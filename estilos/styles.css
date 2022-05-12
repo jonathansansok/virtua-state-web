@@ -49,7 +49,7 @@ a:hover {
   display: grid;
   min-width: 100%;
   grid-template-columns: 100%; 
-  grid-template-rows:   800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px 800px; 
+  grid-template-rows:   800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px /* 800px */; 
   gap: 20px 0px; 
   padding: 0px; 
   margin: 0px; 
@@ -67,7 +67,8 @@ a:hover {
     "d360"
     "hombreGafas"
     "cierre"
-    "dudaFooter-si-no";
+   /*  "dudaFooter-si-no" */
+   ;
 }
 
 
@@ -126,9 +127,9 @@ a:hover {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
     }
 
-.dudaFooter-si-no { grid-area: dudaFooter-si-no; 
+/* .dudaFooter-si-no { grid-area: dudaFooter-si-no; 
     background-color: #7FFF00;
     height: 450px;
-}
+} */
 
 
