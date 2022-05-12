@@ -26,7 +26,6 @@ header{
     padding: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-   
 }
 a {
     text-decoration: none;
@@ -34,8 +33,6 @@ a {
     transition: all 0.7s;
     text-underline-offset: 40%;
 
-    
-    
 }
 a:hover {
     color: #7FFF00;
