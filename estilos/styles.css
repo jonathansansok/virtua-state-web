@@ -5,34 +5,13 @@
     padding: 0px;
     font-family: 'Montserrat Alternates', sans-serif;
 }
+header{
+    height: 800px;
 
-.container {
-  display: grid;
-  grid-template-columns: 100%; 
-  grid-template-rows:  800px 800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px 450px; 
-  gap: 20px 0px; 
-  padding: 0px; 
-  margin: 0px; 
-  grid-template-areas: 
-    "video-intro"
-    "metaverso"
-    "virtua-sate"
-    "contenido-5"
-    "otroTitulo"
-    "a3-d"
-    "b3-dPhotography"
-    "c3-dScan"
-    "createIt"
-    "appsReality"
-    "instagram"
-    "d360"
-    "hombreGafas"
-    "cierre"
-    "dudaFooter-si-no";
 }
-
-.video-intro{ grid-area: video-intro;
-    }
+.video-intro{ 
+    height: 800px ;
+}
 .video-intro  ul{ 
     display: flex;
     flex-direction: row;
@@ -67,6 +46,32 @@ a:hover {
 .video-intro { grid-area: video-intro; 
     background-color: black;
     }
+.container {
+  display: grid;
+  grid-template-columns: 100%; 
+  grid-template-rows:   800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px 450px; 
+  gap: 20px 0px; 
+  padding: 0px; 
+  margin: 0px; 
+  grid-template-areas: 
+    "metaverso"
+    "virtua-sate"
+    "contenido-5"
+    "otroTitulo"
+    "a3-d"
+    "b3-dPhotography"
+    "c3-dScan"
+    "createIt"
+    "appsReality"
+    "instagram"
+    "d360"
+    "hombreGafas"
+    "cierre"
+    "dudaFooter-si-no";
+}
+
+
+
 .metaverso { grid-area: metaverso;
     background-color: #7FFF00 ;
     }
