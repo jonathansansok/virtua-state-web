@@ -16,9 +16,8 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-right: 50px;
-    margin-top: 20px;
-
+    margin-right: 30px;
+    padding-top: 25px;
     }
 
 .video-intro ul li { 
@@ -48,8 +47,9 @@ a:hover {
     }
 .container {
   display: grid;
+  min-width: 100%;
   grid-template-columns: 100%; 
-  grid-template-rows:   800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px 450px; 
+  grid-template-rows:   800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px 800px; 
   gap: 20px 0px; 
   padding: 0px; 
   margin: 0px; 
