@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
+
+.container {
+  display: grid;    
+  grid-template-columns: 100%; 
+  grid-template-rows:  800px 800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px 450px; 
+  gap: 20px 0px; 
+  padding: 0px; 
+  margin: 0px; 
+  grid-template-areas: 
+    "video-intro"
+    "metaverso"
+    "virtua-sate"
+    "contenido-5"
+    "otroTitulo"
+    "a3-d"
+    "b3-dPhotography"
+    "c3-dScan"
+    "createIt"
+    "appsReality"
+    "instagram"
+    "d360"
+    "hombreGafas"
+    "cierre"
+    "dudaFooter-si-no";
+}
+
+.video-intro{ grid-area: video-intro;
+    }
+.video-intro  ul{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 50px;
+    margin-top: 20px;
+
+    }
+
+.video-intro ul li { 
+    list-style: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+   
+}
+a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.7s;
+    text-underline-offset: 40%;
+
+    
+    
+}
+a:hover {
+    color: #7FFF00;
+    
+}
+
+.video-intro { grid-area: video-intro; 
+    background-color: black;
+    }
+.metaverso { grid-area: metaverso;
+    background-color: #7FFF00 ;
+    }
+.virtua-sate { grid-area: virtua-sate; 
+    background-color: white;
+    }
+
+.contenido-5 { grid-area: contenido-5; 
+    background-color: #7FFF00 ;
+    }
+.otroTitulo { grid-area: otroTitulo; 
+    background-color: white ;
+    }
+.a3-d { grid-area: a3-d; 
+    background: rgb(127,255,0);
+background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
+background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
+background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
+}
+.b3-dPhotography { grid-area: b3-dPhotography; 
+    background-color: #7FFF00 ;
+}
+.c3-dScan { grid-area: c3-dScan;
+    background-color: #8a2be2 ; 
+    }
+
+.createIt { grid-area: createIt; 
+    background-color: #FF1493 ; 
+}
+
+.appsReality { grid-area: appsReality; 
+    background-color: #7FFF00 ;
+    }
+.instagram { grid-area: instagram; 
+    background-color: #8a2be2 ; 
+    }
+
+.d360 { grid-area: d360;
+    background-color: #7FFF00
+    }
+
+.hombreGafas { grid-area: hombreGafas; 
+    background-color: #FF1493 ;
+    }
+
+.cierre { grid-area: cierre; 
+    background: rgb(127,255,0);
+background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
+background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
+background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
+    }
+
+.dudaFooter-si-no { grid-area: dudaFooter-si-no; 
+    background-color: #7FFF00;
+    height: 450px;
+}
+
+
