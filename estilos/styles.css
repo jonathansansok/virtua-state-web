@@ -6,8 +6,6 @@
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-
-
 .container {
   display: grid;    
   grid-template-columns: 100%; 
@@ -84,10 +82,10 @@ a:hover {
     }
 .a3-d { grid-area: a3-d; 
     background: rgb(127,255,0);
-background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
-background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
-background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
+    background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
+    background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
+    background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
 }
 .b3-dPhotography { grid-area: b3-dPhotography; 
     background-color: #7FFF00 ;
@@ -117,10 +115,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endCo
 
 .cierre { grid-area: cierre; 
     background: rgb(127,255,0);
-background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
-background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
-background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
+    background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
+    background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
+    background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
     }
 
 .dudaFooter-si-no { grid-area: dudaFooter-si-no; 
