@@ -56,8 +56,8 @@ a:hover {
   display: grid;
   min-width: 100%;
   grid-template-columns: 100%;
-  grid-template-rows:   300px 200px 400px 100px 900px 800px 800px 800px 800px 800px 300px 800px  800px ; 
-  gap: 20px 0px;
+  grid-template-rows:   300px 200px 400px 100px 900px 800px 800px 800px 800px 800px 800px 800px  850px; 
+  gap: 10px 0px;
   padding: 0px;
   margin: 0px;
   grid-template-areas:
@@ -74,7 +74,7 @@ a:hover {
     "d360"
     "hombreGafas"
     "cierre"
-    "dudaFooter-si-no" 
+/*     "dudaFooter-si-no"  */
    ;
 }
 
@@ -129,9 +129,10 @@ a:hover {
     letter-spacing: 1.7rem;
     }
 .otroTitulo h3 { 
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
     text-align: center;
+    letter-spacing: 3rem;
     }
     
 .a3-d { grid-area: a3-d; 
@@ -191,35 +192,206 @@ a:hover {
     }
 .c3-dScan { grid-area: c3-dScan;
     background-color: #8a2be2 ; 
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 2rem;
     }
+
+.c3-dScan h3{
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    background-color: #7FFF00;
+    color: white;
+    padding: 10px;
+    padding-left: 40px;
+}
 
 .createIt { grid-area: createIt; 
     background-color: #FF1493 ; 
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.7rem;
+    text-align: center;
+
+}
+
+.createIt h3{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    background-color: #7FFF00;
+    color: white;
+    width: 500px;
+    color: black;
+    width: 90%;
+}
+
+.CreateItImg{ 
+    width: 100%;
+}
+
+.createIt .CreateItAlone{
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    background-color: #7FFF00;
+    color: white;
+    width: 500px;
+    color: black;
+    width: 50%;
+    padding-left: 35px;
+    
 }
 
 .appsReality { grid-area: appsReality; 
     background-color: #7FFF00 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
     }
+.appsReality h3 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    background-color: #FF1493 ;
+    color: white;
+    padding: 10px;
+    padding-left: 40px;
+    }
+
 .instagram { grid-area: instagram; 
-    background-color: #8a2be2 ; 
+    background-color: #7FFF00 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
+    }
+.instagram h3 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    background-color: #FF1493 ;
+    color: white;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
     }
 
 .d360 { grid-area: d360;
-    background-color: #7FFF00
+    background-color: #7FFF00;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
+    }
+
+.d360 h3 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    background-color: #FF1493 ;
+    color: white;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
     }
 
 .hombreGafas { grid-area: hombreGafas; 
     background-color: #FF1493 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    letter-spacing: 1.1rem;
+
     }
 
+.hombreGafas h3 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    color: #7FFF00;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    letter-spacing: 2rem;
+    }
+
+.hombreGafas span {
+    color: black; /* este color será #FF1493 */
+    }
+
+.hombreGafas .neverPony{ 
+    color: white;
+    margin-top: 00px;
+    margin-bottom: 30px;
+
+
+}
 .cierre { grid-area: cierre; 
     background: rgb(127,255,0);
     background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
     background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
     background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.908000700280112) 74%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     }
 
+.cierre h3{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 60px;
+    color: white;
+    }
+
+.cierre h4{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    color: white;
+    }
+
+.cierre h2{ 
+    text-align: center;
+    margin-top: 50px;
+    font-size: 150px;
+    color: white;
+    }
+
+.cierre .agendar{ 
+    border: 4px solid white;
+    border-radius: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 30px;
+    }
+
+.cierre .logoZoom{ 
+    width: 90px;
+    margin-top: 40px;
+    }
+    
 .miRed{
     width: 50px;
     height: 100px;
@@ -231,9 +403,8 @@ a:hover {
 
 }
 
-.dudaFooter-si-no { grid-area: dudaFooter-si-no; 
+/* .dudaFooter-si-no { grid-area: dudaFooter-si-no; 
     background-color: #7FFF00;
-    height: 450px;
-} 
+}  */
 
 
