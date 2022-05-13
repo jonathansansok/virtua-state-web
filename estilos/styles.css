@@ -7,10 +7,12 @@
 }
 header{
     height: 800px;
-    
 }
+
 .video-intro{ 
-    height: 800px ;
+    height: 800px;
+
+    
 }
 .video-intro  ul{ 
     display: flex;
@@ -41,16 +43,24 @@ a:hover {
 
 .video-intro { grid-area: video-intro; 
     background-color: black;
+    
     }
+
+.textoVideo{ 
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .container {
   display: grid;
   min-width: 100%;
-  grid-template-columns: 100%; 
-  grid-template-rows:   800px 90px 800px 90px 800px 800px 800px 800px 800px 800px 300px 800px  800px ; 
-  gap: 20px 0px; 
-  padding: 0px; 
-  margin: 0px; 
-  grid-template-areas: 
+  grid-template-columns: 100%;
+  grid-template-rows:   300px 200px 400px 100px 900px 800px 800px 800px 800px 800px 300px 800px  800px ; 
+  gap: 20px 0px;
+  padding: 0px;
+  margin: 0px;
+  grid-template-areas:
     "metaverso"
     "virtua-sate"
     "contenido-5"
@@ -72,27 +82,113 @@ a:hover {
 
 .metaverso { grid-area: metaverso;
     background-color: #7FFF00 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.7rem;
     }
+    
+.metaverso h2 { grid-area: metaverso;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    }
+
+
 .virtua-sate { grid-area: virtua-sate; 
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
+
+.virtua-sate h2 { 
+    color: #7FFF00;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3.5rem;
+    }
+
+.stateSolo{ 
+    color: #8a2be2;
+    font-size: 100px;
+}
 
 .contenido-5 { grid-area: contenido-5; 
     background-color: #7FFF00 ;
     }
 .otroTitulo { grid-area: otroTitulo; 
     background-color: white ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.7rem;
     }
+.otroTitulo h3 { 
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    }
+    
 .a3-d { grid-area: a3-d; 
     background: rgb(127,255,0);
     background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
     background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
     background: linear-gradient(103deg, rgba(127,255,0,1) 37%, rgba(138,43,226,0.938813025210084) 74%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
 }
+
+.recoVirtual{
+    color: white;
+    font-size: 150px;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 1.7rem;
+    padding-top: 100px;
+}
+
+.bajo3Dalone{
+    color: #8a2be2;
+    font-size: 250px;
+    font-weight: bold;
+    text-align: center;
+    font-family: arial,sans-serif;
+    padding-top: 40px;
+}
+.letraDsola{
+    color: #7FFF00;
+    font-size: 250px;
+    font-weight: bold;
+    font-family: arial,sans-serif;
+}
+
+
 .b3-dPhotography { grid-area: b3-dPhotography; 
-    background-color: #7FFF00 ;
+    background-color: #7FFF00;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.7rem;
 }
+.b3-dPhotography h3 { 
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    background-color: #8a2be2;
+    color: white;
+    padding: 10px;
+    padding-left: 40px;
+    }
 .c3-dScan { grid-area: c3-dScan;
     background-color: #8a2be2 ; 
     }
