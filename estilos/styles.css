@@ -43,7 +43,6 @@ a:hover {
 
 .video-intro { grid-area: video-intro; 
     background-color: black;
-    
     }
 
 .textoVideo{ 
@@ -402,6 +401,208 @@ a:hover {
     height: 50px;
 
 }
+
+.header-CieloOk{ 
+    height: 520px;
+}
+.cielo{ 
+    height: 520px;
+    background-image: url("./hero-cielo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+    
+}
+.cielo  ul{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 30px;
+    padding-top: 25px;
+    }
+
+.cielo ul li { 
+    color: black;
+    list-style: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.cielo-servicios {
+    text-decoration: none;
+    color: black;
+    transition: all 0.7s;
+    text-underline-offset: 40%;
+
+}
+.cielo-servicios:hover {
+    color: #8a2be2 ;
+}
+
+.video-intro { grid-area: video-intro; 
+    background-color: black;
+    
+    }
+
+.container-RecoVirtual {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 200px 600px 600px 600px 600px;
+    gap: 0px 0px;
+    grid-template-areas:
+        "TitleVirtualTour"
+        "gemelosDigitales"
+        "googleStreet"
+        "cardsRosas"
+        "Ultimo3d"
+        "industrias";
+    }
+
+    .TitleVirtualTour { grid-area: TitleVirtualTour;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        .TitleVirtualTour h1 {
+            font-size: 90px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1.2rem;
+            padding-right: 30px;
+        }
+        .title3oK{ 
+            color: #7FFF00;
+        }
+        .titleDoK{ 
+            color: #FF1493;
+        }
+.gemelosDigitales { grid-area: gemelosDigitales;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    padding-left: 160px;
+    padding-right: 160px;
+    margin: 0px;
+}
+    .tituloGemelosDigitales{ 
+        font-size: 40px;
+        font-weight: bold;
+        text-align: left;
+        color: black;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .textoGemelosDigitales{ 
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 00px;
+        color: black;
+        line-height: 1.73;
+        text-align: left;
+        margin-top: 0px;
+    }
+    .googleStreet { grid-area: googleStreet;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: start;
+        text-align: center;
+        flex-wrap: wrap;
+        
+        margin-top: 60px;
+        padding-left: 00px;
+        padding-right: 110px;
+    }
+    .ArticleGoogleStreet{ 
+           width: 470px;
+    }
+
+    .GoogleStreetView{ 
+        font-size: 1.5rem;
+        letter-spacing: .3px;
+
+        line-height: 26px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .GoogleStreetViewText{ 
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        text-align: start;
+        line-height: 28px;
+    }
+    .liDeStreet{
+        text-align: start;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    .divImgPiscina{
+        width: 300px;
+        margin-top: 20px;
+
+    }
+    .imgPiscina{
+        width: 500px;
+
+
+    }
+
+    .cardsRosas { grid-area: cardsRosas;
+        background-color: rgb(235, 235, 235);
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        padding-top: 70px;
+        justify-content: center;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .cardsRosasUnidad{
+        width: 360px;
+        font-size: 15px;
+        font-weight: bold;
+        padding-left: 100px;
+        margin-bottom: 20px;
+    }
+    .miniTitulo{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .masInformacion{
+        color: black;
+        font-weight: bold;
+        font-size: 17px;
+
+        
+    }
+    .masInformacion p:hover {
+        color: black;
+       
+        
+    }
+
+    .Ultimo3d { grid-area: Ultimo3d;
+    
+    }
+    .industrias { grid-area: industrias;
+    
+    }
+
+
+
+
+
 
 /* .dudaFooter-si-no { grid-area: dudaFooter-si-no; 
     background-color: #7FFF00;
