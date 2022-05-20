@@ -407,7 +407,7 @@ a:hover {
 }
 .cielo{ 
     height: 520px;
-    background-image: url("./hero-cielo.jpg");
+    background-image: url("./hero-cielo.jpg");     
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -450,8 +450,13 @@ a:hover {
 .container-RecoVirtual {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 200px 600px 600px 600px 600px;
+    grid-template-rows: 200px 600px 600px 600px 600px 600px;
     gap: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     grid-template-areas:
         "TitleVirtualTour"
         "gemelosDigitales"
@@ -468,11 +473,12 @@ a:hover {
         align-items: center;
         }
         .TitleVirtualTour h1 {
-            font-size: 90px;
+            font-size: 6rem;
             font-weight: bold;
             text-align: center;
             letter-spacing: 1.2rem;
-            padding-right: 30px;
+            margin-top: 30px;
+/*             padding-right: 30px; */
         }
         .title3oK{ 
             color: #7FFF00;
@@ -490,6 +496,7 @@ a:hover {
     padding-left: 160px;
     padding-right: 160px;
     margin: 0px;
+    margin-top: 40px;
 }
     .tituloGemelosDigitales{ 
         font-size: 40px;
@@ -511,70 +518,77 @@ a:hover {
         margin-top: 0px;
     }
     .googleStreet { grid-area: googleStreet;
+
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
-        align-items: start;
-        text-align: center;
+        justify-content: space-between;
+        align-items: center;
         flex-wrap: wrap;
-        
         margin-top: 60px;
-        padding-left: 00px;
-        padding-right: 110px;
-    }
+        width: 75%;
+        }
+    
     .ArticleGoogleStreet{ 
-           width: 470px;
+        width: 470px;
     }
 
     .GoogleStreetView{ 
         font-size: 1.5rem;
         letter-spacing: .3px;
+        font-weight: bold;
 
         line-height: 26px;
         margin-top: 20px;
         margin-bottom: 20px;
-    }
-    .GoogleStreetViewText{ 
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        text-align: start;
-        line-height: 28px;
-    }
-    .liDeStreet{
-        text-align: start;
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-        margin-left: 20px;
-    }
-    .divImgPiscina{
-        width: 300px;
-        margin-top: 20px;
 
     }
-    .imgPiscina{
-        width: 500px;
-        border-radius: 20px;
+        .GoogleStreetViewText{ 
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: start;
+            line-height: 28px;
+        }
+            .liDeStreet{
+            text-align: start;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            }
+            .liDeStreet::marker{
+                color: #FF1493;
+            }
+            .liDeStreet:hover{
+                color: #8a2be2;
+                }
+/*                 .divImgPiscina{
+                    width: 300px;
+                    margin-top: 20px;
+
+                } */
+                .imgPiscina{
+                    width: 45%;
+                    border-radius: 20px;
 
 
-    }
+                }
 
     .cardsRosas { grid-area: cardsRosas;
         background-color: rgb(235, 235, 235);
         display: flex;
         flex-direction:row;
         flex-wrap: wrap;
-        justify-content: space-evenly;
         padding-top: 70px;
         justify-content: center;
-        margin-left: 75px;
-        margin-right: 75px;
+/*         margin-left: 75px;
+        margin-right: 75px; */
+        margin-top: 50px;
     }
     .cardsRosasUnidad{
-        width: 360px;
-        font-size: 15px;
+        width: 400px;
+        font-size: 13px;
         font-weight: bold;
-        padding-right: 40px;
-        padding-left: 40px;
+        padding-right: 0px;
+        padding-left: 50px;
         margin-bottom: 20px;
     }
     .miniTitulo{
@@ -596,7 +610,42 @@ a:hover {
     }
 
     .Ultimo3d { grid-area: Ultimo3d;
-    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 60px;
+    }
+    .textoUltimoOk{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        text-align: center;
+
+
+    }
+    .pruebeloUstedMismo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: left;
+    }
+    .pruebeloTexto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        text-align: left;
+        max-width: 75%;
+        margin-right: 00px;
+    }
+    .matterportLast{
+        width: 60%;
+
     }
     .industrias { grid-area: industrias;
     
