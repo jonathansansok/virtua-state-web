@@ -553,6 +553,7 @@ a:hover {
     }
     .imgPiscina{
         width: 500px;
+        border-radius: 20px;
 
 
     }
@@ -562,16 +563,18 @@ a:hover {
         display: flex;
         flex-direction:row;
         flex-wrap: wrap;
+        justify-content: space-evenly;
         padding-top: 70px;
         justify-content: center;
-        margin-left: 80px;
-        margin-right: 80px;
+        margin-left: 75px;
+        margin-right: 75px;
     }
     .cardsRosasUnidad{
         width: 360px;
         font-size: 15px;
         font-weight: bold;
-        padding-left: 100px;
+        padding-right: 40px;
+        padding-left: 40px;
         margin-bottom: 20px;
     }
     .miniTitulo{
