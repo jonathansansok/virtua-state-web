@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;1,600&display=swap');
+@font-face {
+    font-family: Integral;
+    src: url('../fuentes/Integral-fonts/Webfont/IntegralCF-Regular.woff');
+}
+@font-face {
+    font-family: Roboto;
+    src: url('../fuentes/roboto/Roboto-Regular.ttf');
+}
 
+.TituloDeVirtualTour {
+    font-family: Integral;
+}
 *{
     margin: 0;
     padding: 0px;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 header{
     height: 800px;
@@ -30,8 +41,11 @@ header{
     font-weight: bold;
 }
 a {
+    font-family: Roboto, sans-serif;
     text-decoration: none;
     color: white;
+    font-size: 24px;
+    font-weight: bold;
     transition: all 0.7s;
     text-underline-offset: 40%;
 
@@ -402,6 +416,19 @@ a:hover {
 
 }
 
+::-webkit-srollbar{
+    width: 10px;
+}
+::-webkit-scrollbar{
+background-color: #7FFF00;
+
+border-radius: 8px;
+}
+::-webkit-scrollbar-thumb{
+background-color:#FF1493;
+border-radius: 8px;
+}
+
 .header-CieloOk{ 
     height: 520px;
 }
@@ -411,9 +438,6 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-
-    
 }
 .cielo  ul{ 
     display: flex;
@@ -431,6 +455,30 @@ a:hover {
     font-size: 1.5rem;
     font-weight: bold;
 }
+.cielo ul li a { 
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    position: relative;
+
+}
+.cielo ul li a::after { 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; bottom: 0; 
+    width: 100%; height: 2px;
+    background-color: #FF1493;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;/*  ease-in-out */
+}
+
+.cielo ul li a:hover::after { 
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 .cielo-servicios {
     text-decoration: none;
     color: black;
@@ -442,11 +490,15 @@ a:hover {
     color: #8a2be2 ;
 }
 
-.video-intro { grid-area: video-intro; 
+h1:hover{
+    text-shadow: red -6px 0, cyan 6px 0  ;
+
+}
+/* .video-intro { grid-area: video-intro; 
     background-color: black;
     
     }
-
+ */
 .container-RecoVirtual {
     display: grid;
     grid-template-columns: 1fr;
@@ -476,15 +528,16 @@ a:hover {
             font-size: 6rem;
             font-weight: bold;
             text-align: center;
-            letter-spacing: 1.2rem;
+            letter-spacing: 1rem;
             margin-top: 30px;
+            transition: all 0.7s;
 /*             padding-right: 30px; */
         }
         .title3oK{ 
             color: #7FFF00;
         }
         .titleDoK{ 
-            color: #FF1493;
+            color: #8a2be2;
         }
 .gemelosDigitales { grid-area: gemelosDigitales;
     
@@ -590,24 +643,29 @@ a:hover {
         padding-right: 0px;
         padding-left: 50px;
         margin-bottom: 20px;
+        transition: all 0.7s;
     }
-    .miniTitulo{
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    .masInformacion{
-        color: black;
-        font-weight: bold;
-        font-size: 17px;
+    .cardsRosasUnidad:hover{
+        transform: scale(1.1);
 
-        
     }
-    .masInformacion p:hover {
-        color: black;
-       
         
-    }
+        .miniFoto{
+            margin-bottom: 25px;
+        }
+        .miniTitulo{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .masInformacion{
+            color: black;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        .masInformacion p:hover {
+            color: black;
+        }
 
     .Ultimo3d { grid-area: Ultimo3d;
         display: flex;
@@ -618,35 +676,48 @@ a:hover {
         margin-top: 50px;
         margin-bottom: 60px;
     }
-    .textoUltimoOk{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: left;
-        text-align: center;
+        .textoUltimoOk{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            text-align: center;
+        }
+        .pruebeloUstedMismo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+        ::after { 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; bottom: 0; 
+    width: 100%; height: 2px;
+    background-color: #FF1493;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;/*  ease-in-out */
+}
 
+.cielo ul li a:hover::after { 
+    transform: scaleX(1);
+    transform-origin: left;
+}
+        .pruebeloTexto{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            text-align: left;
+            max-width: 75%;
+            margin-right: 00px;
+        }
+        .matterportLast{
+/*             width: 60%; */
 
-    }
-    .pruebeloUstedMismo{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        text-align: left;
-    }
-    .pruebeloTexto{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: left;
-        text-align: left;
-        max-width: 75%;
-        margin-right: 00px;
-    }
-    .matterportLast{
-        width: 60%;
-
-    }
+        }
     .industrias { grid-area: industrias;
     
     }
