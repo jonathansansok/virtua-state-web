@@ -1,4 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../assets/fonts/MonumentExtended-Regular.otf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
 
 .TituloDeVirtualTour {
     font-family: Integral;
