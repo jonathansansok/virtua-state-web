@@ -1,0 +1,416 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../fonts/MonumentExtended-Regular.otf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+*{
+    margin: 0;
+    padding: 0px;
+}
+
+/* NAVBAR */
+.navbar{
+    background-color: black;
+}
+
+.navbar-toggler{
+    border: none;
+    background-color: #1a1a1a;
+}
+
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.nav-link {
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.nav-link:hover{
+    color: #7FFF00;
+    text-decoration: underline;
+}
+
+/* VIDEO HERO */
+.video-intro{ 
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.videoBg{
+    width: 100%;
+
+}
+
+.textoVideo{
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.daPasos{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 10px;
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+}
+
+.text_metaverso{
+    color: #e322f4;
+    font-family: 'MonumentExtended', sans-serif !important;
+    letter-spacing: 0.8rem;
+    margin-top: -20px;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    .daPasos{
+        font-size: 30px;
+    }
+    .text_metaverso{
+        font-size: 50px;
+    }
+}
+
+.logo_hero{
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+
+/* SECTION1 */
+.tection1_text {
+    font-family: 'MonumentExtended', sans-serif !important;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    font-size: 60px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0;
+}
+
+/* IMG SECTIONS */
+.img-section{
+    width: min(90%, 800px);
+}
+
+
+/* SECTION2 */
+.section2{
+    background: rgb(127,255,0);
+    background: -moz-linear-gradient(103deg, rgba(127,255,0,1) 10%, rgba(138,43,226,0.938813025210084) 74%);
+    background: -webkit-linear-gradient(103deg, rgba(127,255,0,1) 10%, rgba(138,43,226,0.938813025210084) 74%);
+    background: linear-gradient(103deg, rgba(127,255,0,1) 10%, rgba(138,43,226,0.938813025210084) 74%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7fff00",endColorstr="#8a2be2",GradientType=1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+
+.section2_text{
+    top: 20%;
+    margin: auto;
+}
+
+.section2_text_1{
+    font-family: serif;
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 15px;
+    
+}
+
+.section2_text_2{
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 120px;
+    color: #930ae4;
+    -webkit-text-stroke: 4px black;
+    letter-spacing: -15px;
+}
+
+.section2_text_2_D{
+    color: #3cff2b;
+    -webkit-text-stroke: 4px black; /* width and color */
+}
+
+/* SECTION3 */
+.section3{
+    background-color: #7FFF00;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
+    max-height: 800px;
+}
+
+
+.img_section{
+    max-width: 750px;
+}
+
+.section3_text_container{
+    height: 80px;
+    background-color: #930ae4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+
+.section3_text{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 13px;
+    font-weight: 800;
+    color: rgb(250, 250, 250);
+    text-align: center;
+    margin: 0;
+}
+
+@media (min-width: 860px) {
+    .section3_text{
+        font-size: 40px;
+    }
+   
+}
+
+/* SECTION 4 */
+
+.section4{
+    background-color: #8a2ae3;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
+    max-height: 800px;
+}
+
+.img_section{
+    max-width: 750px;
+}
+
+.section4_text_container{
+    height: 80px;
+    background-color: #7FFF00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.section4_text{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 13px;
+    font-weight: 800;
+    color: rgb(250, 250, 250);
+    text-align: center;
+    margin: 0;
+}
+
+@media (min-width: 860px) {
+    .section4_text{
+        font-size: 40px;
+    }
+   
+}
+
+
+/* SECTION 5 */
+
+.section5{
+    background-color: #ff1493;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
+}
+
+.img_section{
+    max-width: 750px;
+}
+
+.section5_text_container{
+    height: 80px;
+    background-color: #7FFF00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.section5_text{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 10px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    letter-spacing: 10px;
+    margin: 0;
+}
+
+@media (min-width: 537px) {
+    .section5_text{
+        font-size: 15px;
+    }
+   
+}
+@media (min-width: 768px) {
+    .section5_text{
+        font-size: 30px;
+    }
+   
+}
+
+
+@media (min-width: 860px) {
+    .section5_text2{
+        font-family: 'MonumentExtended', sans-serif !important;
+        color: rgb(0, 0, 0);
+        font-weight: 800;
+        font-size: 25px;
+        text-align: center;
+        margin: 0;
+    }
+   
+}
+
+
+
+/* SECTION 6 */
+
+.section6{
+    background-color: #7FFF00;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
+}
+
+.img_section{
+    max-width: 750px;
+}
+
+.section6_text_container{
+    height: 80px;
+    background-color: #ff1493;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.section6_text{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 10px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 10px;
+}
+
+@media (min-width: 537px) {
+    .section6_text{
+        font-size: 15px;
+    }
+   
+}
+
+@media (min-width: 768px) {
+    .section6_text{
+        font-size: 30px;
+    }
+   
+}
+.reallity_apps_img{
+    height: min(90%, 650px);
+}
+
+
+
+
+/* SECTION 7 */
+
+.section7{
+    background-color: #8a2ae3;
+    display: flex;
+    flex-direction: column;
+    justify-content: starts;
+    align-items: center;
+    letter-spacing: 1.1rem;
+}
+
+.img_section{
+    max-width: 750px;
+}
+
+.section7_text_container{
+    height: 80px;
+    background-color: #ff1493;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.section7_text{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 10px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 10px;
+}
+
+@media (min-width: 537px) {
+    .section7_text{
+        font-size: 15px;
+    }
+   
+}
+
+@media (min-width: 768px) {
+    .section7_text{
+        font-size: 30px;
+    }
+   
+}
+.reallity_apps_img{
+    height: min(90%, 650px);
+}

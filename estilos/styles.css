@@ -137,14 +137,14 @@ a:hover {
   display: grid;
   min-width: 100%;
   grid-template-columns: 100%;
-  grid-template-rows:   /* 0.4fr */ /* 0.3fr */ 0.5fr 0.2fr 1fr 0.3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows:   /* 0.4fr */ /* 0.3fr */ /* 0.5fr */ 0.2fr 0.5fr 0.3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
   gap: 10px 0px;
   padding: 0px;
   margin: 0px;
   grid-template-areas:
     /* "metaverso" */
     /* "virtua-sate" */
-    "contenido-5"
+    /* "contenido-5" */
     "otroTitulo"
     "a3-d"
     "b3-dPhotography"
@@ -218,7 +218,7 @@ a:hover {
     color: #8a2be2;
 }
 
-.contenido-5 { grid-area: contenido-5; 
+/* .contenido-5 { grid-area: contenido-5; 
     background-color: #7FFF00 ;
     }
 .otroTitulo { grid-area: otroTitulo; 
@@ -228,7 +228,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     
-    }
+    } */
 
 
 
@@ -251,6 +251,11 @@ a:hover {
         }
     }
 
+.img-recorridos{
+    width: 100%;
+}
+
+    
 
 .a3-d { grid-area: a3-d; 
     background: rgb(127,255,0);
