@@ -60,28 +60,53 @@ header{
 
 .video-intro{ 
     max-height: 800px;
-    
-    
-}
-.video-intro  ul{ 
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 30px;
-    padding-top: 25px;
-    }
-
-.video-intro ul li { 
-    list-style: none;
-    margin: 1rem;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .videoBg{
     width: 100%;
 }
+
+.textoVideo{
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.daPasos{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 10px;
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+}
+
+.text_metaverso{
+    color: #e322f4;
+    font-family: 'MonumentExtended', sans-serif !important;
+    letter-spacing: 0.8rem;
+    margin-top: -20px;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    .daPasos{
+        font-size: 30px;
+    }
+    .text_metaverso{
+        font-size: 50px;
+    }
+}
+
+
+
+.logo_hero{
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+
+
 
 a {
     font-family: Roboto, sans-serif;
@@ -112,14 +137,14 @@ a:hover {
   display: grid;
   min-width: 100%;
   grid-template-columns: 100%;
-  grid-template-rows:   0.4fr 0.3fr 0.5fr 0.3fr 1fr 0.3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows:   /* 0.4fr */ /* 0.3fr */ /* 0.5fr */ 0.2fr 0.5fr 0.3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
   gap: 10px 0px;
   padding: 0px;
   margin: 0px;
   grid-template-areas:
-    "metaverso"
-    "virtua-sate"
-    "contenido-5"
+    /* "metaverso" */
+    /* "virtua-sate" */
+    /* "contenido-5" */
     "otroTitulo"
     "a3-d"
     "b3-dPhotography"
@@ -193,7 +218,7 @@ a:hover {
     color: #8a2be2;
 }
 
-.contenido-5 { grid-area: contenido-5; 
+/* .contenido-5 { grid-area: contenido-5; 
     background-color: #7FFF00 ;
     }
 .otroTitulo { grid-area: otroTitulo; 
@@ -203,7 +228,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     
-    }
+    } */
 
 
 
@@ -226,6 +251,11 @@ a:hover {
         }
     }
 
+.img-recorridos{
+    width: 100%;
+}
+
+    
 
 .a3-d { grid-area: a3-d; 
     background: rgb(127,255,0);
@@ -265,7 +295,7 @@ a:hover {
 
 .bajo3Dalone{
     color: #8a2be2;
-    font-size: 250px;
+    font-size: 100px ;
     font-weight: bold;
     text-align: center;
     font-family: arial,sans-serif;
@@ -277,6 +307,12 @@ a:hover {
     font-family: arial,sans-serif;
 }
 
+@media (min-width:  600px) {
+    .bajo3Dalone{
+        font-size: 250px;
+    }
+}
+    
 
 .b3-dPhotography { grid-area: b3-dPhotography; 
     background-color: #7FFF00;
