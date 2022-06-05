@@ -773,6 +773,13 @@ h1:hover{
           
       }
 }   
+@media (max-width: 718px){
+    .sector-inmobi-logo{
+        width: 40%;
+        height: 40%;
+          
+      }
+}   
 
 @media (max-width: 632px){
     .matterportLast{
