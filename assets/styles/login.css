@@ -12,6 +12,7 @@
 *{
     margin: 0;
     padding: 0px;
+    cursor: crosshair;
 }
 
 #myVideo {
@@ -25,7 +26,7 @@
   /* Add some content at the bottom of the video/page */
 .content {
     position: fixed;
-    top: 30%;
+    top: 45%;
     /* background: rgba(0, 0, 0, 0.5); */
     color: #f1f1f1;
     width: 100%;
@@ -121,8 +122,27 @@
     }
 }
 
-.logo_login:hover{
-    transform: scale(1.2);
-    transition: all 0.7s;
+
+
+.title_login{
+    font-family: 'MonumentExtended', sans-serif !important;
+    font-size: 60px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    letter-spacing: 10px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
+.title_login:hover{
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: .8;
+    transition: opacity .3s ease-in-out;
+    border-radius: 20px;
+}
