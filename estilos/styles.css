@@ -249,6 +249,9 @@ h1:hover{
         min-height: 600px;
     }
     .cardsRosasUnidad{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
         width: 400px;
         font-size: 13px;
         font-weight: bold;
@@ -263,11 +266,15 @@ h1:hover{
     }
         
         .miniFoto{
+            width: 80px;
             margin-bottom: 25px;
         }
         .miniTitulo{
             font-size: 20px;
             font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .cardsTextos{
             margin-bottom: 10px;
         }
         .masInformacion{
@@ -434,8 +441,9 @@ h1:hover{
             max-width: 500px;
         }
         .sector-inmobi-logo{
-          width: 15%;
-          height: 15%;
+       
+          width: 13%;
+          height: 13%;
             
         }
         .sector-inmobi-a{
@@ -717,9 +725,11 @@ h1:hover{
     @media (max-width: 980px){
         .dueniosDirectos{ 
             flex-direction: column;
+            justify-content: right;
+            align-items: center;
         }
         .cartaNegra{
-            width: 100%;
+            width: 80%;
         }
         .cartaNegra.last{
             margin-bottom: 50px;
@@ -727,7 +737,10 @@ h1:hover{
     }
 
 @media (max-width: 910px){
-
+    .gemelosDigitales{ 
+        padding-left: 50px;
+        padding-right: 50px;
+    }
     
     .cielo .cieloLista{  
         width: 100%;
@@ -782,6 +795,21 @@ h1:hover{
 }   
 
 @media (max-width: 632px){
+    .TitleVirtualTour h1{
+        font-size: 2.9rem;
+    }
+    .tituloGemelosDigitales {
+        text-align: center;
+    }
+    .textoGemelosDigitales {
+        text-align: justify;
+    }
+    .GoogleStreetViewText{
+        text-align: justify;
+    }
+    .GoogleStreetViewText{
+        text-align: center;
+    }
     .matterportLast{
         width: 95%;
 
@@ -789,9 +817,33 @@ h1:hover{
 }   
 
 @media (max-width: 530px){
+    .header-CieloOk{
+        height: 350px;
+    }
+    .cielo{
+        height: 350px;
+    }
     .sector-inmobi-logo{
         width: 40%;
         height: 40%;
           
       }
+      .cardsRosasUnidad{
+          padding-left: 10px;
+      }
+      .miniFoto{
+        align-self: center;
+      }
+      .cardsRosasUnidad p{
+          padding-right: 10px;
+      }
+}   
+
+@media (max-width: 418px){
+    .cardsRosasUnidad{
+        width: 320px;
+    }
+    .cardsRosasUnidad p{
+        padding-right: 00px;
+    }
 }   
