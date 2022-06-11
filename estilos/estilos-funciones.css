@@ -1,0 +1,373 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../assets/fonts/MonumentExtended-Regular.otf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+
+    /* .TituloDeVirtualTour {
+        font-family: Integral;
+    } */
+*{
+
+    margin: 0;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+/* 
+    font-family: 'Montserrat',  !important;  */
+
+}
+
+
+
+::-webkit-srollbar{
+    width: 10px;
+}
+::-webkit-scrollbar{
+background-color: #7FFF00;
+
+border-radius: 8px;
+}
+::-webkit-scrollbar-thumb{
+background-color:#FF1493;
+border-radius: 8px;
+}
+
+
+
+.header-CieloOk{ 
+    height: 520px;
+}
+.cielo{ 
+    height: 520px;
+    background-image: url("./imagenes2/poseidon.jpg");     
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Roboto, Arial, sans-serif;
+}
+.cielo  ul{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 30px;
+    padding-top: 25px;
+    }
+
+.cielo ul li { 
+    color: black;
+    list-style: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.cielo ul li a { 
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    position: relative;
+
+}
+.cielo ul li a::after { 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; bottom: 0; 
+    width: 100%; height: 2px;
+    background-color: #FF1493;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;/*  ease-in-out */
+}
+
+.cielo ul li a:hover::after { 
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.cielo-servicios {
+    text-decoration: none;
+    color: black;
+    transition: all 0.7s;
+    text-underline-offset: 40%;
+
+}
+.cielo-servicios:hover {
+    color: #8a2be2 ;
+}
+
+h1:hover{
+    text-shadow: red -6px 0, cyan 6px 0  ;
+
+}
+
+
+
+        ::after { 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; bottom: 0; 
+    width: 100%; height: 2px;
+    background-color: #FF1493;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;/*  ease-in-out */
+}
+
+.cielo ul li a:hover::after { 
+    transform: scaleX(1);
+    transform-origin: left;
+}
+        
+.menu-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+/*      right: 30px;  */
+   z-index: 2;
+   font-size: 1.5rem;
+   padding-left: 12px;
+   padding-right: 12px;
+   padding-bottom: 4px;
+   margin-left: 20px;
+   vertical-align: middle;
+   border-radius: 4px;
+   background-color: rgb(26, 26, 26, 0.9);
+   display: none;
+}
+.menu-btn img{
+    padding-top: 5px;
+    padding-bottom: 1px;
+   vertical-align: middle;
+
+}
+
+
+.containerRealState {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 600px 600px 600px 600px 600px 600px 600px  600px  600px  600px;
+    gap: 0px 0px;
+
+    grid-template-areas:
+        "bim"
+        "notes"
+        "planosPlanta"
+        "matterPak"
+        "google"
+        "fotos4k"
+        "modoDeMedicion"
+        "BlurBrush"
+        "vistaMaqueta"
+        "recorridos"
+
+        ;
+    }
+
+.bim { grid-area: bim;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+ /*    gap: 0px 70px; */
+
+    
+    
+    }
+    .miniFoto{
+        width: 600px;
+    }
+
+    .bim-miniFoto{
+        margin-bottom: 30px;
+    }
+    .bim-texto{
+        max-width: 650px;
+        line-height: 1.5rem;
+
+    }
+    .bim-miniTitulo{
+        margin-bottom: 25px;
+    }
+    .masInformacion{
+        color: black;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+
+.notes { grid-area: notes;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+   .miniIcon{
+    width: 72px;
+    margin-bottom: 30px;
+   }
+
+.notes-texto1{
+    max-width: 650px;
+    line-height: 1.5rem;
+}
+.notes-texto2{
+    max-width: 650px;
+    line-height: 1.5rem;
+}
+
+.miniTitulo{
+    margin-bottom: 20px;
+}
+.miniFotoNotes{
+    width: 600px;
+
+}
+
+.notes-texto-largo{
+    margin-top: 30px;
+    max-width: 87%;
+    line-height: 1.5rem;
+}
+
+
+
+.masInformacion{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.planosPlanta { grid-area: planosPlanta;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px;
+
+}
+    .miniFotoFloor{
+        width: 500px;
+    }
+
+.matterPak { grid-area: matterPak;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+
+    .liDeStreet::marker{
+        color: #FF1493;
+    }
+    .liDeStreet:hover{
+        color: #8a2be2;
+    }
+    .notes-texto-largo{
+        margin: 0;
+    }
+    
+.google { grid-area: google;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 80px;
+}
+
+   .miniFotoGoogle{
+    width: 550px;
+    border-radius: 7px;
+    
+   }
+
+
+.modoDeMedicion { grid-area: modoDeMedicion;
+
+}
+.vistaMaqueta { grid-area: vistaMaqueta;
+
+}
+
+.recorridos { grid-area: recorridos;
+
+}
+
+
+
+ 
+@media (max-width: 910px){
+    
+    .cielo .cieloLista{  
+        width: 100%;
+        background-color: rgb(47, 54, 64, 0.6);
+        opacity: 0.9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 40px;
+        margin: 0;
+        transform: translateX(-1000px);
+        transition: transform  .5s ease-in-out;
+    }
+    .cielo .cieloLista.show{  
+        transform: translateX(0px);
+        
+        
+    } 
+
+
+    .cielo ul li{
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 8px 0px;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+ }
+
+    
+
+@media (max-width: 530px){
+    .header-CieloOk{
+        height: 350px;
+    }
+    .cielo{
+        height: 350px;
+    }
+    .sector-inmobi-logo{
+        width: 40%;
+        height: 40%;
+          
+      }
+      .cardsRosasUnidad{
+          padding-left: 10px;
+      }
+      .miniFoto{
+        align-self: center;
+      }
+      .cardsRosasUnidad p{
+          padding-right: 10px;
+      }
+}   
+
+    
