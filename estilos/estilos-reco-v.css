@@ -784,18 +784,29 @@ h1:hover{
     }
 }
 
-    
+@media (max-width: 1247px){
+    .restoInfo{
+        max-width: 800px;
+        
+    }
+}   
+
 @media (max-width: 820px){
     .sector-inmobi-logo{
         width: 20%;
         height: 20%;
           
       }
+      .vidEdificio-ok{
+        width: 500px;
+      }
 }   
-@media (max-width: 718px){
+
+
+@media (max-width: 720px){
     .sector-inmobi-logo{
-        width: 40%;
-        height: 40%;
+        width: 20%;
+        height: 20%;
           
       }
 }   
@@ -820,7 +831,28 @@ h1:hover{
         width: 95%;
 
     }
+    .GoogleStreetView{
+        text-align: center;
+    }
+    .GoogleStreetViewText{
+        text-align: center;
+    }
 }   
+
+@media (max-width: 597px){
+    .sector-inmobi-74 .sector-inmobi-95{
+        text-align: center;
+    }
+    .sector-inmobi-95{
+        text-align: center;
+    }
+    .sector-inmobi-texto95{
+        text-align: center;
+    }
+
+
+
+}
 
 @media (max-width: 530px){
     .header-CieloOk{
@@ -843,6 +875,12 @@ h1:hover{
       .cardsRosasUnidad p{
           padding-right: 10px;
       }
+      .vidEdificio-ok{
+        width: 418px;
+      }
+    .sector-inmobi-74{
+        text-align: center;
+    }
 }   
 
 @media (max-width: 418px){
@@ -852,4 +890,7 @@ h1:hover{
     .cardsRosasUnidad p{
         padding-right: 00px;
     }
+    .vidEdificio-ok{
+        width: 340px;
+      }
 }   

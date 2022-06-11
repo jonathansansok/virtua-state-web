@@ -153,7 +153,7 @@ h1:hover{
 .containerRealState {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 600px 600px 600px 600px 600px 600px 600px  600px  600px  600px;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
     gap: 0px 0px;
 
     grid-template-areas:
@@ -164,7 +164,7 @@ h1:hover{
         "google"
         "fotos4k"
         "modoDeMedicion"
-        "BlurBrush"
+        "blurBrush"
         "vistaMaqueta"
         "recorridos"
 
@@ -172,7 +172,7 @@ h1:hover{
     }
 
 .bim { grid-area: bim;
-    margin-top: 40px;
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -206,6 +206,7 @@ h1:hover{
 
 
 .notes { grid-area: notes;
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -263,6 +264,7 @@ h1:hover{
     }
 
 .matterPak { grid-area: matterPak;
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -294,19 +296,110 @@ h1:hover{
     border-radius: 7px;
     
    }
+   .google-compare{
+    width: 1200px;
+   }
+   .googleTitCompare{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px; 
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(226, 217, 217);
+    border-radius: 3px;
+   }
+    .googleTitCompare h5{
+     font-size: 1.2rem;
+     font-weight: bold;
+     padding: 12px 0px 4px 0px;
+     min-width: 450px;
+     flex-wrap: wrap;
+     width: 1200px;
+
+    }
+    .googleFrames{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        min-width: 450px;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-top: 30px;
+        border: 1px solid rgb(221, 217, 217); 
+        padding-bottom: 15px; 
+
+    }
+    .matterportLast{
+        min-width: 450px;
+        flex-wrap: wrap;
+
+    }
+
+    .google-pie{
+        margin-top: 30px;
+        font-size: 1.2rem;
+    }
+
+    .fotos4k{ grid-area: fotos4k;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: start;
+        margin-top: 100px;
+        gap: 0px 70px;
+    }
+
+    .miniFoto4k{
+        width: 70px;
+        margin-bottom: 30px ;
+    }
+    .notes-texto1{
+        max-width: 600px;
+        
+        
+    }
 
 
 .modoDeMedicion { grid-area: modoDeMedicion;
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: start;
+        margin-top: 100px;
+        gap: 0px 70px;
 
 }
-.vistaMaqueta { grid-area: vistaMaqueta;
+.miniFoto4k{
+    width: 70px;
+    margin-bottom: 30px ;
+}
 
+.blurBrush{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    margin-top: 50px;
+    gap: 0px 70px;
+}
+
+
+.vistaMaqueta { grid-area: vistaMaqueta;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .recorridos { grid-area: recorridos;
 
 }
-
 
 
  
@@ -344,8 +437,6 @@ h1:hover{
     }
 
  }
-
-    
 
 @media (max-width: 530px){
     .header-CieloOk{
