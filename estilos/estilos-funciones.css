@@ -154,7 +154,7 @@ h1:hover{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
-    gap: 0px 0px;
+/*     gap: 0px 0px; */
 
     grid-template-areas:
         "bim"
@@ -167,7 +167,6 @@ h1:hover{
         "blurBrush"
         "vistaMaqueta"
         "recorridos"
-
         ;
     }
 
@@ -175,14 +174,11 @@ h1:hover{
     margin-top: 100px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
- /*    gap: 0px 70px; */
-
-    
-    
-    }
+    gap: 0px 70px;
+}
     .miniFoto{
         width: 600px;
     }
@@ -209,9 +205,10 @@ h1:hover{
     margin-top: 100px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    gap: 0px 70px;
 
 }
    .miniIcon{
@@ -238,8 +235,9 @@ h1:hover{
 
 .notes-texto-largo{
     margin-top: 30px;
-    max-width: 87%;
+/*     max-width: 87%; */
     line-height: 1.5rem;
+    margin: 20px 80px 0px 80px;
 }
 
 
@@ -253,12 +251,13 @@ h1:hover{
 .planosPlanta { grid-area: planosPlanta;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     margin-top: 60px;
-
+    gap: 0px 70px;
 }
+
     .miniFotoFloor{
         width: 500px;
     }
@@ -279,16 +278,17 @@ h1:hover{
         color: #8a2be2;
     }
     .notes-texto-largo{
-        margin: 0;
+      
     }
     
 .google { grid-area: google;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     margin-top: 80px;
+    gap: 0px 70px;
 }
 
    .miniFotoGoogle{
@@ -299,17 +299,17 @@ h1:hover{
    .google-compare{
     width: 1200px;
    }
-   .googleTitCompare{
+/*    .googleTitCompare{
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 40px; 
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     text-align: center;
     background-color: rgb(226, 217, 217);
     border-radius: 3px;
-   }
+   } */
     .googleTitCompare h5{
      font-size: 1.2rem;
      font-weight: bold;
@@ -322,21 +322,40 @@ h1:hover{
     .googleFrames{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        min-width: 450px;
+        justify-content: center;
+/*         min-width: 450px; */
         flex-wrap: wrap;
-        align-items: center;
+/*         align-items: center; */
         padding-top: 30px;
-        border: 1px solid rgb(221, 217, 217); 
-        padding-bottom: 15px; 
+/*         border: 1px solid rgb(221, 217, 217);  */
+        padding-bottom: 15px;
+        gap: 0px 20px; 
 
     }
-    .matterportLast{
+    .googleFrames1Tit{
+        height: 30px;
+        padding-top: 3px;
+        margin-bottom: 15px;
+        background-color: rgb(221, 217, 217); 
+        width: 100%;
+        text-align: center;
+        border-radius: 3px;
+
+    }
+    .googleFrames1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+/*     .matterportLast{
         min-width: 450px;
         flex-wrap: wrap;
 
-    }
 
+    }
+ */
     .google-pie{
         margin-top: 30px;
         font-size: 1.2rem;
@@ -371,7 +390,6 @@ h1:hover{
         align-items: start;
         margin-top: 100px;
         gap: 0px 70px;
-
 }
 .miniFoto4k{
     width: 70px;
@@ -392,13 +410,22 @@ h1:hover{
 .vistaMaqueta { grid-area: vistaMaqueta;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: 60px ;
+    gap: 0px 70px;
 }
 
 .recorridos { grid-area: recorridos;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px ;
+    margin-bottom: 60px;
+    gap: 0px 70px;
 }
 
 
