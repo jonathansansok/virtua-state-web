@@ -45,7 +45,7 @@ border-radius: 8px;
 }
 .cielo{ 
     height: 520px;
-    background-image: url("./imagenes2/poseidon.jpg");     
+    background-image: url("./imagenes-funciones-web/digital-twins.png");     
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,7 +70,7 @@ border-radius: 8px;
 .cielo ul li a { 
     display: inline-block;
     text-decoration: none;
-    color: black;
+    color: #FF1493;
     position: relative;
 
 }
@@ -188,8 +188,14 @@ h1:hover{
     }
     .bim-texto{
         max-width: 650px;
-        line-height: 1.5rem;
+        line-height: 1.7rem;
+        font-size: 16px;
 
+    }
+    .bim-texto1{
+        max-width: 650px;
+        line-height: 1.7rem;
+        font-size: 16px;
     }
     .bim-miniTitulo{
         margin-bottom: 25px;
@@ -218,7 +224,8 @@ h1:hover{
 
 .notes-texto1{
     max-width: 650px;
-    line-height: 1.5rem;
+    line-height: 1.73rem;
+    font-size: 16px;
 }
 .notes-texto2{
     max-width: 650px;
@@ -236,11 +243,15 @@ h1:hover{
 .notes-texto-largo{
     margin-top: 30px;
 /*     max-width: 87%; */
-    line-height: 1.5rem;
+    line-height: 1.72rem;
+    font-size: 16px;
     margin: 20px 80px 0px 80px;
 }
 
-
+.notes-texto-largo1{
+    line-height: 1.72rem;
+    font-size: 16px;
+}
 
 .masInformacion{
     color: black;
@@ -348,6 +359,10 @@ h1:hover{
         justify-content: center;
         align-items: center;
     }
+    .miniFoto-gsv{
+        margin-top: 40px;
+        width: 900px;
+    }
 
 /*     .matterportLast{
         min-width: 450px;
@@ -372,7 +387,8 @@ h1:hover{
     }
 
     .miniFoto4k{
-        width: 70px;
+        margin-top: 10px;
+        width: 90px;
         margin-bottom: 30px ;
     }
     .notes-texto1{
