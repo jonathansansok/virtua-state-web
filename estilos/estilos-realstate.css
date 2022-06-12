@@ -110,210 +110,6 @@ h1:hover{
     
     }
  */
-.container-RecoVirtual {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 200px 600px 600px 600px 600px 900px;
-    gap: 0px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    grid-template-areas:
-        "TitleVirtualTour"
-        "gemelosDigitales"
-        "googleStreet"
-        "cardsRosas"
-        "Ultimo3d"
-        "industrias";
-    }
-
-    .TitleVirtualTour { grid-area: TitleVirtualTour;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        }
-        .TitleVirtualTour h1 {
-            font-size: 6rem;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: 1rem;
-            margin-top: 30px;
-            transition: all 0.7s;
-/*             padding-right: 30px; */
-        }
-        .title3oK{ 
-            color: #7FFF00;
-        }
-        .titleDoK{ 
-            color: #8a2be2;
-        }
-.gemelosDigitales { grid-area: gemelosDigitales;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    text-align: left;
-    padding-left: 160px;
-    padding-right: 160px;
-    margin: 0px;
-    margin-top: 40px;
-}
-    .tituloGemelosDigitales{ 
-        font-size: 40px;
-        font-weight: bold;
-        text-align: left;
-        color: black;
-        margin-top: 0px;
-        margin-bottom: 10px;
-    }
-    .textoGemelosDigitales{ 
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 0px;
-        margin-bottom: 00px;
-        color: black;
-        line-height: 1.73;
-        text-align: left;
-        margin-top: 0px;
-    }
-    .googleStreet { grid-area: googleStreet;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 60px;
-        width: 75%;
-        }
-    
-    .ArticleGoogleStreet{ 
-        width: 470px;
-    }
-
-    .GoogleStreetView{ 
-        font-size: 1.5rem;
-        letter-spacing: .3px;
-        font-weight: bold;
-
-        line-height: 26px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-
-    }
-        .GoogleStreetViewText{ 
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            text-align: start;
-            line-height: 28px;
-        }
-            .liDeStreet{
-            text-align: start;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            margin-left: 20px;
-            }
-            .liDeStreet::marker{
-                color: #FF1493;
-            }
-            .liDeStreet:hover{
-                color: #8a2be2;
-                }
-/*                 .divImgPiscina{
-                    width: 300px;
-                    margin-top: 20px;
-
-                } */
-                .imgPiscina{
-                    width: 45%;
-                    border-radius: 20px;
-
-
-                }
-
-    .cardsRosas { grid-area: cardsRosas;
-        background-color: rgb(235, 235, 235);
-        display: flex;
-        flex-direction:row;
-        flex-wrap: wrap;
-        padding-top: 70px;
-        justify-content: center;
-/*         margin-left: 75px;
-        margin-right: 75px; */
-        margin-top: 50px;
-        min-height: 600px;
-    }
-    .cardsRosasUnidad{
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        width: 400px;
-        font-size: 13px;
-        font-weight: bold;
-        padding-right: 0px;
-        padding-left: 50px;
-        margin-bottom: 20px;
-        transition: all 0.7s;
-    }
-    .cardsRosasUnidad:hover{
-        transform: scale(1.1);
-
-    }
-        
-        .miniFoto{
-            width: 80px;
-            margin-bottom: 25px;
-        }
-        .miniTitulo{
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .cardsTextos{
-            margin-bottom: 10px;
-        }
-        .masInformacion{
-            color: black;
-            font-weight: bold;
-            font-size: 17px;
-            text-decoration: none;
-
-            
-        }
-        
-        .masInformacion p:hover {
-            text-decoration: underline #7FFF00 1px; 
-
-        }
-
-    .Ultimo3d { grid-area: Ultimo3d;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 60px;
-    }
-        .textoUltimoOk{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: left;
-            text-align: center;
-        }
-        .pruebeloUstedMismo{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
-        }
-
 
         ::after { 
     content: '';
@@ -634,9 +430,14 @@ h1:hover{
 /*         margin-left: 75px;
         margin-right: 75px; */
         margin-top: 50px;
+        min-height: 600px;
     }
     .cardsRosasUnidad{
-        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 450px;
+
         font-size: 13px;
         font-weight: bold;
         padding-right: 0px;
@@ -646,10 +447,39 @@ h1:hover{
     }
     .cardsRosasUnidad:hover{
         transform: scale(1.1);
-        
-
     }
-        
+    .miniFoto{
+        width: 80px;
+        margin-bottom: 25px;
+    }
+    .blurIco{
+        width: 60px;
+    }
+    .miniTitulo{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .cardsTextos{
+        margin-bottom: 10px;
+    }
+    .masInformacion{
+        color: black;
+        font-weight: bold;
+        font-size: 17px;
+        text-decoration: none;
+       
+    }
+    .masInformacion:hover{
+        color: black;
+       
+    }
+    
+    
+    .masInformacion p:hover {
+        text-decoration: underline #7FFF00 1px; 
+
+    }        
        
 
 
