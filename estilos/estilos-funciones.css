@@ -446,6 +446,33 @@ h1:hover{
 }
 
 @media (max-width: 1118px){
+    .bim-miniFoto{
+        margin-top: 20px;
+    }
+    .notes{
+        margin-top: 20px;
+    }
+    .matterPak{
+        margin-top: 20px;
+    }
+    .google{
+        margin-top: 20px;
+    }
+    .googleFrames1Tit{
+        margin-top: 30px;
+    }
+    .fotos4k{
+        margin-top: 20px;
+    }
+    .modoDeMedicion{
+        margin-top: 20px;
+    }
+    .recorridos{
+        margin-top: 20px;     
+    }
+    .maq{
+        margin-top: 20px;   
+    }
     .planosPlanta{
         flex-direction: column;
     }
@@ -536,10 +563,13 @@ h1:hover{
  }
 
  @media (max-width: 700px){
-    .containerRealState{
+/*     .containerRealState{
         margin-left: 5px;
     }
-
+ */
+ .bim{
+    margin-top: 40px;
+}
     .googleFrames1Tit{
         width: 450px;
     }
@@ -592,51 +622,37 @@ h1:hover{
         border-radius: 7px;
         
     }
-/*     .bim{
-        flex-direction: column;
-        justify-content: center;
+    .bim{
+        margin-left: 13px;
     }
-    .miniFoto{
-        flex-direction: column;
-        justify-content: center;
-    }
-    .notes{
-        flex-direction: column;
-        justify-content: center;
-    }
+
     .planosPlanta{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
     }
     .matterPak{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
     }
     .google{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
     }
     .fotos4k{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
     }
     .modoDeMedicion{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
+
     }
     .blurBrush{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
+
     }
     .vistaMaqueta{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
     }
     .recorridos{
-        flex-direction: column;
-        justify-content: center;
+        margin-left: 10px;
     }
- */
+ 
 
 
 
@@ -682,6 +698,7 @@ h1:hover{
     p{
         width: 350px;
     }
+
     .miniFoto{
         width: 350px;
     }
