@@ -671,7 +671,7 @@ h1:hover{
     }
 }   
 
-@media (max-width: 417px){
+@media (max-width: 450px){
     .bim{
         width: 350px;
         flex-direction: column;
