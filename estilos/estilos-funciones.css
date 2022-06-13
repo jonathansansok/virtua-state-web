@@ -536,6 +536,9 @@ h1:hover{
  }
 
  @media (max-width: 700px){
+    .containerRealState{
+        margin-left: 5px;
+    }
 
     .googleFrames1Tit{
         width: 450px;
@@ -589,7 +592,7 @@ h1:hover{
         border-radius: 7px;
         
     }
-    .bim{
+/*     .bim{
         flex-direction: column;
         justify-content: center;
     }
@@ -633,7 +636,7 @@ h1:hover{
         flex-direction: column;
         justify-content: center;
     }
-
+ */
 
 
 
