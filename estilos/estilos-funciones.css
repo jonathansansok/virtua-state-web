@@ -250,6 +250,7 @@ h1:hover{
 
 .notes-texto-largo1{
     line-height: 1.72rem;
+    width: auto;
     font-size: 16px;
 }
 
@@ -308,7 +309,7 @@ h1:hover{
     
    }
    .google-compare{
-    width: 1200px;
+    width: auto;
    }
 /*    .googleTitCompare{
     display: flex;
@@ -327,7 +328,7 @@ h1:hover{
      padding: 12px 0px 4px 0px;
      min-width: 450px;
      flex-wrap: wrap;
-     width: 1200px;
+     width: auto;
 
     }
     .googleFrames{
@@ -361,7 +362,7 @@ h1:hover{
     }
     .miniFoto-gsv{
         margin-top: 40px;
-        width: 900px;
+        width: auto;
     }
 
 /*     .matterportLast{
@@ -444,8 +445,39 @@ h1:hover{
     gap: 0px 70px;
 }
 
+@media (max-width: 1118px){
+    .planosPlanta{
+        flex-direction: column;
+    }
+    .googleFrames{
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+    .googleFrames1Tit{
+        width: 700px;
+    }
+    .google-pie{
+        width: 700px;
+    }
+    
 
- 
+    .notes-texto-largo{
+        margin-left: 15px;
+        margin-right: 15px;
+        height: auto;
+        width: 800px;
+    }
+    .notes-texto-largo1{
+        width: auto;
+        height: auto;
+    }
+    .notes-texto-largo2{
+        width: auto;
+        height: auto;
+    }
+    }
+    
 @media (max-width: 910px){
     
     .cielo .cieloLista{  
@@ -467,6 +499,19 @@ h1:hover{
         
         
     } 
+    .notes-texto-largo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 450px;
+    }
+    .notes-texto-largo1{
+        max-width: 400px;
+    }
+    .notes-texto-largo2{
+        max-width: 400px;
+    }
 
 
     .cielo ul li{
@@ -478,9 +523,79 @@ h1:hover{
     .menu-btn{
         display: block;
     }
+    .miniFoto-gsv{
+        max-width: 450px;
+    }
+    .planosPlanta{
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
  }
 
+ @media (max-width: 700px){
+
+    .googleFrames1Tit{
+        width: 450px;
+    }
+    .google-pie{
+        width: 450px;
+    }
+    .miniFoto{
+        width: 450px;
+    }
+    .miniFotoNotes{
+        width: 450px;
+    
+    }
+    .notes-texto1{
+        max-width: 450px;
+        
+        
+    }
+    .planosPlanta{
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .bim-texto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+
+    }
+    .bim-miniFoto{
+        width: 50px;
+    }
+    .bim-texto1{
+        width: 450px;
+        min-width: 300px;
+    }
+    .bim-texto2{
+        width: 450px;
+        min-width: 300px;
+    }
+    .miniFotoGoogle{
+        width: 350px;
+        border-radius: 7px;
+        
+    }
+    .miniFotoNotes{
+        width: 350px;
+        border-radius: 7px;
+        
+       }
+
+
+
+
+
+    
+ }
 @media (max-width: 530px){
     .header-CieloOk{
         height: 350px;
@@ -502,6 +617,29 @@ h1:hover{
       .cardsRosasUnidad p{
           padding-right: 10px;
       }
+      .miniFotoFloor{
+        width: 350px;
+    }
 }   
 
-    
+@media (max-width: 480px){
+    h4{
+        width: 340px;
+    }
+    h3{
+        width: 340px;
+    }
+    h5{
+        width: 340px;
+    }
+    p{
+        width: 350px;
+    }
+    .miniFoto{
+        width: 350px;
+    }
+    .miniFoto-gsv{
+        width: 350px;
+
+    }
+}   
