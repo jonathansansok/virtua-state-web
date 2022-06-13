@@ -588,8 +588,51 @@ h1:hover{
         width: 350px;
         border-radius: 7px;
         
-       }
-
+    }
+    .bim{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .miniFoto{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .notes{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .planosPlanta{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .matterPak{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .google{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .fotos4k{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .modoDeMedicion{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .blurBrush{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .vistaMaqueta{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .recorridos{
+        flex-direction: column;
+        justify-content: center;
+    }
 
 
 
