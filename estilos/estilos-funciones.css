@@ -289,9 +289,9 @@ h1:hover{
     .liDeStreet:hover{
         color: #8a2be2;
     }
-    .notes-texto-largo{
+/*     .notes-texto-largo{
       
-    }
+    } */
     
 .google { grid-area: google;
     display: flex;
@@ -623,6 +623,7 @@ h1:hover{
 }   
 
 @media (max-width: 480px){
+    
     h4{
         width: 340px;
     }
@@ -641,5 +642,75 @@ h1:hover{
     .miniFoto-gsv{
         width: 350px;
 
+    }
+    .notes-texto-largo{
+
+        width: 350px;
+    }
+    .bim-texto{
+        width: 350px;
+    }
+    .bim-texto1{
+        width: 350px;
+    }
+    .bim-texto2{
+        width: 350px;
+    }
+    .googleFrames1{
+        width: 350px;
+    }
+    .googleFrames1Tit{
+        width: 350px;
+    }
+    
+    .matterportLast{
+        width: 350px;
+    }
+    .google-pie{
+        width: 350px;
+    }
+}   
+
+@media (max-width: 417px){
+    .bim{
+        width: 350px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .miniFoto{
+        width: 350px;
+    }
+    .notes{
+        width: 350px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .planosPlanta{
+        width: 350px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .matterPak{
+        width: 350px;
+        justify-content: center;
+    }
+    .google{
+        width: 350px;
+    }
+    .fotos4k{
+        width: 350px;
+    }
+    .modoDeMedicion{
+        width: 350px;
+    }
+    .blurBrush{
+        width: 350px;
+    }
+    .vistaMaqueta{
+        width: 350px;
+    }
+
+    .recorridos{
+        width: 350px;
     }
 }   
