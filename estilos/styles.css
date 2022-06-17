@@ -807,13 +807,13 @@ h1:hover{
         text-align: center;
     }
     .textoGemelosDigitales {
-        text-align: justify;
-    }
-    .GoogleStreetViewText{
-        text-align: justify;
-    }
-    .GoogleStreetViewText{
         text-align: center;
+    }
+    .GoogleStreetViewText{
+        text-align: justify;
+    }
+    .GoogleStreetViewText{
+     /*    text-align: center; */
     }
     .matterportLast{
         width: 95%;
