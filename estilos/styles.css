@@ -808,6 +808,7 @@ h1:hover{
     }
     .textoGemelosDigitales {
         text-align: center;
+        font-size: 1.4rem;
     }
     .GoogleStreetViewText{
         text-align: justify;
