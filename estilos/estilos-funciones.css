@@ -1,0 +1,782 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../assets/fonts/MonumentExtended-Regular.otf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+
+    /* .TituloDeVirtualTour {
+        font-family: Integral;
+    } */
+*{
+
+    margin: 0;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+/* 
+    font-family: 'Montserrat',  !important;  */
+
+}
+
+
+
+::-webkit-srollbar{
+    width: 10px;
+}
+::-webkit-scrollbar{
+background-color: #7FFF00;
+
+border-radius: 8px;
+}
+::-webkit-scrollbar-thumb{
+background-color:#FF1493;
+border-radius: 8px;
+}
+
+
+
+.header-CieloOk{ 
+    height: 520px;
+}
+.cielo{ 
+    height: 520px;
+    background-image: url("./imagenes-funciones-web/digital-twins.png");     
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Roboto, Arial, sans-serif;
+}
+.cielo  ul{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 30px;
+    padding-top: 25px;
+    }
+
+.cielo ul li { 
+    color: black;
+    list-style: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.cielo ul li a { 
+    display: inline-block;
+    text-decoration: none;
+    color: #FF1493;
+    position: relative;
+
+}
+.cielo ul li a::after { 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; bottom: 0; 
+    width: 100%; height: 2px;
+    background-color: #FF1493;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;/*  ease-in-out */
+}
+
+.cielo ul li a:hover::after { 
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.cielo-servicios {
+    text-decoration: none;
+    color: black;
+    transition: all 0.7s;
+    text-underline-offset: 40%;
+
+}
+.cielo-servicios:hover {
+    color: #8a2be2 ;
+}
+
+h1:hover{
+    text-shadow: red -6px 0, cyan 6px 0  ;
+
+}
+
+
+
+        ::after { 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; bottom: 0; 
+    width: 100%; height: 2px;
+    background-color: #FF1493;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;/*  ease-in-out */
+}
+
+.cielo ul li a:hover::after { 
+    transform: scaleX(1);
+    transform-origin: left;
+}
+        
+.menu-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+/*      right: 30px;  */
+   z-index: 2;
+   font-size: 1.5rem;
+   padding-left: 12px;
+   padding-right: 12px;
+   padding-bottom: 4px;
+   margin-left: 20px;
+   vertical-align: middle;
+   border-radius: 4px;
+   background-color: rgb(26, 26, 26, 0.9);
+   display: none;
+}
+.menu-btn img{
+    padding-top: 5px;
+    padding-bottom: 1px;
+   vertical-align: middle;
+
+}
+
+
+.containerRealState {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+/*     gap: 0px 0px; */
+
+    grid-template-areas:
+        "bim"
+        "notes"
+        "planosPlanta"
+        "matterPak"
+        "google"
+        "fotos4k"
+        "modoDeMedicion"
+        "blurBrush"
+        "vistaMaqueta"
+        "recorridos"
+        ;
+    }
+
+.bim { grid-area: bim;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0px 70px;
+}
+    .miniFoto{
+        width: 600px;
+    }
+
+    .bim-miniFoto{
+        margin-bottom: 30px;
+    }
+    .bim-texto{
+        max-width: 650px;
+        line-height: 1.7rem;
+        font-size: 16px;
+
+    }
+    .bim-texto1{
+        max-width: 650px;
+        line-height: 1.7rem;
+        font-size: 16px;
+    }
+    .bim-miniTitulo{
+        margin-bottom: 25px;
+    }
+    .masInformacion{
+        color: black;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+
+.notes { grid-area: notes;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0px 70px;
+
+}
+   .miniIcon{
+    width: 72px;
+    margin-bottom: 30px;
+   }
+
+.notes-texto1{
+    max-width: 650px;
+    line-height: 1.73rem;
+    font-size: 16px;
+}
+.notes-texto2{
+    max-width: 650px;
+    line-height: 1.5rem;
+}
+
+.miniTitulo{
+    margin-bottom: 20px;
+}
+.miniFotoNotes{
+    width: 600px;
+
+}
+
+.notes-texto-largo{
+    margin-top: 30px;
+/*     max-width: 87%; */
+    line-height: 1.72rem;
+    font-size: 16px;
+    margin: 20px 80px 0px 80px;
+}
+
+.notes-texto-largo1{
+    line-height: 1.72rem;
+    width: auto;
+    font-size: 16px;
+}
+
+.masInformacion{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.planosPlanta { grid-area: planosPlanta;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px;
+    gap: 0px 70px;
+}
+
+    .miniFotoFloor{
+        width: 500px;
+    }
+
+.matterPak { grid-area: matterPak;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+
+    .liDeStreet::marker{
+        color: #FF1493;
+    }
+    .liDeStreet:hover{
+        color: #8a2be2;
+    }
+/*     .notes-texto-largo{
+      
+    } */
+    
+.google { grid-area: google;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 80px;
+    gap: 0px 70px;
+}
+
+   .miniFotoGoogle{
+    width: 550px;
+    border-radius: 7px;
+    
+   }
+   .google-compare{
+    width: auto;
+   }
+/*    .googleTitCompare{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(226, 217, 217);
+    border-radius: 3px;
+   } */
+    .googleTitCompare h5{
+     font-size: 1.2rem;
+     font-weight: bold;
+     padding: 12px 0px 4px 0px;
+     min-width: 450px;
+     flex-wrap: wrap;
+     width: auto;
+
+    }
+    .googleFrames{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+/*         min-width: 450px; */
+        flex-wrap: wrap;
+/*         align-items: center; */
+        padding-top: 30px;
+/*         border: 1px solid rgb(221, 217, 217);  */
+        padding-bottom: 15px;
+        gap: 0px 20px; 
+
+    }
+    .googleFrames1Tit{
+        height: 30px;
+        padding-top: 3px;
+        margin-bottom: 15px;
+        background-color: rgb(221, 217, 217); 
+        width: 100%;
+        text-align: center;
+        border-radius: 3px;
+
+    }
+    .googleFrames1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .miniFoto-gsv{
+        margin-top: 40px;
+        width: auto;
+    }
+
+/*     .matterportLast{
+        min-width: 450px;
+        flex-wrap: wrap;
+
+
+    }
+ */
+    .google-pie{
+        margin-top: 30px;
+        font-size: 1.2rem;
+    }
+
+    .fotos4k{ grid-area: fotos4k;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: start;
+        margin-top: 100px;
+        gap: 0px 70px;
+    }
+
+    .miniFoto4k{
+        margin-top: 10px;
+        width: 90px;
+        margin-bottom: 30px ;
+    }
+    .notes-texto1{
+        max-width: 600px;
+        
+        
+    }
+
+
+.modoDeMedicion { grid-area: modoDeMedicion;
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: start;
+        margin-top: 100px;
+        gap: 0px 70px;
+}
+.miniFoto4k{
+    width: 70px;
+    margin-bottom: 30px ;
+}
+
+.blurBrush{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    margin-top: 50px;
+    gap: 0px 70px;
+}
+
+
+.vistaMaqueta { grid-area: vistaMaqueta;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px ;
+    gap: 0px 70px;
+}
+
+.recorridos { grid-area: recorridos;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px ;
+    margin-bottom: 60px;
+    gap: 0px 70px;
+}
+
+@media (max-width: 1118px){
+    .bim-miniFoto{
+        margin-top: 20px;
+    }
+    .notes{
+        margin-top: 20px;
+    }
+    .matterPak{
+        margin-top: 20px;
+    }
+    .google{
+        margin-top: 20px;
+    }
+    .googleFrames1Tit{
+        margin-top: 30px;
+    }
+    .fotos4k{
+        margin-top: 20px;
+    }
+    .modoDeMedicion{
+        margin-top: 20px;
+    }
+    .recorridos{
+        margin-top: 20px;     
+    }
+    .maq{
+        margin-top: 20px;   
+    }
+    .planosPlanta{
+        flex-direction: column;
+    }
+    .googleFrames{
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+    .googleFrames1Tit{
+        width: 700px;
+    }
+    .google-pie{
+        width: 700px;
+    }
+    
+
+    .notes-texto-largo{
+        margin-left: 15px;
+        margin-right: 15px;
+        height: auto;
+        width: 800px;
+    }
+    .notes-texto-largo1{
+        width: auto;
+        height: auto;
+    }
+    .notes-texto-largo2{
+        width: auto;
+        height: auto;
+    }
+    }
+    
+@media (max-width: 910px){
+    
+    .cielo .cieloLista{  
+        width: 100%;
+        background-color: rgb(47, 54, 64, 0.6);
+        opacity: 0.9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 40px;
+        margin: 0;
+        transform: translateX(-1000px);
+        transition: transform  .5s ease-in-out;
+    }
+    .cielo .cieloLista.show{  
+        transform: translateX(0px);
+        
+        
+    } 
+    .notes-texto-largo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 450px;
+    }
+    .notes-texto-largo1{
+        max-width: 400px;
+    }
+    .notes-texto-largo2{
+        max-width: 400px;
+    }
+
+
+    .cielo ul li{
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 8px 0px;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+    .miniFoto-gsv{
+        max-width: 450px;
+    }
+    .planosPlanta{
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+ }
+
+ @media (max-width: 700px){
+/*     .containerRealState{
+        margin-left: 5px;
+    }
+ */
+ .bim{
+    margin-top: 40px;
+}
+    .googleFrames1Tit{
+        width: 450px;
+    }
+    .google-pie{
+        width: 450px;
+    }
+    .miniFoto{
+        width: 450px;
+    }
+    .miniFotoNotes{
+        width: 450px;
+    
+    }
+    .notes-texto1{
+        max-width: 450px;
+        
+        
+    }
+    .planosPlanta{
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .bim-texto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+
+    }
+    .bim-miniFoto{
+        width: 50px;
+    }
+    .bim-texto1{
+        width: 450px;
+        min-width: 300px;
+    }
+    .bim-texto2{
+        width: 450px;
+        min-width: 300px;
+    }
+    .miniFotoGoogle{
+        width: 350px;
+        border-radius: 7px;
+        
+    }
+    .miniFotoNotes{
+        width: 350px;
+        border-radius: 7px;
+        
+    }
+    .bim{
+        margin-left: 24px;
+    }
+    .notes{
+        margin-left: 13px;
+    }
+
+    .planosPlanta{
+        margin-left: 22px;
+    }
+    .matterPak{
+        margin-left: 25px;
+    }
+    .google{
+        margin-left: 22px;
+    }
+    .fotos4k{
+        margin-left: 22px;
+    }
+    .modoDeMedicion{
+        margin-left: 22px;
+
+    }
+    .blurBrush{
+        margin-left: 22px;
+
+    }
+    .vistaMaqueta{
+        margin-left: 22px;
+    }
+    .recorridos{
+        margin-left: 22px;
+    }
+ 
+
+
+
+    
+ }
+@media (max-width: 530px){
+    .header-CieloOk{
+        height: 350px;
+    }
+    .cielo{
+        height: 350px;
+    }
+    .sector-inmobi-logo{
+        width: 40%;
+        height: 40%;
+          
+      }
+      .cardsRosasUnidad{
+          padding-left: 10px;
+      }
+      .miniFoto{
+        align-self: center;
+      }
+      .cardsRosasUnidad p{
+          padding-right: 10px;
+      }
+      .miniFotoFloor{
+        width: 350px;
+    }
+}   
+
+@media (max-width: 480px){
+    
+    h4{
+        width: 340px;
+    }
+    h3{
+        width: 340px;
+    }
+    h5{
+        width: 340px;
+    }
+    p{
+        width: 350px;
+    }
+
+    .miniFoto{
+        width: 350px;
+    }
+    .miniFoto-gsv{
+        width: 350px;
+
+    }
+    .notes-texto-largo{
+
+        width: 350px;
+    }
+    .bim-texto{
+        width: 350px;
+    }
+    .bim-texto1{
+        width: 350px;
+    }
+    .bim-texto2{
+        width: 350px;
+    }
+    .googleFrames1{
+        width: 350px;
+    }
+    .googleFrames1Tit{
+        width: 350px;
+    }
+    
+    .matterportLast{
+        width: 350px;
+    }
+    .google-pie{
+        width: 350px;
+    }
+}   
+
+@media (max-width: 450px){
+    .bim{
+        width: 350px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .miniFoto{
+        width: 350px;
+    }
+    .notes{
+        width: 350px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .planosPlanta{
+        width: 350px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .matterPak{
+        width: 350px;
+        justify-content: center;
+    }
+    .google{
+        width: 350px;
+    }
+    .fotos4k{
+        width: 350px;
+    }
+    .modoDeMedicion{
+        width: 350px;
+    }
+    .blurBrush{
+        width: 350px;
+    }
+    .vistaMaqueta{
+        width: 350px;
+    }
+
+    .recorridos{
+        width: 350px;
+    }
+}   
