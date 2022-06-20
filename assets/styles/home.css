@@ -63,11 +63,11 @@ body{
 
 .videoBg{
     width: 100%;
-
+    filter: brightness(0.8);
 }
 
 .textoVideo{
-    top: 10%;
+    top: 5%;
     left: 0;
     right: 0;
     margin: auto;
@@ -637,7 +637,7 @@ body{
 
 .derechos{
     text-align: center;
-    margin-top: 40px;
+
     font-size: 12px;
     font-weight: bold;
 }
@@ -691,4 +691,13 @@ body{
     font-size: 15px;
     cursor: pointer;
     font-weight: bold;
+}
+
+.mapa{
+    width: min(90%, 800px);
+}
+
+.contenedor_redes{
+    margin-top: -15px;
+    margin-bottom: 10px;
 }
