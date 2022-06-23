@@ -473,10 +473,9 @@ body{
 }
 
 .section9{
-    margin-bottom: 50px;
     margin-top: 50px;
     background-color: #ffffff;
-    padding-top: 50px;
+   
 }
 
 .section9Puente{
@@ -589,9 +588,12 @@ body{
 }
 
 .footer{
-    background-color: #000;
+   /*  background-color: #000; */
     color: #fff;
-    padding-bottom: 40px;
+    padding: 40px 0px;
+    background-image: url('../img/pattern.jpg');
+    background-size: contain;
+    background-position: center;
 }
 
 .text1_footer{
@@ -644,7 +646,10 @@ body{
 
 .section_trends{
     background-color: #fff;
-    padding: 40px 15px;
+    padding: 60px 15px;
+    background-image: url('../img/grid3d.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .trends_title{
@@ -665,21 +670,37 @@ body{
 
 .card_trend{
     width: 400px;
+    height: 200px;
     border: 2px solid rgb(166, 166, 166);
-    border-radius: 15px;
-    padding: 10px;
-    -webkit-box-shadow: 5px 5px 17px -8px rgba(0,0,0,0.84); 
-    box-shadow: 5px 5px 17px -8px rgba(0,0,0,0.84);
+    /* border-radius: 15px; */
+    padding: 20px;
+   /*  -webkit-box-shadow: 5px 5px 17px -8px rgba(0,0,0,0.84); 
+    box-shadow: 5px 5px 17px -8px rgba(0,0,0,0.84); */
+    background-color: #fff;
+    /* background-image: url('../img/tarjeta.png');
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.img-marco{
+    width: 440px;
+    height: 270px;
+    top: -27px;
+    left: -23px;
 }
 
 .card_trend_title{
     font-family: 'MonumentExtended', sans-serif !important;
     font-size: 20px;
-    color: #4b9600;
+    color: #e322f4;
+    font-weight: bold;
 }
 
 .contenedor_cards{
-    gap: 30px;
+    gap: 40px;
+    width: min(90%, 1200px);
+    font-weight: bold;
+
 }
 
 .boton_descargar{
