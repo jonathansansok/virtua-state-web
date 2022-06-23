@@ -654,12 +654,13 @@ body{
 
 .trends_title{
     font-family: 'MonumentExtended', sans-serif !important;
-    font-size: 25px;
+    font-size: 15px;
     color: #000;
     text-align: center;
     margin-top: 40px;
     margin-bottom: 0;
 }
+
 
 .trends_2022{
     font-family: 'MonumentExtended', sans-serif !important;
@@ -668,32 +669,95 @@ body{
     text-align: center;
 }
 
+
+
 .card_trend{
-    width: 400px;
+    width: 250px;
     height: 200px;
     border: 2px solid rgb(166, 166, 166);
-    /* border-radius: 15px; */
     padding: 20px;
-   /*  -webkit-box-shadow: 5px 5px 17px -8px rgba(0,0,0,0.84); 
-    box-shadow: 5px 5px 17px -8px rgba(0,0,0,0.84); */
     background-color: #fff;
-    /* background-image: url('../img/tarjeta.png');
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
 
+@media (min-width:400px) {
+    .card_trend{
+        width: 300px;
+        height: 200px;
+    }
+    
+} 
+
+@media (min-width:500px) {
+    .card_trend{
+        width: 400px;
+        height: 200px;
+    }
+    
+} 
+
+
 .img-marco{
-    width: 440px;
+    width: 276px;
     height: 270px;
     top: -27px;
-    left: -23px;
+    left: -15px;
 }
+
+
+@media (min-width: 400px) {
+    .img-marco{
+        width: 336px;
+        height: 270px;
+        top: -27px;
+        left: -20px;
+    }
+} 
+
+
+@media (min-width: 500px) {
+    .img-marco{
+        width: 440px;
+        height: 270px;
+        top: -27px;
+        left: -23px;
+    }
+} 
 
 .card_trend_title{
     font-family: 'MonumentExtended', sans-serif !important;
-    font-size: 20px;
+    font-size: 15px;
     color: #e322f4;
     font-weight: bold;
+    margin: 0;
+}
+
+@media (min-width: 400px) {
+    .card_trend_title{
+        font-size: 20px;
+    }
+    
+    
+}
+
+.card_trend_text{
+    font-size: 13px;
+    color: #000;
+    margin: 0;
+}
+
+@media (min-width: 400px) {
+    .card_trend_text{
+        font-size: 14px;
+    }
+    
+}
+
+
+@media (min-width: 500px) {
+    .card_trend_text{
+        font-size: 16px;
+    }
+    
 }
 
 .contenedor_cards{
