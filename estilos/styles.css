@@ -343,10 +343,7 @@ h1:hover{
             max-width: 75%;
             margin-right: 00px;
         }
-        .matterportLast{
-/*             width: 60%; */
 
-        }
     .industrias { grid-area: industrias;
     
     }
@@ -853,3 +850,72 @@ h1:hover{
         padding-right: 00px;
     }
 }   
+
+/* ------FOOTER ---------*/
+
+
+.footer{
+    /*  background-color: #000; */
+     color: #fff;
+     padding: 40px 0px;
+     background-image: url('./imagenes/pattern.jpg');
+     background-size: contain;
+     background-position: center;
+ }
+ 
+ .text1_footer{
+     font-family: 'MonumentExtended', sans-serif !important;
+     text-align: center;
+     font-size: 20px;
+ }
+ 
+ @media (min-width: 768px) {
+     .text1_footer{
+         font-size: 40px;
+     }
+ }
+ 
+ .matters{
+     color: #8a2ae3;
+ }
+ 
+ .logoFooter{
+     font-size: 50px;
+ }
+ 
+ .bi-linkedin{
+     color: #8a2ae3;
+ }
+ 
+ .bi-instagram{
+     color: #ff1493;
+ }
+ 
+ .cursor_pointer{
+     cursor: pointer;
+ }
+ 
+ .img_footer{
+     width: 200px;
+     border-radius: 10px;
+ }
+ 
+ .container1_text_footer{
+     width: 200px;
+ }
+ 
+ .title_container1_text_footer{
+     font-family: 'MonumentExtended', sans-serif !important;
+     font-size: 17px;
+     color: #fff;
+     text-align: center;
+ }
+ 
+ .derechos{
+     text-align: center;
+ 
+     font-size: 12px;
+     font-weight: bold;
+ }
+ 
+ /* ------FOOTER ---------*/
