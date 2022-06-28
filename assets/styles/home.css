@@ -950,3 +950,14 @@ body{
         height: 438px;
     }
 }
+
+
+@media (max-width: 465px) {
+
+    .gmap_canvas{
+        max-width: 350px;
+    }
+    .mapouter{
+        max-width: 350px;
+    }
+}
