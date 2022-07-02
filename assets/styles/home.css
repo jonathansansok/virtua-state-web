@@ -959,3 +959,9 @@ body{
         max-width: 350px;
     }
 }
+
+
+.container_render1{
+    width: min(100%, 640px);
+    height: 360px;
+}
