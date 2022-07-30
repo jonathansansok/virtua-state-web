@@ -44,7 +44,7 @@ border-radius: 8px;
 }
 .cielo{ 
     height: 520px;
-    background-image: url("./hero-cielo.jpg");     
+    background-image: url("./imagenes/poseidon.png");     
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
