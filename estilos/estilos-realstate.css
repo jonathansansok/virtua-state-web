@@ -353,69 +353,52 @@ h1:hover{
                 }
 
     .presentaciones-de-venta { grid-area: presentaciones-de-venta;
-        
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 100%;
-        align-items: center;
-
-        flex-wrap: wrap;
-        margin-top: 60px;
-/*         width: 75%; */
-        }
-    
-    .articleGoogleStreet2{ 
-/*         width: 470px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
     }
-       .videoEdificio{
-        margin-right: 0px;
-
+    
+    .videoEdificio{
+    margin-right: 0px;
     } 
     .vidEdificio-ok{
-        width: 750px;
-
+    width: 750px;
     }
 
     .GoogleStreetView{ 
-        font-size: 1.5rem;
-        letter-spacing: .3px;
-        font-weight: bold;
-
-        line-height: 26px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-
+    font-size: 1.5rem;
+    letter-spacing: .3px;
+    font-weight: bold;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     }
-        .GoogleStreetViewText{ 
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            text-align: start;
-            line-height: 28px;
-        }
-            .liDeStreet{
-            text-align: start;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            margin-left: 20px;
-            }
-            .liDeStreet::marker{
-                color: #FF1493;
-            }
-            .liDeStreet:hover{
-                color: #8a2be2;
-                }
-/*                 .divImgPiscina{
-                    width: 300px;
-                    margin-top: 20px;
-
-                } */
-                .imgPiscina{
-                    width: 45%;
-                    border-radius: 20px;
-
-
-                }
+    .GoogleStreetViewText{ 
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-align: start;
+    line-height: 28px;
+    }
+    .liDeStreet{
+    text-align: start;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    }
+    .liDeStreet::marker{
+        color: #FF1493;
+    }
+    .liDeStreet:hover{
+    color: #8a2be2;
+    }
+    .imgPiscina{
+        width: 45%;
+        border-radius: 20px;
+    }
 
 
         
@@ -425,12 +408,10 @@ h1:hover{
         flex-direction:row;
         flex-wrap: wrap;
         padding-top: 70px;
-/*         height: 600px; */
         justify-content: center;
-/*         margin-left: 75px;
-        margin-right: 75px; */
         margin-top: 50px;
         min-height: 600px;
+        max-width: 1400px;
     }
     .cardsRosasUnidad{
         display: flex;
@@ -712,6 +693,16 @@ h1:hover{
         text-align: center;
     }
 }   
+
+@media (max-width: 465px) {
+
+    .gmap_canvas{
+        max-width: 350px;
+    }
+    .mapouter{
+        max-width: 350px;
+    }
+}
 
 @media (max-width: 418px){
     .cardsRosasUnidad{

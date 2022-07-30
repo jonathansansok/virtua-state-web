@@ -884,4 +884,14 @@ h1:hover{
      font-weight: bold;
  }
  
+
+ @media (max-width: 465px) {
+
+    .gmap_canvas{
+        max-width: 350px;
+    }
+    .mapouter{
+        max-width: 350px;
+    }
+}
  /* ------FOOTER ---------*/
