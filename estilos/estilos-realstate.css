@@ -136,12 +136,9 @@ h1:hover{
             max-width: 75%;
             margin-right: 00px;
         }
-        .matterportLast{
-/*             width: 60%; */
 
-        }
+
     .industrias { grid-area: industrias;
-    
     }
 
 
@@ -635,18 +632,13 @@ h1:hover{
     .GoogleStreetViewText{
         text-align: justify;
     }
-    .GoogleStreetViewText{
-     /*    text-align: center; */
-    }
+
     .matterportLast{
         width: 95%;
 
     }
     .GoogleStreetView{
         text-align: center;
-    }
-    .GoogleStreetViewText{
-     /*    text-align: center; */
     }
 }   
 
