@@ -107,8 +107,6 @@ h1:hover{
 
 }
 
-
-
         ::after { 
     content: '';
     position: absolute;
@@ -843,6 +841,18 @@ h1:hover{
      font-size: 12px;
      font-weight: bold;
  }
+
+ @media (max-width: 481px) {
+    .footer-esquivo-bootstrap{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+ 
  @media (max-width: 465px) {
 
     .gmap_canvas{
