@@ -6,6 +6,7 @@ reco-virtual.html - real-state.html -funciones.html a cargo de Jonathan Sansó
   La idea de esta WEB es poder mostrar todos los servicios que brinda su empresa sobre recorridos virtuales en casas, museos, lugares turísticos y otros espacios.
   
 En el Header podemos encontrar un menu con las opciones:
+
 HOME: Despliega en Hero y muestra todos los servicios proporcionados a la fecha
 
 SERVICIOS: 3D VIRTUAL TOUR (empresa me debe pasar mas contenido y boceto)
