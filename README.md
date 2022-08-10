@@ -6,10 +6,15 @@
   
 En el Header podemos encontrar un menu con las opciones:
 HOME: Despliega en Hero y muestra todos los servicios proporcionados a la fecha
+
 SERVICIOS: 3D VIRTUAL TOUR (empresa me debe pasar mas contenido y boceto)
+
 NOSOTROS: Sector inmobiliario (empresa me debe pasar mas contenido y boceto)
+
 PORTFOLIO: MAS DETALLES DE RECORRIDOS  (empresa me debe pasar mas contenido y boceto)
+
 CONTACTO: Todavia no me definieron contenido (empresa me debe pasar mas contenido y boceto)
+
 Footer: contiene mapa y  links a sus redes .
 
 ## TECNOLOGIAS UTILIZADAS 🛠️
