@@ -1,6 +1,7 @@
 (sitio en desarrollo)
 ## WEB PARA CLIENTE- EMPRESA "VIRTUASTATE" 
-
+HOME a cargo de compañero @Racknar0
+reco-virtual.html - real-state.html -funciones.html a cargo de Jonathan Sansó
 
   La idea de esta WEB es poder mostrar todos los servicios que brinda su empresa sobre recorridos virtuales en casas, museos, lugares turísticos y otros espacios.
   
