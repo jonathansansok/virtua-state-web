@@ -81,15 +81,15 @@ body{
 }
 
 .daPasos{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif;
     font-size: 10px;
     letter-spacing: 0.3rem;
     font-weight: 500;
 }
 
-.text_metaverso{
+.text_metaverso {
     color: #e322f4;
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     letter-spacing: 0.8rem;
     margin-top: -20px;
     font-size: 20px;
@@ -113,7 +113,7 @@ body{
 
 /* SECTION1 */
 .tection1_text {
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     padding-top: 35px;
     padding-bottom: 35px;
     font-size: 30px;
@@ -165,7 +165,7 @@ body{
     letter-spacing: 15px;
     -webkit-text-stroke: 1px rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     
 }
 
@@ -231,7 +231,7 @@ body{
 
 
 .section3_text{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 20px;
     font-weight: 800;
     color: rgb(250, 250, 250);
@@ -276,7 +276,7 @@ body{
 }
 
 .section4_text{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 20px;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -321,7 +321,7 @@ body{
 }
 
 .section5_text{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 20px;
     font-weight: 800;
     color: rgb(0, 0, 0);
@@ -350,7 +350,7 @@ body{
 
 @media (min-width: 860px) {
     .section5_text2{
-        font-family: 'MonumentExtended', sans-serif !important;
+        font-family: 'MonumentExtended', sans-serif ;
         color: rgb(0, 0, 0);
         font-weight: 800;
         font-size: 25px;
@@ -391,7 +391,7 @@ body{
 }
 
 .section6_text{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 20px;
     font-weight: 800;
     color: rgb(255, 255, 255);
@@ -412,7 +412,7 @@ body{
 
 @media (min-width: 860px) {
     .section6_text{
-        font-family: 'MonumentExtended', sans-serif !important;
+        font-family: 'MonumentExtended', sans-serif ;
         color: rgb(255, 255, 255);
         font-weight: 800;
         font-size: 25px;
@@ -470,7 +470,7 @@ body{
 }
 
 .section7_text{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 20px;
     font-weight: 800;
     color: rgb(255, 255, 255);
@@ -491,7 +491,7 @@ body{
 
 @media (min-width: 860px) {
     .section7_text{
-        font-family: 'MonumentExtended', sans-serif !important;
+        font-family: 'MonumentExtended', sans-serif ;
         color: rgb(255, 255, 255);
         font-weight: 800;
         font-size: 25px;
@@ -567,7 +567,7 @@ body{
 }
 
 .title_puente{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     color: #fff;
     text-align: center;
     padding-top: 20px;
@@ -576,7 +576,7 @@ body{
 
 
 .virtuastatepuente_text{
-    font-family: 'Integral', sans-serif !important;
+    font-family: 'Integral', sans-serif ;
     color: #fff;
     text-align: center;
     font-size: 50px;
@@ -638,10 +638,10 @@ body{
 }
 
 .text_agendar{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     text-align: center;
     font-size: 15px;
-    cursor: pointer !important;
+    cursor: pointer ;
 }
 
 
@@ -678,7 +678,7 @@ body{
 }
 
 .text1_footer{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     text-align: center;
     font-size: 20px;
 }
@@ -719,7 +719,7 @@ body{
 }
 
 .title_container1_text_footer{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 17px;
     color: #fff;
     text-align: center;
@@ -741,7 +741,7 @@ body{
 }
 
 .trends_title{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 25px;
     color: #fffbff;
     text-align: center;
@@ -750,7 +750,7 @@ body{
 
 
 .trends_2022{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 40px;
     color: #ffffff;
     text-align: center;
@@ -811,7 +811,7 @@ body{
 } 
 
 .card_trend_title{
-    font-family: 'MonumentExtended', sans-serif !important;
+    font-family: 'MonumentExtended', sans-serif ;
     font-size: 15px;
     color: #e322f4;
     font-weight: bold;
