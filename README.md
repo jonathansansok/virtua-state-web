@@ -1,6 +1,7 @@
 (sitio en desarrollo)
 ## WEB PARA CLIENTE- EMPRESA "VIRTUASTATE" 
-HOME a cargo de compañero @Racknar0
+
+home.html a cargo de compañero @Racknar0
 
 reco-virtual.html - real-state.html -funciones.html a cargo de Jonathan Sansó
 
@@ -58,3 +59,4 @@ El modelo de componentes de React nos da más control sobre la forma y función 
 
 
 Contacto: jonasans@live.com.ar
+https://www.linkedin.com/in/jonathan-sanso-fullstack/
