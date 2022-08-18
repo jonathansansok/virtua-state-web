@@ -1,8 +1,6 @@
 (sitio en desarrollo :wrench: )
 ## WEB PARA CLIENTE- EMPRESA "VIRTUASTATE" 
 
-
-
   La idea de esta WEB es poder mostrar todos los servicios que brinda su empresa sobre recorridos virtuales en casas, museos, lugares turísticos y otros espacios.
   
 En el Header podemos encontrar un menu con las opciones:
