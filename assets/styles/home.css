@@ -56,10 +56,10 @@ border-radius: 8px;
 }
 .cielo{ 
 /*     height: 520px; */
-    background-image: url("./imagenes-funciones-web/digital-twins.png");     
+/*     background-image: url("./imagenes-funciones-web/digital-twins.png");     
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     font-family: Roboto, Arial, sans-serif;
 }
 .cielo  ul{ 
@@ -172,6 +172,7 @@ h1:hover{
 .videoBg{
     width: 100%;
     filter: brightness(0.8);
+
 }
 
 .textoVideo{
@@ -200,6 +201,7 @@ h1:hover{
     
     .cielo .cieloLista{  
         width: 100%;
+
         background-color: rgb(47, 54, 64, 0.6);
         opacity: 0.9;
         display: flex;
@@ -207,16 +209,21 @@ h1:hover{
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding-top: 40px;
+        padding-top: 00px;
         margin: 0;
         transform: translateX(-1000px);
         transition: transform  .5s ease-in-out;
     }
     .cielo .cieloLista.show{  
         transform: translateX(0px);
+        height: 190px;
         
         
     } 
+
+    .cielo ul li{
+        font-size: 1.4rem;
+    }
     .notes-texto-largo{
         display: flex;
         flex-direction: column;
@@ -235,7 +242,7 @@ h1:hover{
     .cielo ul li{
         margin-top: 0;
         margin-bottom: 0;
-        padding: 8px 0px;
+        padding: 4px 0px;
     }
 
     .menu-btn{
@@ -244,13 +251,6 @@ h1:hover{
     .miniFoto-gsv{
         max-width: 450px;
     }
-/*     .planosPlanta{
-        width: 600px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
- */
  }
 
 @media (min-width: 768px) {
@@ -260,6 +260,10 @@ h1:hover{
     .text_metaverso{
         font-size: 50px;
     }
+}
+
+@media (max-width: 678px) {
+
 }
 
 .logo_hero{
@@ -706,6 +710,13 @@ h1:hover{
 @media (min-width: 537px) {
     .section9Puente{
         height: 400px;
+    }
+}
+
+@media (max-width: 422px) {
+    .cielo .cieloLista.show{
+        max-height: 400px ;
+        height: auto;
     }
 }
 
