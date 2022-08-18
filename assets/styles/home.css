@@ -246,6 +246,7 @@ h1:hover {
 
   .menu-btn {
     display: block;
+    margin-top: -40px;
   }
   .miniFoto-gsv {
     max-width: 450px;
