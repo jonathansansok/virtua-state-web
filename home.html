@@ -9,39 +9,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/styles/home.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link  rel="icon" href="estilos\favicon\favicon1.ico" type="image/x-icon"/> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 <body>
-    <header>
-            <nav class="navbar navbar-expand-lg">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand d-flex justify-content-center" href="#"><img src="./assets/img/brand.png" alt=""></a>
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-                        <li class="nav-item active ml-2 mr-2 d-flex justify-content-center">
-                            <a class="nav-link" href="reco-virtual.html">SERVICIOS<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item ml-2 mr-2 d-flex justify-content-center">
-                            <a class="nav-link" href="reco-virtual.html">NOSOTROS</a>
-                        </li>
-                        <li class="nav-item ml-2 mr-2 d-flex justify-content-center">
-                            <a class="nav-link" href="funciones.html">PORTFOLIO</a>
-                        </li>
-                        <li class="nav-item ml-2 mr-2 d-flex justify-content-center">
-                            <a class="nav-link" href="home.html">CONTACTO</a>
-                        </li>
-        
-                    </ul>
-                </div>
-            </nav>
+    <header class="header-CieloOk">
+<!--         <div class="menu-btn">
+            <img class="fas fa-bars" src="https://icongr.am/fontawesome/bars.svg?size=30&color=8d8d8d" alt="||"></a>
+        </div> -->
         
             <div class="video-intro">
                 <div class="position-relative">
                     <video class="videoBg" autoplay loop muted src="./assets/video/bg_new.mp4"></video>
                     <div class="textoVideo position-absolute text-center">
+                        <div class="menu-btn">
+                            <img class="fas fa-bars" src="https://icongr.am/fontawesome/bars.svg?size=30&color=8d8d8d" alt="||"></a>
+                        </div>
+                
+                        <div class="cielo">
+                            <ul class="cieloLista show">
+                                <li><a class="cielo-servicios" href="reco-virtual.html" target="_blank">Servicios</a></li>
+                                <li><a class="cielo-servicios" href="real-state.html" target="_blank">Nosotros</a></li>
+                                <li><a class="cielo-servicios" href="funciones.html" target="_blank">Portfolio</a></li>
+                                <li><a class="cielo-servicios" href="home.html" target="_blank">Contacto</a></li>
+                            </ul>
                         <p class="text-white daPasos">DA TUS PRIMEROS PASOS EN EL</p>
                         <p class="text_metaverso good">METAVERSO</p>
                        
@@ -297,5 +288,6 @@
     <script>
         AOS.init();
       </script>
+          <script src="responsive.js"></script>
 </body>
 </html>
