@@ -172,6 +172,14 @@ h1:hover{
 .videoBg{
     width: 100%;
     filter: brightness(0.8);
+    bottom: 0;
+    height: 1080px;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    right: 0;
+    top: 0;
+    width: 100%;
 
 }
 
