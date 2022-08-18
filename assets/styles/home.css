@@ -218,12 +218,9 @@ h1:hover {
   }
   .cielo .cieloLista.show {
     transform: translateX(0px);
-    /*         height: 190px; */
+    margin-top: -52px;
   }
 
-  /*     .cielo ul li{
-        font-size: 1.4rem;
-    } */
   .notes-texto-largo {
     display: flex;
     flex-direction: column;
