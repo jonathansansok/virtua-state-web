@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="página de realidad aumentada, scan 3d 3D 3-D, recorrido virtual, tour virtual">
+    <meta name="keywords" content="3D, REALIDAD-AUMENTADA, VIRTUAL REALITY, FILTROS-IG, INSTAGRAM, STORYS, 3-D-PHOTOGRAPHY, SCAN-3D, 3D-SCAN, INNOVACION, TECNOLOGIA, ARGENTINA">
+    <link rel="stylesheet" href="./assets/styles/login.css">
+    <link  rel="icon" href="estilos\favicon\favicon1.ico" type="image/x-icon"/> 
+    <title>Login VR</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="./assets/video/login_bg.mp4" type="video/mp4">
+      </video>
+      
+      <div class="content">
+            <!-- <img class="logo_login" src="./assets/img/logo.png" alt=""> -->
+            <h1 class="title_login">VIRTUASTATE</h1>
+            <button id="loginBtn" class="glow-on-hover" type="button">ENTER THE METAVERSE</button>
+
+      </div>
+
+      <script src="./assets/js/login.js"></script>
+</body>
+</html>
+
+ESTE ESO EL HOME QUE VOLABA LOGIN

@@ -4,24 +4,288 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="página de realidad aumentada, scan 3d 3D 3-D, recorrido virtual, tour virtual">
-    <meta name="keywords" content="3D, REALIDAD-AUMENTADA, VIRTUAL REALITY, FILTROS-IG, INSTAGRAM, STORYS, 3-D-PHOTOGRAPHY, SCAN-3D, 3D-SCAN, INNOVACION, TECNOLOGIA, ARGENTINA">
-    <link rel="stylesheet" href="./assets/styles/login.css">
     <link  rel="icon" href="estilos\favicon\favicon1.ico" type="image/x-icon"/> 
-    <title>Login VR</title>
+    <title>Home VirtuaState</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/home.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link  rel="icon" href="estilos\favicon\favicon1.ico" type="image/x-icon"/> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 <body>
-    <video autoplay muted loop id="myVideo">
-        <source src="./assets/video/login_bg.mp4" type="video/mp4">
-      </video>
-      
-      <div class="content">
-            <!-- <img class="logo_login" src="./assets/img/logo.png" alt=""> -->
-            <h1 class="title_login">VIRTUASTATE</h1>
-            <button id="loginBtn" class="glow-on-hover" type="button">ENTER THE METAVERSE</button>
+    <header class="header-CieloOk">
+<!--         <div class="menu-btn">
+            <img class="fas fa-bars" src="https://icongr.am/fontawesome/bars.svg?size=30&color=8d8d8d" alt="||"></a>
+        </div> -->
+        <div class="video-intro">
+            <div class="position-relative">
+                <video class="videoBg" autoplay loop muted src="./assets/video/bg_new.mp4"></video>
+                <div class="textoVideo position-absolute text-center">
+                    <div class="menu-btn">
+                        <img class="fas fa-bars" src="https://icongr.am/fontawesome/bars.svg?size=30&color=8d8d8d" alt="||"></a>
+                    </div>
+                    <div class="cielo" >
+                        <ul class="cieloLista show">
+                            <li><a class="cielo-servicios" href="reco-virtual.html" target="_blank">Servicios</a></li>
+                            <li><a class="cielo-servicios" href="real-state.html" target="_blank">Nosotros</a></li>
+                            <li><a class="cielo-servicios" href="funciones.html" target="_blank">Portfolio</a></li>
+                            <li><a class="cielo-servicios" href="home.html" target="_blank">Contacto</a></li>
+                        </ul>
+                    <p class="text-white daPasos">DA TUS PRIMEROS PASOS EN EL</p>
+                    <p class="text_metaverso good">METAVERSO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-      </div>
+    <main>
+        <div>
+            <div class="section_trends">
+<!--                 <img class="logo_hero" src="./assets/img/logo.png" alt=""> -->
+                <p class="trends_title">TRENDS REPORT</p>
+                <P class="trends_2022">2022</P>
+                <div class="d-flex justify-content-center flex-wrap contenedor_cards mx-auto">
+                    <div class="card_trend position-relative">
+                        <p class="card_trend_title">UNO.</p>
+                        <p class="card_trend_text">El metaverso creará nuevos
+                            espacios donde las empresas
+                            podrán expandir su presencia,
+                            sus servicios y su creatividad,
+                            maximizando la interacción con
+                            los clientes y los empleados.!</p>
+                        <div>
+                            <img class="position-absolute img-marco" src="./assets/img/tarjeta.png" alt="">
+                        </div>
+                    </div>
 
-      <script src="./assets/js/login.js"></script>
+                    <div class="card_trend position-relative">
+                        <p class="card_trend_title">DOS.</p>
+                        <p class="card_trend_text">Será fundamental mantener
+                            la centralidad del ser humano
+                            ante los avances tecnológicos
+                            en materia de IA y aprendizaje
+                            automático.</p>
+                        <div>
+                            <img class="position-absolute img-marco" src="./assets/img/tarjeta.png" alt="">
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="card_trend position-relative">
+                        <p class="card_trend_title">TRES.</p>
+                        <p class="card_trend_text">La blockchain y la
+                            descentralización impulsarán la
+                            reinvención de las empresas.</p>
+                        <div>
+                            <img class="position-absolute img-marco" src="./assets/img/tarjeta.png" alt="">
+                        </div>
+                    </div>
+
+
+
+                    <div class="card_trend position-relative">
+                        <p class="card_trend_title">CUATRO.</p>
+                        <p class="card_trend_text">La reinvención de los modelos
+                            comerciales se centrará
+                            en garantizar la resiliencia
+                            mediante alianzas estratégicas
+                            multidisciplinarias y una nueva
+                            relación con el cliente.</p>
+                        <div>
+                            <img class="position-absolute img-marco" src="./assets/img/tarjeta.png" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="card_trend position-relative">
+                        <p class="card_trend_title">CINCO.</p>
+                        <p class="card_trend_text">La capacidad de adaptación, la
+                            flexibilidad y la sustentabilidad
+                            serán los motores clave de los
+                            espacios de trabajo de alto
+                            rendimiento.</p>
+                        <div>
+                            <img class="position-absolute img-marco" src="./assets/img/tarjeta.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    <button class="btn boton_descargar">DESCARGAR DOCUMENTO</button>
+                </div>
+            </div>
+        </div>
+        <div data-aos="fade-up" class="section1">
+            <h2 class="tection1_text">TECNOLOGÍA</h2>
+        </div>
+        
+        <div data-aos="fade-up" class="section2 position-relative mb-3 pt-5 pb-5">
+            <!-- <div class=""> -->
+                <img class="img-section" src="./assets/img/3dvirtualtour2.png" alt="">
+         <!--    </div> -->
+            <div data-aos="fade-up" class="container_sectionText_2 position-absolute section2_text text-center">
+                <!-- <h2 class="section2_text_1">RECORRIDOS <br> VIRTUALES</h2><br> -->
+                <h2 class="section2_text_2">3<span class="section2_text_2_D">D</span></h2>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="section3 mb-3 pt-5 pb-5">
+            <div class="section3_text_container mb-4">
+                <p class="section3_text">360 PHOTOGRAPHY</p>
+            </div>
+            <div class="position-relative">
+                <img class="img_160" src="./assets/img/360foto1.png" alt="">
+                    <div  class="zapaiframe">
+                        <iframe width="100%" height="100%" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" style="border:0;" src="https://api.cappasity.com/api/player/064a52b7-4b00-4534-b5e1-187d1f984cbd/embedded?autorun=0&closebutton=1&logo=1&analytics=1&uipadx=0&uipady=0&enablestoreurl=0&storeurl=&hidehints=0&language=&autorotate=0&autorotatetime=10&autorotatedelay=2&autorotatedir=1&hidefullscreen=1&hideautorotateopt=1&hidesettingsbtn=0&enableimagezoom=1&zoomquality=1&hidezoomopt=0&arbutton=1" ></iframe>
+                    </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="section4 mb-3 pt-5 pb-5">
+            <div class="section4_text_container mb-4">
+                <p class="section4_text">3D SCAN</p>
+            </div>
+            <div class="position-relative">
+                <img class="img_160" src="./assets/img/360foto1.png" alt="">
+                    <div  class="zapaiframe">
+                        <iframe width="100%" height="100%" title="Zapatilla Adidas" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/9485c098f96542a69e028d3f2e4a60a6/embed"> </iframe>
+                    </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="section5 mb-3 pt-5 pb-5">
+            <div class="section5_text_container mb-4">
+                <p class="section5_text">THE BEST WAY TO PREDICT <br>
+                    THE FUTURE IS TO</p>
+            </div>
+            <img class="img-section pb-5 pt-5 mt-5" src="./assets/img/glasses.png" alt="">
+            <!-- <div class="section5_text_container mb-4">
+                <p class="section5_text2">CREATE IT</p>
+            </div> -->
+            
+        </div>
+
+        <div data-aos="fade-up" class="section6 mb-3 pt-5 pb-5">
+            <div class="section6_text_container mb-4">
+                <p class="section6_text">THE BEST WAY TO PREDICT <br>
+                    THE FUTURE IS TO</p>
+            </div>
+            <img class="img-fluid pb-5 pt-5 reallity_apps_img" src="./assets/img/augmented_reallity_apps.png" alt="">
+        </div>
+
+        <div data-aos="fade-up" class="section7 mb-3 pt-5 pb-5">
+            <div class="section7_text_container mb-4">
+                <p class="section7_text">INSTAGRAM/FACEBOOK <br>
+                    FILTERS</p>
+            </div>
+            <img class="img-fluid pb-5 pt-5 reallity_apps_img" src="./assets/img/filtros.png" alt="">
+        </div>
+
+        <div data-aos="fade-up" class="section8 d-flex flex-column align-items-center justify-content-center w-100">
+            <h1 class="text-white">RENDERS</h1>
+            <div class="container_render1 mt-5">
+                <iframe width='100%' height='100%' src='https://roundme.com/embed/756592/2385407' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="container_render1 mt-5">
+                <iframe width='100%' height='100%' src='https://roundme.com/embed/776535/2446772' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="section8 d-flex flex-column align-items-center justify-content-center w-100">
+            <h1 class="text-white">MAPING</h1>
+            <!-- <img class="cyber_punker_img" src="./assets/img/cyberPunker.png" alt=""> -->
+        </div>
+
+        <div data-aos="fade-up" class="section9 d-flex justify-content-center" id="contacto">
+            <div class=" position-relative w-100">
+                <img class="section9Puente" src="./assets/img/puente_filtro.png" alt="">
+                <div class="section9_title position-absolute">
+                    <h2 class="title_puente text-center">WE ARE THE BRIDGE BETWEEN THE REAL <br> TO THE VIRTUAL</h2>
+                    <h2 class="title_puente text-center">THIS IS</h2>
+                    <p class="virtuastatepuente_text">VIRTUASTATE</p>
+
+                    <div class="d-flex flex-row justify-content-center ">
+                        <div class="d-flex flex-column justify-content-center align-items-center mx-3">
+                            <img class="agendar_img" src="./assets/img/agendar.png" alt="">
+                                <div class="container_text_agendar">
+                                    <a class="text-decoration-none" href="https://calendly.com/virtuastate" target="_blank" rel="noreferrer">
+                                    <p class="text_agendar m-0">Agendar</p>
+                                    </a>
+                                </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center mx-3">
+                            <img class="agendar_img" src="./assets/img/whatsapp-logo.png" alt="">
+                                <div class="container_text_agendar">
+                                    <a class="text-decoration-none" href="https://wa.me/5491130257638" target="_blank" rel="noreferrer">
+                                    <p class="text_agendar m-0">Contactar</p>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+
+    <footer data-aos="fade-up" class="footer">
+
+        <div>
+            <p class="text1_footer">#Innovation<span class="matters">Matters</span></p>
+        </div>
+
+
+
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-4 mb-4">
+            
+            <div class="d-none d-md-flex">
+                <div class="mapouter"><div class="gmap_canvas">
+                    <iframe width="456" height="202" id="gmap_canvas" src="https://maps.google.com/maps?q=Santiago%20del%20Estero%201640,%20B1640HLJ%20Mart%C3%ADnez,%20Provincia%20de%20Buenos%20Aires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:202px;width:456px;}</style><a href="https://www.embedgooglemap.net">google map coding</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:202px;width:456px;}</style></div></div>
+            </div>
+
+            <div class="d-flex d-md-none">
+                <div class="mapouter"><div class="gmap_canvas">
+                    <iframe width="300" height="202" id="gmap_canvas" src="https://maps.google.com/maps?q=Santiago%20del%20Estero%201640,%20B1640HLJ%20Mart%C3%ADnez,%20Provincia%20de%20Buenos%20Aires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <a href="https://123movies-to.org"></a>
+                    <br>
+                    <style>.mapouter{position:relative;text-align:center;height:202px;width:456px;}</style><a href="https://www.embedgooglemap.net">google map coding</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:202px;width:456px;}</style></div>
+                </div>
+            </div>
+
+            <div class="container1_text_footer text-center mx-3 mt-4 mt-md-0">
+                <div class="d-flex justify-content-center contenedor_redes">
+                    <a class="cursor_pointer" href=""><i class="bi bi-linkedin logoFooter mx-3 cursor_pointer"></i></a>
+                    <a class="cursor_pointer" href="https://www.instagram.com/virtuastate/?hl=es" target="_blank"><i class="bi bi-instagram logoFooter mx-3 cursor_pointer"></i></a>
+                </div>
+                <p class="m-0 title_container1_text_footer">VIRTUASPACE</p>
+                <p class="m-0">Tel: +5491130257638</p>
+                <p class="m-0">Santiago del estero</p>
+                <p class="m-0">Martinez, San Isidro, BA.</p>
+                
+            </div>
+        </div>
+
+        <div class="mapa">
+            
+        </div>
+        <div class="derechos">
+            <p class="m-0">Preguntame si jodemos</p>
+            <p class="m-0">Copyright, 2022. VIRTUASTATE.NET</p>
+        </div>
+    </footer>
+    
+
+    <script async src="https://api.cappasity.com/api/player/cappasity-ai"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="./assets/js/responsive.js"></script>
 </body>
 </html>
