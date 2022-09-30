@@ -373,9 +373,35 @@ h1:hover {
   height: 850px;
 }
 
+.title-3d-virtual-tour{
+  background-color: #8a2be2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .boton-masinfo{
   color: #ff1493;
 }
+
+.title-3d-render{
+  color:white;
+  background-color: #7fff00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 
 @media (min-width: 768px) {
   .section2_text_1 {
