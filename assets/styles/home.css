@@ -34,6 +34,16 @@ body {
   overflow-x: hidden;
 }
 
+.my-button{
+  position: fixed;
+  right: 40px;
+  bottom: 80px;
+  width: 70px;
+  height: 70px;
+  z-index: 100
+  }
+  
+
 /* NAVBAR */
 ::-webkit-srollbar {
   width: 10px;
@@ -275,6 +285,24 @@ h1:hover {
 }
 
 /* SECTION1 */
+.technology-cover{
+  background-image: url("../img/fondo-pink.jpg");
+  height: 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+}
+.technology-title{
+  font-size: 145px;
+  color: white;
+  font-family: "MonumentExtended", sans-serif;
+  padding-top: 25px;
+}
 .tection1_text {
   font-family: "MonumentExtended", sans-serif;
   padding-top: 35px;
@@ -284,6 +312,7 @@ h1:hover {
   color: rgb(255, 255, 255);
   text-align: center;
   margin: 0;
+  margin-top: 18px;
 }
 
 @media (min-width: 768px) {
@@ -338,6 +367,10 @@ h1:hover {
   -webkit-text-stroke: 1px rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   font-family: "MonumentExtended", sans-serif;
+}
+
+.carousel {
+  height: 850px;
 }
 
 @media (min-width: 768px) {
@@ -551,7 +584,7 @@ h1:hover {
 
 .section6_text {
   font-family: "MonumentExtended", sans-serif;
-  font-size: 20px;
+  font-size: 45px;
   font-weight: 800;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -580,7 +613,7 @@ h1:hover {
 
 @media (min-width: 1000px) {
   .section6_text {
-    font-size: 35px;
+    font-size: 40px;
     letter-spacing: 10px;
     margin: 0;
   }
@@ -810,7 +843,8 @@ h1:hover {
   /*  background-color: #000; */
   color: #fff;
   padding: 40px 0px;
-  background-image: url("../img/pattern.jpg");
+  background-image: url("../img/pattern2.png");
+
   background-size: contain;
   background-position: center;
 }
@@ -1079,4 +1113,9 @@ h1:hover {
 .container_render1 {
   width: min(100%, 640px);
   height: 360px;
+}
+
+#preguntame{
+  color: #000;
+  font-size: 1.4rem;
 }
