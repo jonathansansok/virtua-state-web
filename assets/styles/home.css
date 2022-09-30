@@ -373,6 +373,10 @@ h1:hover {
   height: 850px;
 }
 
+.boton-masinfo{
+  color: #ff1493;
+}
+
 @media (min-width: 768px) {
   .section2_text_1 {
     font-size: 70px;
