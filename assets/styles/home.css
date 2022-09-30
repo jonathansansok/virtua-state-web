@@ -303,6 +303,42 @@ h1:hover {
   font-family: "MonumentExtended", sans-serif;
   padding-top: 25px;
 }
+@media (max-width: 1362px) {
+  .technology-title {
+    font-size: 90px;
+  }
+}
+@media (max-width: 896px) {
+  .technology-title {
+    font-size: 70px;
+  }
+}
+@media (max-width: 678px) {
+  .technology-title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 560px) {
+  .technology-title {
+    font-size: 50px;
+  }
+}
+@media (max-width: 522px) {
+  .technology-title {
+    font-size: 45px;
+  }
+}
+@media (max-width: 438px) {
+  .technology-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 398px) {
+  .technology-title {
+    font-size: 35px;
+  }
+}
 .tection1_text {
   font-family: "MonumentExtended", sans-serif;
   padding-top: 35px;
