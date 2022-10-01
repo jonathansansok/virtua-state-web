@@ -826,17 +826,19 @@ h1:hover{
 /* ------FOOTER ---------*/
 
 
-.footer{
+.footer {
     /*  background-color: #000; */
      color: #fff;
      padding: 40px 0px;
-     background-image: url('./imagenes/pattern.jpg');
+     background-image: url('../assets/img/pattern2.png');
      background-size: contain;
      background-position: center;
+     opacity: disabled;
+     opacity: none;
  }
  
  .text1_footer{
-     font-family: 'MonumentExtended', sans-serif;
+     font-family: 'MonumentExtended', sans-serif ;
      text-align: center;
      font-size: 20px;
  }
@@ -889,8 +891,18 @@ h1:hover{
      font-size: 12px;
      font-weight: bold;
  }
- 
 
+ @media (max-width: 481px) {
+    .footer-esquivo-bootstrap{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+ 
  @media (max-width: 465px) {
 
     .gmap_canvas{
@@ -900,4 +912,14 @@ h1:hover{
         max-width: 350px;
     }
 }
+#preguntame{
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.color-negro{
+  color: #000;
+
+}
+
  /* ------FOOTER ---------*/
