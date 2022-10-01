@@ -362,6 +362,8 @@ h1:hover {
   width: min(90%, 800px);
 }
 
+
+
 /* SECTION2 */
 .section2 {
   background: rgb(127, 255, 0);
@@ -388,6 +390,12 @@ h1:hover {
   min-height: 600px;
 }
 
+.v3d-virtual-tour-section{
+  display:flex;
+  flex-direction: column;
+/*   justify-content: center; */
+
+}
 .section2_text {
   top: 20%;
   margin: auto;
@@ -421,9 +429,7 @@ h1:hover {
   margin-bottom: 20px;
 }
 
-.boton-masinfo{
-  color: #ff1493;
-}
+
 
 .title-3d-render{
   color:white;
@@ -728,6 +734,9 @@ h1:hover {
   margin-bottom: 0px;
 }
 
+.facebook-link  {
+  width: 400px;
+}
 @media (min-width: 768px) {
   .section7_text {
     font-size: 25px;
@@ -1063,6 +1072,13 @@ h1:hover {
   background-position: center;
 }
 
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .text1_footer {
   font-family: "MonumentExtended", sans-serif;
   text-align: center;
@@ -1338,3 +1354,27 @@ h1:hover {
   color: #000;
 
 }
+
+.boton-masinfo {
+  border: 1px solid #ff1493;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+  .boton-masinfo a{
+/*     width: 150px; */
+    font-size: 1.8rem;
+    padding: 0px 00px 00px 00px ;
+    color: #ff1493;
+    text-decoration: none;
+    font-family: "MonumentExtended", sans-serif;
+    border: 2px #ff1493;
+    border-radius: 10px;
+  }
+
