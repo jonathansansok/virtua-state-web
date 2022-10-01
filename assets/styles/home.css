@@ -703,7 +703,7 @@ h1:hover {
 .img_section {
   max-width: 750px;
 }
-
+/* 
 .section7_text_container {
   background-color: #ff1493;
   display: flex;
@@ -713,7 +713,7 @@ h1:hover {
   padding: 20px;
   margin-top: 40px;
   width: 100%;
-}
+} */
 
 .section7_text {
   font-family: "MonumentExtended", sans-serif;
@@ -759,11 +759,6 @@ h1:hover {
   height: min(90%, 650px);
 }
 
-.section8 {
-  background-color: #000;
-  padding-top: 100px;
-  padding-bottom: 40px;
-}
 
 .cyber_punker_img {
   width: min(90%, 500px);
@@ -785,6 +780,156 @@ h1:hover {
   width: 100%;
   height: 300px;
 }
+
+/* EMPIEZA CYBERPUNKER NEVER PONY ------------------------------*/
+.section8 {
+  background-color: white;
+
+  background-color: #000;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cyber-section{
+   width: 780px; 
+  height: 1180px; 
+  background-image: url("../img/cyberPunker.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  z-index: 5;
+}
+
+@media (max-width: 780px) {
+  .cyber-section{
+    width: 480px; 
+
+  }
+}
+.cyber-section-inside{
+  margin-top: 100px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+  width: 800px;
+  height: 900px;
+}
+
+.pizarra{
+  background-image: url("../img/tarjeta.png");
+  width: 310px;
+  height: 200px;
+  z-index: -2;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+/*   background-color: rgb(255, 20, 147, 0.5);  */
+}
+
+
+.pizarra2{
+  margin-top: -100px;
+}
+
+.pizarra3{
+  margin-top: 100px;
+}
+.pizarra4{
+  margin-top: 150px;
+}
+.pizarra5{
+  margin-top: 90px;
+}
+
+
+.pizarra-transparente{
+  width: 280px;
+  height: 150px;
+/*   background-color: rgb(255, 20, 147, 0.5);  */
+}
+
+@media (max-width: 780px) {
+  .cyber-section{
+    width: 480px; 
+    
+  }
+  .cyber-section-inside{
+    margin-top: 10px;
+
+  }
+  .pizarra{
+    margin-bottom: 0px;
+    
+  }
+  .pizarra2 {
+    margin: 0px;
+  }
+  .pizarra3{
+    margin: 0px;
+  }
+  .pizarra4{
+    margin: 0px;
+  }
+  .pizarra5{
+    margin: 0px;
+  }
+}
+@media (max-width: 479px) {
+  .cyber-section{
+    width: 350px; 
+    
+  }
+}
+.pizarra-transparente-texto{
+  font-family: "MonumentExtended", sans-serif;
+  color: #fff;
+  margin-left: 10px;
+  width: 220px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: rgb(255, 20, 147, 0.5); 
+  
+}
+
+/* .cyberpunker{
+  background-image: url("../img/cyberPunker.png");
+
+  margin-top: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cyberpunker-main{
+  padding-top: 50px;
+
+  height: 1000px;
+}
+ */
+
+
+
+/* EMPIEZA CYBERPUNKER NEVER PONY ------------------------------*/
 
 @media (min-width: 537px) {
   .section9Puente {
