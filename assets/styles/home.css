@@ -627,6 +627,16 @@ h1:hover {
     margin: 0;
   }
 }
+@media (max-width: 859px) {
+  .section5_text2 {
+    font-family: "MonumentExtended", sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 35px;
+    text-align: center;
+    margin: 0;
+  }
+}
 
 /* SECTION 6 */
 
@@ -665,6 +675,8 @@ h1:hover {
   margin: 0;
   letter-spacing: 0px;
 }
+
+
 
 @media (min-width: 768px) {
   .section6_text {
@@ -991,7 +1003,7 @@ h1:hover {
     font-size: 20px;
   }
   .virtuastatepuente_text {
-    font-size: 70px;
+    font-size: 30px;
   }
 }
 
@@ -1001,6 +1013,14 @@ h1:hover {
   }
   .virtuastatepuente_text {
     font-size: 100px;
+  }
+}
+@media (max-width: 416px) {
+  .section6_text  {
+    font-size: 30px;
+  }
+  .virtuastatepuente_text{
+    font-size: 20px;
   }
 }
 
@@ -1380,3 +1400,17 @@ h1:hover {
     border-radius: 10px;
   }
 
+  @media (max-width: 353px) {
+    .boton-masinfo a{
+      max-width: 230px;
+      text-align: center;
+    }
+    .boton-masinfo {
+      max-width: 250px;
+      text-align: center;
+    }
+    .facebook-link{
+      max-width: 200px;
+    }
+  }
+  
