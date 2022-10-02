@@ -34,15 +34,14 @@ body {
   overflow-x: hidden;
 }
 
-.my-button{
+.my-button {
   position: fixed;
   right: 40px;
   bottom: 80px;
   width: 70px;
   height: 70px;
-  z-index: 100
-  }
-  
+  z-index: 100;
+}
 
 /* NAVBAR */
 ::-webkit-srollbar {
@@ -253,7 +252,7 @@ h1:hover {
 
   .menu-btn {
     display: block;
-     margin-top: -40px; 
+    margin-top: -40px;
   }
   .miniFoto-gsv {
     max-width: 450px;
@@ -287,7 +286,7 @@ h1:hover {
 }
 
 /* SECTION1 */
-.technology-cover{
+.technology-cover {
   background-image: url("../img/fondo-pink.jpg");
   height: 900px;
   background-position: center;
@@ -299,7 +298,7 @@ h1:hover {
   align-items: center;
   margin-top: 18px;
 }
-.technology-title{
+.technology-title {
   font-size: 145px;
   color: white;
   font-family: "MonumentExtended", sans-serif;
@@ -364,8 +363,6 @@ h1:hover {
   width: min(90%, 800px);
 }
 
-
-
 /* SECTION2 */
 .section2 {
   background: rgb(127, 255, 0);
@@ -392,12 +389,11 @@ h1:hover {
   min-height: 600px;
 }
 
-.v3d-virtual-tour-section{
-  display:flex;
+.v3d-virtual-tour-section {
+  display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-
 }
 .section2_text {
   top: 20%;
@@ -420,26 +416,24 @@ h1:hover {
   height: 850px;
 }
  */
-.centrando-slider{
-  width:853px;
+.centrando-slider {
+  width: 853px;
   height: 480px;
-/*   display:flex;
+  /*   display:flex;
   flex-direction: column;
   justify-content: center; */
   align-items: center;
   margin-top: 20px;
   margin-bottom: 30px;
-
 }
 @media (max-width: 854px) {
-  .achico-iframes{
+  .achico-iframes {
     width: 100%;
-/*     height: 800px; */
+    /*     height: 800px; */
   }
 }
 
-
-.title-3d-virtual-tour{
+.title-3d-virtual-tour {
   background-color: #8a2be2;
   display: flex;
   flex-direction: column;
@@ -451,10 +445,8 @@ h1:hover {
   margin-bottom: 20px;
 }
 
-
-
-.title-3d-render{
-  color:white;
+.title-3d-render {
+  color: white;
   background-color: #7fff00;
   display: flex;
   flex-direction: column;
@@ -466,12 +458,11 @@ h1:hover {
   margin-bottom: 20px;
 }
 
-.centrar-epigrafe{
+.centrar-epigrafe {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 @media (min-width: 768px) {
   .section2_text_1 {
@@ -494,7 +485,7 @@ h1:hover {
 
 /* SECTION3 */
 .section3 {
-   background-color: #7fff00;   
+  background-color: #7fff00;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -699,8 +690,6 @@ h1:hover {
   letter-spacing: 0px;
 }
 
-
-
 @media (min-width: 768px) {
   .section6_text {
     font-size: 25px;
@@ -767,11 +756,11 @@ h1:hover {
   margin: 0;
   letter-spacing: 0px;
 }
-.filters-ig-main{
+.filters-ig-main {
   margin-bottom: 0px;
 }
 
-.facebook-link  {
+.facebook-link {
   width: 400px;
 }
 @media (min-width: 768px) {
@@ -804,7 +793,6 @@ h1:hover {
 .reallity_apps_img {
   height: min(90%, 650px);
 }
-
 
 .cyber_punker_img {
   width: min(90%, 500px);
@@ -840,9 +828,9 @@ h1:hover {
   align-items: center;
 }
 
-.cyber-section{
-   width: 780px; 
-  height: 1180px; 
+.cyber-section {
+  width: 780px;
+  height: 1180px;
   background-image: url("../img/cyberPunker.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -854,23 +842,22 @@ h1:hover {
 }
 
 @media (max-width: 780px) {
-  .cyber-section{
-    width: 480px; 
-
+  .cyber-section {
+    width: 480px;
   }
 }
-.cyber-section-inside{
+.cyber-section-inside {
   margin-top: 100px;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   width: 800px;
   height: 900px;
 }
 
-.pizarra{
+.pizarra {
   background-image: url("../img/tarjeta.png");
   width: 310px;
   height: 200px;
@@ -886,72 +873,65 @@ h1:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-/*   background-color: rgb(255, 20, 147, 0.5);  */
+  /*   background-color: rgb(255, 20, 147, 0.5);  */
 }
 
-
-.pizarra2{
+.pizarra2 {
   margin-top: -100px;
 }
 
-.pizarra3{
+.pizarra3 {
   margin-top: 100px;
 }
-.pizarra4{
+.pizarra4 {
   margin-top: 150px;
 }
-.pizarra5{
+.pizarra5 {
   margin-top: 40px;
 }
 
-
-.pizarra-transparente{
+.pizarra-transparente {
   width: 280px;
   height: 150px;
-/*   background-color: rgb(255, 20, 147, 0.5);  */
+  /*   background-color: rgb(255, 20, 147, 0.5);  */
 }
 
 @media (max-width: 780px) {
-  .cyber-section{
-    width: 480px; 
-    
+  .cyber-section {
+    width: 480px;
   }
-  .cyber-section-inside{
+  .cyber-section-inside {
     margin-top: 10px;
-
   }
-  .pizarra{
+  .pizarra {
     margin-bottom: 0px;
-    
   }
   .pizarra2 {
     margin: 0px;
   }
-  .pizarra3{
+  .pizarra3 {
     margin: 0px;
   }
-  .pizarra4{
+  .pizarra4 {
     margin: 0px;
   }
-  .pizarra5{
+  .pizarra5 {
     margin: 0px;
   }
 }
 @media (max-width: 479px) {
-  .cyber-section{
-    width: 350px; 
-    
+  .cyber-section {
+    width: 350px;
   }
 }
-.pizarra-transparente-texto{
+.pizarra-transparente-texto {
   font-family: "MonumentExtended", sans-serif;
   color: #fff;
   margin-left: 10px;
   width: 220px;
   height: 100px;
   border-radius: 10px;
-  background-color: rgb(255, 20, 147, 0.5); 
-  
+  background-color: rgb(255, 20, 147, 0.5);
 }
 
 /* .cyberpunker{
@@ -972,8 +952,6 @@ h1:hover {
   height: 1000px;
 }
  */
-
-
 
 /* EMPIEZA CYBERPUNKER NEVER PONY ------------------------------*/
 
@@ -1039,10 +1017,10 @@ h1:hover {
   }
 }
 @media (max-width: 416px) {
-  .section6_text  {
+  .section6_text {
     font-size: 30px;
   }
-  .virtuastatepuente_text{
+  .virtuastatepuente_text {
     font-size: 20px;
   }
 }
@@ -1390,14 +1368,13 @@ h1:hover {
   height: 360px;
 }
 
-#preguntame{
+#preguntame {
   color: #000;
   font-size: 1.1rem;
 }
 
-.color-negro{
+.color-negro {
   color: #000;
-
 }
 
 .boton-masinfo {
@@ -1410,34 +1387,31 @@ h1:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 .boton-masinfo2 {
   margin-top: 15px;
-
 }
-  .boton-masinfo a{
-/*     width: 150px; */
-    font-size: 1.8rem;
-    padding: 0px 00px 00px 00px ;
-    color: #ff1493;
-    text-decoration: none;
-    font-family: "MonumentExtended", sans-serif;
-    border: 2px #ff1493;
-    border-radius: 10px;
-  }
+.boton-masinfo a {
+  /*     width: 150px; */
+  font-size: 1.8rem;
+  padding: 0px 00px 00px 00px;
+  color: #ff1493;
+  text-decoration: none;
+  font-family: "MonumentExtended", sans-serif;
+  border: 2px #ff1493;
+  border-radius: 10px;
+}
 
-  @media (max-width: 353px) {
-    .boton-masinfo a{
-      max-width: 230px;
-      text-align: center;
-    }
-    .boton-masinfo {
-      max-width: 250px;
-      text-align: center;
-    }
-    .facebook-link{
-      max-width: 200px;
-    }
+@media (max-width: 353px) {
+  .boton-masinfo a {
+    max-width: 230px;
+    text-align: center;
   }
-  
+  .boton-masinfo {
+    max-width: 250px;
+    text-align: center;
+  }
+  .facebook-link {
+    max-width: 200px;
+  }
+}
