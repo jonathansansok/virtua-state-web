@@ -57,8 +57,7 @@ body {
   border-radius: 8px;
 }
 
-.header-CieloOk {
-}
+
 .cielo {
   /*     height: 520px; */
   /*     background-image: url("./imagenes-funciones-web/digital-twins.png");     
@@ -794,7 +793,7 @@ h1:hover {
   height: min(90%, 650px);
 }
 
-.cyber_punker_img {
+/* .cyber_punker_img {
   width: min(90%, 500px);
   -webkit-transition: all 0.5s ease-in-out;
 }
@@ -804,7 +803,7 @@ h1:hover {
 
   -webkit-transition: all 0.5s ease-in-out;
 }
-
+ */
 .section9 {
   margin-top: 50px;
   background-color: #ffffff;
