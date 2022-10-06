@@ -1,0 +1,19 @@
+
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@leadsales/
+      leadclick@1.11.1/dist/leadclick/leadclick.esm.js"></script>
+      
+      <leadclick-widget
+        integrations="1"
+        fburl="https://www.m.me/"
+        igurl="https://www.instagram.com/leadsales.io/?hl=es"
+        waurl="https://api.whatsapp.com/send?phone=54991130257638&text="
+        cta="Contáctanos"
+        fontcolor="8a2be2"
+        bgcolor="#ff1493"
+        instructions="Dejanos tu consulta"
+        orientation="right"
+        visible_integrations="WhatsApp"
+        ispremium="false"
+      >
+      </leadclick-widget>
+    
