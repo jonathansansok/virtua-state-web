@@ -57,7 +57,6 @@ body {
   border-radius: 8px;
 }
 
-
 .cielo {
   /*     height: 520px; */
   /*     background-image: url("./imagenes-funciones-web/digital-twins.png");     
@@ -1413,4 +1412,14 @@ h1:hover {
   .facebook-link {
     max-width: 200px;
   }
+}
+/* MODIFICO ANCHO DE FLECHAS DEL CARROULLOUSEL  */
+.carousel-control-next{
+  width: 50px;
+  height: 100px;
+}
+
+.carousel-control-prev{
+  width: 50px;
+  height: 100px;
 }
