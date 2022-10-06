@@ -1415,11 +1415,11 @@ h1:hover {
 }
 /* MODIFICO ANCHO DE FLECHAS DEL CARROULLOUSEL  */
 .carousel-control-next{
-  width: 50px;
-  height: 100px;
+
+  height: 150px;
 }
 
 .carousel-control-prev{
-  width: 50px;
-  height: 100px;
+
+  height: 150px;
 }
