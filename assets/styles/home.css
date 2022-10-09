@@ -392,6 +392,12 @@ h1:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  background-color: #000;
+
+}
+.slide{
+  width: 100vw;
 }
 .section2_text {
   top: 20%;
@@ -431,6 +437,10 @@ h1:hover {
   }
 }
 
+ .carousel-item {
+  width: 100vw;
+  height: 100vh;
+} 
 .title-3d-virtual-tour {
   background-color: #8a2be2;
   display: flex;
