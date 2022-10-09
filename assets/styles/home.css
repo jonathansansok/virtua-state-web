@@ -1367,6 +1367,20 @@ main{
 .cuidarAltura{
   height: 800px;
 }
+
+@media (max-width: 768px) {
+  .cuidarAltura{
+    height: 400px;
+  }
+  
+}
+@media (max-width: 600px) {
+  .cuidarAltura{
+    height: 300px;
+  }
+  
+}
+
 .zapaiframe {
   position: absolute;
   top: 13px;
