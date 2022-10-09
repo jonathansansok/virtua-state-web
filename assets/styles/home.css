@@ -983,6 +983,20 @@ main{
 
 /* termina CYBERPUNKER NEVER PONY ------------------------------*/
 
+/* EMPIEZA PUENTE  2022------------------------------*/
+
+.puente-main2022{
+  background-image: url('../img/puente_filtro.png');
+  height: 580px;
+  background-size: auto;
+  background-position: center;
+}
+
+
+
+
+/* TERMINA PUENTE 2022------------------------------*/
+
 @media (min-width: 537px) {
   .section9Puente {
     height: 400px;
@@ -999,6 +1013,9 @@ main{
 @media (min-width: 768px) {
   .section9Puente {
     height: 550px;
+  }
+  .section9_title {
+    font-size: 8rem;
   }
 }
 
@@ -1017,7 +1034,8 @@ main{
   color: #fff;
   text-align: center;
   padding-top: 20px;
-  font-size: 10px;
+
+  margin: 30px 0px 30px 0px;
 }
 
 .virtuastatepuente_text {
@@ -1030,10 +1048,10 @@ main{
 
 @media (min-width: 537px) {
   .title_puente {
-    font-size: 20px;
+    font-size: 80px;
   }
   .virtuastatepuente_text {
-    font-size: 30px;
+    font-size: 80px;
   }
 }
 
