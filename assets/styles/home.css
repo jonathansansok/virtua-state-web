@@ -408,6 +408,12 @@ h1:hover {
 .slide{
   width: 100vw;
 }
+.centrandoInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .section2_text {
   top: 20%;
   margin: auto;
@@ -1358,6 +1364,9 @@ main{
   /* left: 140px; */
 }
 
+.cuidarAltura{
+  height: 800px;
+}
 .zapaiframe {
   position: absolute;
   top: 13px;
