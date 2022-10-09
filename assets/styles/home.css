@@ -294,7 +294,7 @@ h1:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 18px;
+  margin-top: 3px;
 }
 .technology-title {
   font-size: 145px;
@@ -501,7 +501,7 @@ h1:hover {
   display: flex;
 
   flex-direction: column;
-  justify-content: starts;
+  justify-content: start;
   align-items: center;
   letter-spacing: 1.1rem;
   max-height: 800px;
