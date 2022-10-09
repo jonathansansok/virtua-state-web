@@ -831,6 +831,7 @@ main{
 .section9 {
   margin-top: 50px;
   background-color: #ffffff;
+  height: 100vh;
 }
 
 .section9Puente {
@@ -980,7 +981,7 @@ main{
 }
  */
 
-/* EMPIEZA CYBERPUNKER NEVER PONY ------------------------------*/
+/* termina CYBERPUNKER NEVER PONY ------------------------------*/
 
 @media (min-width: 537px) {
   .section9Puente {
@@ -1008,6 +1009,7 @@ main{
   bottom: 0;
   margin: auto;
   padding-top: 10px;
+  height: 100vh;
 }
 
 .title_puente {
