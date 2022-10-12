@@ -172,9 +172,8 @@ h1:hover {
   overflow: hidden;
 }
 
-
-  .position-relative{
-    height: 100vh;
+.position-relative {
+  height: 100vh;
 }
 .videoBg {
   width: 100%;
@@ -188,7 +187,6 @@ h1:hover {
   top: 0;
   width: 100%;
   height: 100vh;
-
 }
 
 .textoVideo {
@@ -287,7 +285,6 @@ h1:hover {
   width: 70%;
   display: block;
   margin: auto;
-
 }
 
 /* SECTION1 */
@@ -403,9 +400,8 @@ h1:hover {
   align-items: center;
   width: 100vw;
   background-color: #000;
-
 }
-.slide{
+.slide {
   width: 100vw;
 }
 .centrandoInfo {
@@ -452,10 +448,10 @@ h1:hover {
   }
 }
 
- .carousel-item {
+.carousel-item {
   width: 100vw;
   height: 100vh;
-} 
+}
 .title-3d-virtual-tour {
   background-color: #8a2be2;
   display: flex;
@@ -785,7 +781,7 @@ h1:hover {
   margin-bottom: 0px;
 }
 
-main{
+main {
   background-color: #000;
 }
 
@@ -924,7 +920,6 @@ main{
   width: 280px;
   height: 150px;
   /*   background-color: rgb(255, 20, 147, 0.5);  */
-  
 }
 
 @media (max-width: 780px) {
@@ -948,7 +943,6 @@ main{
   }
   .pizarra5 {
     margin: 0px;
-
   }
 }
 @media (max-width: 479px) {
@@ -991,16 +985,13 @@ main{
 
 /* EMPIEZA PUENTE  2022------------------------------*/
 
-.puente-main2022{
-  background-image: url('../img/puente_filtro.png');
+.puente-main2022 {
+  background-image: url("../img/puente_filtro.png");
   height: 570px;
   background-size: auto;
   background-position: center;
   border-bottom: 30px solid black;
 }
-
-
-
 
 /* TERMINA PUENTE 2022------------------------------*/
 
@@ -1060,10 +1051,10 @@ main{
   .virtuastatepuente_text {
     font-size: 40px;
   }
-  .achicoLetra{
+  .achicoLetra {
     font-size: 2rem;
   }
-  .agrandoLetra{
+  .agrandoLetra {
     font-size: 4rem;
   }
 }
@@ -1085,7 +1076,7 @@ main{
   }
 }
 
-.menosBottom{
+.menosBottom {
   margin-bottom: 0;
 }
 .agendar_img {
@@ -1364,21 +1355,19 @@ main{
   /* left: 140px; */
 }
 
-.cuidarAltura{
+.cuidarAltura {
   height: 800px;
 }
 
 @media (max-width: 768px) {
-  .cuidarAltura{
+  .cuidarAltura {
     height: 400px;
   }
-  
 }
 @media (max-width: 600px) {
-  .cuidarAltura{
+  .cuidarAltura {
     height: 300px;
   }
-  
 }
 
 .zapaiframe {
@@ -1404,13 +1393,7 @@ main{
     }
   }
 
-  @media (max-width: 405px) {
-    .img_160 {
-      width: 340px;
-      margin: 0 auto;
-      display: block;
-    }
-  }
+
   .zapa3d {
     top: 0px;
     /* left: 140px; */
@@ -1448,14 +1431,34 @@ main{
   }
 }
 
+@media (max-width: 405px) {
+  .img_160 {
+    width: 340px;
+    margin: 0 auto;
+    display: block;
+  }
+
+}
+
 @media (max-width: 599px) {
   .zapaiframe {
     top: 17px;
     width: 330px;
     height: 235px;
   }
-
 }
+
+@media (max-width: 405px) {
+
+  .zapaiframe{
+    top: 15px;
+    left: 24px;
+    z-index: 1;
+    width: 290px;
+    height: 200px;
+  }
+}
+
 
 @media (max-width: 465px) {
   .gmap_canvas {
@@ -1520,12 +1523,10 @@ main{
   }
 }
 /* MODIFICO ANCHO DE FLECHAS DEL CARROULLOUSEL  */
-.carousel-control-next{
-
+.carousel-control-next {
   height: 150px;
 }
 
-.carousel-control-prev{
-
+.carousel-control-prev {
   height: 150px;
 }
