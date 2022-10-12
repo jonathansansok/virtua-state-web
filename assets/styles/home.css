@@ -1354,7 +1354,7 @@ main{
 }
 
 .img_160 {
-  width: 314px;
+  width: 400px;
   margin: 0 auto;
   display: block;
 }
@@ -1396,7 +1396,21 @@ main{
     margin: 0 auto;
     display: block;
   }
+  @media (max-width: 599px) {
+    .img_160 {
+      width: 400px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
 
+  @media (max-width: 405px) {
+    .img_160 {
+      width: 340px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
   .zapa3d {
     top: 0px;
     /* left: 140px; */
@@ -1404,7 +1418,7 @@ main{
 
   .zapaiframe {
     position: absolute;
-    top: 23px;
+    top: 22px;
     left: 55px;
     z-index: 1;
     width: 404px;
@@ -1432,6 +1446,15 @@ main{
     width: 584px;
     height: 438px;
   }
+}
+
+@media (max-width: 599px) {
+  .zapaiframe {
+    top: 17px;
+    width: 330px;
+    height: 235px;
+  }
+
 }
 
 @media (max-width: 465px) {
