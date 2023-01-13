@@ -393,6 +393,11 @@ h1:hover {
   min-height: 600px;
 }
 
+
+.bordesIframes{
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .v3d-virtual-tour-section {
   display: flex;
   flex-direction: column;
@@ -451,7 +456,15 @@ h1:hover {
 .carousel-item {
   width: 100vw;
   height: 100vh;
+
 }
+
+.carousel-inner{
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
 .title-3d-virtual-tour {
   background-color: #8a2be2;
   display: flex;
