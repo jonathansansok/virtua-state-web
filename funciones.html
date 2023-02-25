@@ -54,6 +54,7 @@
 
             <section class="bim">
                 <article class="bim-cuadrito">
+                    <p>White box waiting for design from client.</p>
                     <img class="miniFoto" src="estilos\imagenes-funciones-web\image-1.png" alt="">
                 </article>
                 <article class="bim-texto">
@@ -72,9 +73,108 @@
                     <p class="notes-texto1">Matterport Notes, una función revolucionaria para cambiar el trabajo en equipo y la eficiencia, le mantiene conectado gracias a un flujo de trabajo integrado para planificar proyectos y hablar sobre los espacios. Esta herramienta de comentarios facil de usar hace que el trabajo en equipo y el intercambio de archivos sea algo rápido y cómodo. Los revisores pueden iniciar conversaciones, añadir @menciones, hashtags, enlaces profundos y archivos adjuntos directamente en sus espacios de Matterport.</p>
                     <p class="notes-texto2"> Haga todo su trabajo en un solo lugar con un contexto espacial completo. Invite a colaboradores de su organización, comparta archivos adjuntos, haga preguntas y asigne tareas.</p>
                 </article>
-                <article class="notes-foto">
+                <div class="container">
+                  <div class="tab-container">
+                    <div class="tab-filter-container">
+                      <li class="filter-btn active" data-tab="web-design">
+                        <ion-icon name="desktop-outline"></ion-icon>
+                        Space
+                      </li>
+                      <li class="filter-btn" data-tab="web-development">
+                        <ion-icon name="logo-nodejs"></ion-icon>
+                        Details
+                      </li>
+                      <li class="filter-btn" data-tab="ux-design">
+                        <ion-icon name="diamond-outline"></ion-icon>
+                        ADD-ONS
+                      </li>
+                      <li class="filter-btn" data-tab="app-development">
+                        <ion-icon name="logo-google-playstore"></ion-icon>
+                        Download
+                      </li>
+                    </div>
+                    <div class="tab-filter-item-container">
+                      <div class="tab-item web-design select_tab">
+                        <div class="tab-content-left">
+                          <img
+                            src="images/web design.jpg"
+                            alt="web design"
+                            class="tab-img"
+                          />
+                        </div>
+                        <div class="tab-content-right">
+                          <h1 class="tab-heading">Responsive Web Design</h1>
+                          <p class="paragraph">
+                            Web design means creating websites with user-friendly structure
+                            and with aesthetic approach. A web designer always thinks about
+                            the layout, color scheme and unique design of a website
+                          </p>
+                          <a href="#!" class="btn-primary">Read More</a>
+                        </div>
+                      </div>
+                      <div class="tab-item web-development">
+                        <div class="tab-content-left">
+                          <h1 class="tab-heading">Web Development</h1>
+                          <p class="paragraph">
+                            Web Development consists of two segments front end development
+                            and backend development. Front-end Developers work with visual
+                            designs of a website and build the sites with using of code
+                          </p>
+                          <a href="#!" class="btn-primary">Read More</a>
+                        </div>
+                        <div class="tab-content-right">
+                          <img
+                            src="images/web-development.jpg"
+                            alt="web development"
+                            class="tab-img"
+                          />
+                        </div>
+                      </div>
+                      <div class="tab-item ux-design">
+                        <div class="tab-content-left">
+                          <img src="images/ux-ui.jpg" alt="UI/UX Design" class="tab-img" />
+                        </div>
+                        <div class="tab-content-right">
+                          <h1 class="tab-heading">UI UX Design</h1>
+                          <p class="paragraph">
+                            This course UX & UI Design is designed for those people, who
+                            wants to design anything to keep users on first priority and
+                            working on to make them happy.
+                          </p>
+                          <a href="#!" class="btn-primary">Read More</a>
+                        </div>
+                      </div>
+                      <div class="tab-item app-development">
+                        <div class="tab-content-left">
+                          <h1 class="tab-heading">App Development</h1>
+                          <p class="paragraph">
+                            With the world going mobile, the importance of apps is
+                            increasing by the day. App development hence refers to the
+                            creation of applications to be used on mobile devices.
+                          </p>
+                          <a href="#!" class="btn-primary">Read More</a>
+                        </div>
+                        <div class="tab-content-right">
+                          <img
+                            src="images/app development.png"
+                            alt="UI/UX Design"
+                            class="tab-img"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+<!--                 <article class="notes-foto">
                     <img class="miniFotoNotes" src="estilos\imagenes-funciones-web\image-1.png"  alt="">
-                </article>
+                </article> -->
                 <section class="notes-texto-largo">
                     <p class="notes-texto-largo1">Cualquier persona con acceso de edición a su espacio puede ver, crear y comentar con la función Matterport Notes en tiempo real. Notes le permite seguir el proceso y recibir notificaciones cuando se abren archivos o se añaden comentarios. Incluso puede enviar recordatorios, actualizar los plazos o cerrar flujos de trabajo.</p>
                     <p class="notes-texto-largo2"> Es ideal para cualquier proyecto que implique la documentación del espacio, como es el caso de los contratistas y los diseñadores de interiores que necesitan hablar de las diferentes opciones con los propietarios, los proveedores de seguros que deben confirmar las valoraciones para obtener unas reclamaciones precisas y los minoristas que gestionan los rediseños de las tiendas desde sus escritorios. La version beta abierta de Notes esta disponible para todos los planes de suscripción. Con Matterport Notes, puede iniciar una conversación en cualquier espacio.</p>
@@ -320,6 +420,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script> -->
 <script type="module" src="https://cdn.jsdelivr.net/npm/@leadsales/
 leadclick@1.11.1/dist/leadclick/leadclick.esm.js"></script>
+<script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 
 </html>
