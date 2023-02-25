@@ -51,7 +51,7 @@ border-radius: 8px;
 }
 .cielo{ 
     height: 520px;
-    background-image: url("./imagenes-funciones-web/digital-twins.png");     
+    background-image: url("../assets/img/sofa.jpg");     
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,7 +76,7 @@ border-radius: 8px;
 .cielo ul li a { 
     display: inline-block;
     text-decoration: none;
-    color: #FF1493;
+    color: #7FFF00;
     position: relative;
 
 }
@@ -105,7 +105,7 @@ border-radius: 8px;
 
 }
 .cielo-servicios:hover {
-    color: #8a2be2 ;
+    color: #FF1493 ;
 }
 
 h1:hover{
@@ -551,7 +551,7 @@ header {
         flex-wrap: wrap;
         align-items: start;
         margin-top: 100px;
-        gap: 0px 0px;
+        gap: 0px 40px;
 }
 .miniFoto4k{
     width: 70px;
