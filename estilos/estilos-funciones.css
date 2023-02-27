@@ -538,7 +538,7 @@ header {
   --borde-negro: #00000050;
   --marcado: rgb(127, 195, 255);
   /* Tipografía */
-  --tipo-principal: Helvetica, Arial, sans-serif;
+/*   --tipo-principal: Helvetica, Arial, sans-serif; */
 }
 
 /* Las adaptamos al modo oscuro */
@@ -583,9 +583,9 @@ time, mark, audio, video, button {
 } */
 
 video, iframe, figure {
-  max-width: 100%;
+ /*  max-width: 100%;
   width: 100%;
-  display: block;
+  display: block; */
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center center;
@@ -595,10 +595,10 @@ video, iframe, figure {
 a {
   display: block;
 }
-
+/* 
 p a {
   display: inline;
-}
+} */
 
 li {
   list-style-type: none;
@@ -1052,9 +1052,9 @@ svg {
   h5 {
     width: 340px;
   }
-  p {
+/*   p {
     width: 350px;
-  }
+  } */
 
   .miniFoto {
     width: 350px;
