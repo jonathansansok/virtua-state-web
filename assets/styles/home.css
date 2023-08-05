@@ -123,7 +123,7 @@ h1:hover {
 }
 
 ::after {
-  content: "";
+
   position: absolute;
   bottom: 0;
   left: 0;
@@ -476,6 +476,7 @@ h1:hover {
   width: 100%;
   margin-bottom: 20px;
   border-radius: 10px;
+  font-size: 3.4rem;
 }
 
 .title-3d-render {
@@ -519,18 +520,26 @@ h1:hover {
 
 /* SECTION3 */
 .section3 {
-  background-color: #7fff00;
+/*   background-color: #7fff00; */
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-
+  background-color: #3cff2b;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   letter-spacing: 1.1rem;
   max-height: 800px;
-}
 
+}
+#particles-js{
+  background-color: #7fff00 ;
+  position: fixed;
+  position: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+}
 .img_section {
   max-width: 750px;
 }
@@ -554,12 +563,15 @@ h1:hover {
 
 .section3_text {
   font-family: "MonumentExtended", sans-serif;
-  font-size: 20px;
   font-weight: 800;
   color: rgb(250, 250, 250);
   text-align: center;
-  margin: 0;
+  margin-top: 150px;
+/*   margin-bottom: 40px; */
   letter-spacing: 5px;
+  padding: 20px 60px;
+  background-color: #8a2ae3;
+  border-radius: 20px;
 }
 
 @media (min-width: 768px) {
@@ -1370,15 +1382,43 @@ main {
 
 .cuidarAltura {
   height: 800px;
+  margin-top: 150px;
 }
 
 @media (max-width: 768px) {
   .cuidarAltura {
     height: 400px;
   }
+  .cuidarAltura-3dscan {
+    height: 400px;
+  }
+
 }
 @media (max-width: 600px) {
   .cuidarAltura {
+    height: 300px;
+  }
+  .cuidarAltura-3dscan {
+    height: 400px;
+
+  }
+  .section3_text{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .particles-js{
+    max-height: 50px;
+  }
+  .section3_text_container{
+    height: 100px;
+  }
+  .section3_text{
+    margin-top: 50px;
+  }
+  #particles-js{
+    height: 300;
+  }
+  .cuidarAltura-3dscan{
     height: 300px;
   }
 }
