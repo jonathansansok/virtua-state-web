@@ -590,6 +590,11 @@ h1:hover {
   letter-spacing: 1.1rem;
   max-height: 800px;
 }
+@media (max-width: 768px) {
+  .section4 {
+    max-height: 570px;
+  }
+}
 
 .img_section {
   max-width: 750px;
