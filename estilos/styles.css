@@ -107,9 +107,11 @@ border-radius: 8px;
     color: #8a2be2 ;
 }
 
-h1:hover{
+h1{
     text-shadow: red -6px 0, cyan 6px 0  ;
-
+}
+h1:hover{
+    text-shadow: none ;
 }
 /* .video-intro { grid-area: video-intro; 
     background-color: black;
