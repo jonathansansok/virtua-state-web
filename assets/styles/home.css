@@ -1008,9 +1008,9 @@ main {
 
 /* termina CYBERPUNKER NEVER PONY ------------------------------*/
 
-/* EMPIEZA PUENTE  2022------------------------------*/
+/* EMPIEZA PUENTE  2024------------------------------*/
 
-.puente-main2022 {
+.puente-main2024 {
   background-image: url("../img/puente_filtro.png");
   height: 570px;
   background-size: auto;
@@ -1018,7 +1018,7 @@ main {
   border-bottom: 30px solid black;
 }
 
-/* TERMINA PUENTE 2022------------------------------*/
+/* TERMINA PUENTE 2024------------------------------*/
 
 @media (min-width: 537px) {
   .section9Puente {
@@ -1252,7 +1252,7 @@ main {
   margin-bottom: 0;
 }
 
-.trends_2022 {
+.trends_2024 {
   font-family: "MonumentExtended", sans-serif;
   font-size: 40px;
   color: #ffffff;
