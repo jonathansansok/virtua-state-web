@@ -40,62 +40,97 @@
         if (!el) return; // aqui: no montamos si no existe el contenedor
         window.particlesJS(id, config);
       }
-      
+
       // aqui: config base liviana (no la default pesada de la lib)
       const BASE_CONFIG = {
         particles: {
           number: { value: 120, density: { enable: false } },
-          color: { value: "#000000" },                                        // aqui: negro
-          shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
+          color: { value: "#000000" }, // aqui: negro
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+          },
           opacity: { value: 0.5, random: false },
           size: { value: 3, random: true },
-          line_linked: { enable: true, distance: 150, color: "#000000", opacity: 0.4, width: 1 },
-          move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#000000",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+          },
         },
         interactivity: {
           detect_on: "canvas",
-          events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+          },
           modes: {
             grab: { distance: 400, line_linked: { opacity: 1 } },
-            bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
             repulse: { distance: 200, duration: 0.4 },
             push: { particles_nb: 4 },
-            remove: { particles_nb: 2 }
-          }
+            remove: { particles_nb: 2 },
+          },
         },
-        retina_detect: true
+        retina_detect: true,
       };
-      
+
       const CONFIG_SECTION3 = { ...BASE_CONFIG };
       const CONFIG_SECTION6 = {
         ...BASE_CONFIG,
         particles: {
           ...BASE_CONFIG.particles,
           color: { value: "#ffffff" },
-          line_linked: { ...BASE_CONFIG.particles.line_linked, color: "#ffffff" }
-        }
+          line_linked: {
+            ...BASE_CONFIG.particles.line_linked,
+            color: "#ffffff",
+          },
+        },
       };
-      
+
       // aca: inicializo cada una SOLO si existe el contenedor
       document.addEventListener("DOMContentLoaded", () => {
         mountParticles("particles-js", CONFIG_SECTION3); // aqui: section3
         mountParticles("particles-ar", CONFIG_SECTION6); // aqui: section6
       });
-      
+
       // aca: debounce de resize -> recalcula canvas y densidad sin romper instancias
       let _pzTimer;
       window.addEventListener("resize", () => {
         clearTimeout(_pzTimer);
         _pzTimer = setTimeout(() => {
-          (window.pJSDom || []).forEach(inst => inst?.pJS?.fn?.particlesRefresh?.());
+          (window.pJSDom || []).forEach((inst) =>
+            inst?.pJS?.fn?.particlesRefresh?.()
+          );
         }, 200);
       });
-      
+
       // opcional: si usás AOS, al entrar la sección refrescamos por si cambió el alto
       document.addEventListener("aos:in", () => {
-        (window.pJSDom || []).forEach(inst => inst?.pJS?.fn?.particlesRefresh?.());
+        (window.pJSDom || []).forEach((inst) =>
+          inst?.pJS?.fn?.particlesRefresh?.()
+        );
       });
-      </script>
+    </script>
   </head>
   <body>
     <leadclick-widget
@@ -262,179 +297,82 @@
           <h2 class="tection1_text title-3d-virtual-tour">3D VIRTUAL TOUR</h2>
         </div>
         <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="4"
-              aria-label="Slide 5"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="5"
-              aria-label="Slide 6"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="6"
-              aria-label="Slide 7"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="7"
-              aria-label="Slide 8"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="8"
-              aria-label="Slide 9"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=kJrTHYAKfuN"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=P9rBeZdfzXM"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=gRHH6NgcAws"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=BGcMzzBNQFo"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=uqbf2sbGUZc"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=xuqNCoxqWRQ"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=aFayvkNa1XN"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src="https://my.matterport.com/show/?m=ti544onKan6"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe
-                class="bordesIframes"
-                style="width: 100vw; height: 100vh"
-                src=""
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking"
-              ></iframe>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <!-- Reindexados tras quitar 1,5,8 y el vacío -->
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+            class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+          <!-- (QUITADO) antes había un 6º indicator para el slide vacío -->
         </div>
+      
+        <div class="carousel-inner">
+          <!-- Activo (antes #2) -->
+          <div class="carousel-item active">
+            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
+              src="https://my.matterport.com/show/?m=P9rBeZdfzXM" frameborder="0"
+              allowfullscreen allow="xr-spatial-tracking"></iframe>
+          </div>
+      
+          <!-- antes #3 -->
+          <div class="carousel-item">
+            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
+              src="https://my.matterport.com/show/?m=gRHH6NgcAws" frameborder="0"
+              allowfullscreen allow="xr-spatial-tracking"></iframe>
+          </div>
+      
+          <!-- antes #4 -->
+          <div class="carousel-item">
+            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
+              src="https://my.matterport.com/show/?m=BGcMzzBNQFo" frameborder="0"
+              allowfullscreen allow="xr-spatial-tracking"></iframe>
+          </div>
+      
+          <!-- antes #6 -->
+          <div class="carousel-item">
+            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
+              src="https://my.matterport.com/show/?m=xuqNCoxqWRQ" frameborder="0"
+              allowfullscreen allow="xr-spatial-tracking"></iframe>
+          </div>
+      
+          <!-- antes #7 -->
+          <div class="carousel-item">
+            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
+              src="https://my.matterport.com/show/?m=aFayvkNa1XN" frameborder="0"
+              allowfullscreen allow="xr-spatial-tracking"></iframe>
+          </div>
+      
+          <!-- Slide vacío (REMOVIDO / COMENTADO) -->
+          <!--
+          <div class="carousel-item">
+            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
+              src="" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
+          </div>
+          -->
+        </div>
+      
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
       </section>
       <!-- EMPIEZA RENDERS----------------------------------------- -->
       <section class="v3d-virtual-tour-section">
@@ -576,9 +514,8 @@
         </h6>
       </section>
 
-
-      <div data-aos="fade-up"  class="section3 mb-3 mt-2 pt-5 pb-5" >
-        <div class="section3_text_container mb-4 mt-0" id="particles-js" >
+      <div data-aos="fade-up" class="section3 mb-3 mt-2 pt-5 pb-5">
+        <div class="section3_text_container mb-4 mt-0" id="particles-js">
           <p class="section3_text section3_text2">360 PHOTOGRAPHY</p>
         </div>
         <div class="position-relative cuidarAltura">
@@ -629,17 +566,17 @@
         <h6 class="boton-masinfo-3d-scan mt-3">
           <a href="./renders.html" target="_blank">+ INFO</a>
         </h6>
-                <div class="burbujas">
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
+        <div class="burbujas">
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
+          <div class="burbuja"></div>
         </div>
       </div>
 
@@ -671,50 +608,56 @@
       </div>
 
       <div data-aos="fade-up" class="section6 mb-3 pt-5 pb-5">
-        <div id="particles-ar"></div> <!-- aqui vive el canvas -->
-      
+        <div id="particles-ar"></div>
+        <!-- aqui vive el canvas -->
+
         <div class="section6_text_container mb-4">
           <p class="section6_text">AUGMENTED REALITY</p>
         </div>
-      
+
         <img
           class="img-fluid pb-5 pt-5 reallity_apps_img"
           src="./assets/img/augmented_reallity_apps.png"
           alt=""
         />
-      
+
         <h6 class="boton-masinfo facebook-link mb-5">
-          <a class="facebook-link" href="./reco-virtual.html" target="_blank">+INFO</a>
+          <a class="facebook-link" href="./reco-virtual.html" target="_blank"
+            >+INFO</a
+          >
         </h6>
       </div>
 
-<!-- SECTION 7 -->
-<section id="section7" data-aos="fade-up" class="section7 mb-3 pt-5 pb-0 filters-ig-main">
-  <!-- capa WebGL detrás -->
-  <div id="vanta-ig-bg" aria-hidden="true"></div>
+      <!-- SECTION 7 -->
+      <section
+        id="section7"
+        data-aos="fade-up"
+        class="section7 mb-3 pt-5 pb-0 filters-ig-main"
+      >
+        <!-- capa WebGL detrás -->
+        <div id="vanta-ig-bg" aria-hidden="true"></div>
 
-  <div class="section7_text_container mb-4">
-    <p class="section7_text">
-      INSTAGRAM/FACEBOOK <br />
-      FILTERS
-    </p>
-  </div>
+        <div class="section7_text_container mb-4">
+          <p class="section7_text">
+            INSTAGRAM/FACEBOOK <br />
+            FILTERS
+          </p>
+        </div>
 
-  <img
-    class="img-fluid pb-2 widthpt-5 reallity_apps_img"
-    src="./assets/img/filtros.png"
-    alt="Filtros AR"
-  />
+        <img
+          class="img-fluid pb-2 widthpt-5 reallity_apps_img"
+          src="./assets/img/filtros.png"
+          alt="Filtros AR"
+        />
 
-  <h6 class="boton-masinfo3 facebook-link mb-5">
-    <a href="./reco-virtual.html" target="_blank">+INFO</a>
-  </h6>
-</section>
+        <h6 class="boton-masinfo3 facebook-link mb-5">
+          <a href="./reco-virtual.html" target="_blank">+INFO</a>
+        </h6>
+      </section>
 
-<!-- Cargar libs (UNA sola vez, cerca del cierre de body) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
-
+      <!-- Cargar libs (UNA sola vez, cerca del cierre de body) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+      <script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
 
       <!-- EMPIEZA CYBERPUNKER------------------------------------- -->
       <div data-aos="fade-up" class="section8 mb-0 pt-5 pb-5">
@@ -1112,47 +1055,52 @@ leadclick@1.11.1/dist/leadclick/leadclick.esm.js"
           });
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
+        <script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
 
-<!-- 2) Tu bloque de inicialización (esto que me pasaste) -->
-<script>
-  (function () {
-    let vantaIg = null;
+        <!-- 2) Tu bloque de inicialización (esto que me pasaste) -->
+        <script>
+          (function () {
+            let vantaIg = null;
 
-    function initVanta() {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion || vantaIg) return;
+            function initVanta() {
+              const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+              ).matches;
+              if (reduceMotion || vantaIg) return;
 
-      vantaIg = VANTA.NET({
-        el: "#vanta-ig-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: 0x7fff00,
-        backgroundColor: 0x0,
-        points: 12.0,
-        maxDistance: 20.0,
-        spacing: 18.0,
-        showDots: false
-      });
-    }
+              vantaIg = VANTA.NET({
+                el: "#vanta-ig-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.0,
+                minWidth: 200.0,
+                scale: 1.0,
+                scaleMobile: 1.0,
+                color: 0x7fff00,
+                backgroundColor: 0x0,
+                points: 12.0,
+                maxDistance: 20.0,
+                spacing: 18.0,
+                showDots: false,
+              });
+            }
 
-    function destroyVanta() {
-      if (vantaIg && typeof vantaIg.destroy === 'function') {
-        vantaIg.destroy();
-        vantaIg = null;
-      }
-    }
+            function destroyVanta() {
+              if (vantaIg && typeof vantaIg.destroy === "function") {
+                vantaIg.destroy();
+                vantaIg = null;
+              }
+            }
 
-    document.addEventListener("DOMContentLoaded", initVanta);
-    window.addEventListener("resize", () => vantaIg && vantaIg.resize());
-    window.addEventListener("pagehide", destroyVanta);
-  })();
-</script>
+            document.addEventListener("DOMContentLoaded", initVanta);
+            window.addEventListener(
+              "resize",
+              () => vantaIg && vantaIg.resize()
+            );
+            window.addEventListener("pagehide", destroyVanta);
+          })();
+        </script>
       </div>
     </main>
   </body>
