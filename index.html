@@ -32,6 +32,71 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
+    <script>
+      // aca: BORRAR cualquier "particlesJS({ ... })" sin id que tengas antes.
+      // aca: helper seguro para montar por id (no choca con otras instancias)
+      function mountParticles(id, config) {
+        const el = document.getElementById(id);
+        if (!el) return; // aqui: no montamos si no existe el contenedor
+        window.particlesJS(id, config);
+      }
+      
+      // aqui: config base liviana (no la default pesada de la lib)
+      const BASE_CONFIG = {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } }, // aqui: 80 partículas
+          color: { value: "#000000" },                                        // aqui: negro
+          shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
+          opacity: { value: 0.5, random: false },
+          size: { value: 3, random: true },
+          line_linked: { enable: true, distance: 150, color: "#000000", opacity: 0.4, width: 1 },
+          move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+          modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 }
+          }
+        },
+        retina_detect: true
+      };
+      
+      // aqui: variantes por sección (colores distintos para no pisar estética)
+      const CONFIG_SECTION3 = { ...BASE_CONFIG }; // aqui: negro sobre tu #7fff00
+      const CONFIG_SECTION6 = {
+        ...BASE_CONFIG,
+        particles: {
+          ...BASE_CONFIG.particles,
+          color: { value: "#ffffff" },                                         // aqui: blanco para contrastar
+          line_linked: { ...BASE_CONFIG.particles.line_linked, color: "#ffffff" }
+        }
+      };
+      
+      // aca: inicializo cada una SOLO si existe el contenedor
+      document.addEventListener("DOMContentLoaded", () => {
+        mountParticles("particles-js", CONFIG_SECTION3); // aqui: section3
+        mountParticles("particles-ar", CONFIG_SECTION6); // aqui: section6
+      });
+      
+      // aca: debounce de resize -> recalcula canvas y densidad sin romper instancias
+      let _pzTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(_pzTimer);
+        _pzTimer = setTimeout(() => {
+          (window.pJSDom || []).forEach(inst => inst?.pJS?.fn?.particlesRefresh?.());
+        }, 200);
+      });
+      
+      // opcional: si usás AOS, al entrar la sección refrescamos por si cambió el alto
+      document.addEventListener("aos:in", () => {
+        (window.pJSDom || []).forEach(inst => inst?.pJS?.fn?.particlesRefresh?.());
+      });
+      </script>
   </head>
   <body>
     <leadclick-widget
@@ -511,15 +576,7 @@
           <a href="./renders.html" target="_blank">+ INFO</a>
         </h6>
       </section>
-      <!--         <div data-aos="fade-up" class="section2 position-relative mb-3 pt-5 pb-5"> -->
-      <!-- <div class=""> -->
-      <!--                 <img class="img-section" src="./assets/img/3dvirtualtour2.png" alt=""> -->
-      <!--    </div> -->
-      <!--             <div data-aos="fade-up" class="container_sectionText_2 position-absolute section2_text text-center"> -->
-      <!-- <h2 class="section2_text_1">RECORRIDOS <br> VIRTUALES</h2><br> -->
-      <!--                 <h2 class="section2_text_2">3<span class="section2_text_2_D">D</span></h2> -->
-      <!--  </div> -->
-      <!--  </div> -->
+
 
       <div data-aos="fade-up"  class="section3 mb-3 mt-2 pt-5 pb-5" >
         <div class="section3_text_container mb-4 mt-0" id="particles-js" >
@@ -615,18 +672,20 @@
       </div>
 
       <div data-aos="fade-up" class="section6 mb-3 pt-5 pb-5">
+        <div id="particles-ar"></div> <!-- aqui vive el canvas -->
+      
         <div class="section6_text_container mb-4">
           <p class="section6_text">AUGMENTED REALITY</p>
         </div>
+      
         <img
           class="img-fluid pb-5 pt-5 reallity_apps_img"
           src="./assets/img/augmented_reallity_apps.png"
           alt=""
         />
+      
         <h6 class="boton-masinfo facebook-link mb-5">
-          <a class="facebook-link" href="./reco-virtual.html" target="_blank"
-            >+INFO</a
-          >
+          <a class="facebook-link" href="./reco-virtual.html" target="_blank">+INFO</a>
         </h6>
       </div>
 
