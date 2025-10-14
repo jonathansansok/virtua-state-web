@@ -824,7 +824,35 @@ h1:hover {
 .filters-ig-main {
   margin-bottom: 0px;
 }
+/* capa WebGL de Vanta detrás del contenido */
+#section7 { position: relative; overflow: hidden; }
+#vanta-ig-bg { position: absolute; inset: 0; z-index: 0; }
 
+/* todo el contenido por encima del fondo */
+#section7 > *:not(#vanta-ig-bg) { position: relative; z-index: 1; }
+
+.section7_text_container {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
+  border: none; /* quitamos borde */
+  box-shadow: none; /* quitamos la sombra interna */
+  border-radius: 14px;
+  padding: 0;
+} 
+
+/* botón neon-on-hover */
+.boton-masinfo3 a{
+  text-decoration: none;
+  color: #7fff00;
+  font-size: 1.8rem;
+  font-family: "MonumentExtended", sans-serif;
+  transition: filter .2s ease, text-shadow .2s ease;
+}
+.boton-masinfo3 a:hover{
+  filter: brightness(1.2);
+  text-shadow: 0 0 8px #7fff00, 0 0 18px #7fff00;
+}
 main {
   background-color: #000;
 }

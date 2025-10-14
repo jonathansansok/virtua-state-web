@@ -44,7 +44,7 @@
       // aqui: config base liviana (no la default pesada de la lib)
       const BASE_CONFIG = {
         particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } }, // aqui: 80 partículas
+          number: { value: 120, density: { enable: false } },
           color: { value: "#000000" },                                        // aqui: negro
           shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
           opacity: { value: 0.5, random: false },
@@ -66,13 +66,12 @@
         retina_detect: true
       };
       
-      // aqui: variantes por sección (colores distintos para no pisar estética)
-      const CONFIG_SECTION3 = { ...BASE_CONFIG }; // aqui: negro sobre tu #7fff00
+      const CONFIG_SECTION3 = { ...BASE_CONFIG };
       const CONFIG_SECTION6 = {
         ...BASE_CONFIG,
         particles: {
           ...BASE_CONFIG.particles,
-          color: { value: "#ffffff" },                                         // aqui: blanco para contrastar
+          color: { value: "#ffffff" },
           line_linked: { ...BASE_CONFIG.particles.line_linked, color: "#ffffff" }
         }
       };
@@ -689,22 +688,33 @@
         </h6>
       </div>
 
-      <div data-aos="fade-up" class="section7 mb-3 pt-5 pb-0 filters-ig-main">
-        <div class="section7_text_container mb-4">
-          <p class="section7_text">
-            INSTAGRAM/FACEBOOK <br />
-            FILTERS
-          </p>
-        </div>
-        <img
-          class="img-fluid pb-2 widthpt-5 reallity_apps_img"
-          src="./assets/img/filtros.png"
-          alt=""
-        />
-        <h6 class="boton-masinfo3 facebook-link  mb-5">
-          <a href="./reco-virtual.html" target="_blank">+INFO</a>
-        </h6>
-      </div>
+<!-- SECTION 7 -->
+<section id="section7" data-aos="fade-up" class="section7 mb-3 pt-5 pb-0 filters-ig-main">
+  <!-- capa WebGL detrás -->
+  <div id="vanta-ig-bg" aria-hidden="true"></div>
+
+  <div class="section7_text_container mb-4">
+    <p class="section7_text">
+      INSTAGRAM/FACEBOOK <br />
+      FILTERS
+    </p>
+  </div>
+
+  <img
+    class="img-fluid pb-2 widthpt-5 reallity_apps_img"
+    src="./assets/img/filtros.png"
+    alt="Filtros AR"
+  />
+
+  <h6 class="boton-masinfo3 facebook-link mb-5">
+    <a href="./reco-virtual.html" target="_blank">+INFO</a>
+  </h6>
+</section>
+
+<!-- Cargar libs (UNA sola vez, cerca del cierre de body) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
+
 
       <!-- EMPIEZA CYBERPUNKER------------------------------------- -->
       <div data-aos="fade-up" class="section8 mb-0 pt-5 pb-5">
@@ -942,7 +952,7 @@
           <div class="mapa"></div>
           <div class="derechos">
             <p class="m-0" id="preguntame">Preguntame si jodemos</p>
-            <p class="m-0" id="preguntame">Copyright, 2024. VIRTUASTATE.NET</p>
+            <p class="m-0" id="preguntame">Copyright, 2025. VIRTUASTATE.NET</p>
           </div>
         </footer>
 
@@ -1101,6 +1111,48 @@ leadclick@1.11.1/dist/leadclick/leadclick.esm.js"
             retina_detect: true,
           });
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
+
+<!-- 2) Tu bloque de inicialización (esto que me pasaste) -->
+<script>
+  (function () {
+    let vantaIg = null;
+
+    function initVanta() {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion || vantaIg) return;
+
+      vantaIg = VANTA.NET({
+        el: "#vanta-ig-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x7fff00,
+        backgroundColor: 0x0,
+        points: 12.0,
+        maxDistance: 20.0,
+        spacing: 18.0,
+        showDots: false
+      });
+    }
+
+    function destroyVanta() {
+      if (vantaIg && typeof vantaIg.destroy === 'function') {
+        vantaIg.destroy();
+        vantaIg = null;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initVanta);
+    window.addEventListener("resize", () => vantaIg && vantaIg.resize());
+    window.addEventListener("pagehide", destroyVanta);
+  })();
+</script>
       </div>
     </main>
   </body>
