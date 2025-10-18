@@ -265,7 +265,7 @@ h1:hover { text-shadow: red -6px 0, cyan 6px 0; }
 
 /* ============== SECTION 7 (Vanta) ============== */
 .section7 {
-  background-color: #8a2ae3; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; letter-spacing: 1.1rem;
+  background-color: black; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; letter-spacing: 1.1rem;
 }
 #section7 { position: relative; overflow: hidden; }
 #vanta-ig-bg { position: absolute; inset: 0; z-index: 0; }
@@ -548,7 +548,7 @@ h1:hover { text-shadow: red -6px 0, cyan 6px 0; }
   justify-content: center;
   align-items: center;
   overflow: visible;
-  margin-top: 40px;
+  margin-top: 100px;
 
   background:#1100ff; border-radius:16px;
   
@@ -584,7 +584,7 @@ h1:hover { text-shadow: red -6px 0, cyan 6px 0; }
 .section3_text{
   position: relative;
   z-index: 1;
-  margin: 0;
+
   padding: .45em 1.1em;               /* “gordo” del pill */
   background: rgb(255,20,147);                /* ← color de fondo “ese” */
   color: #fff;                         /* ← texto blanco */
@@ -595,4 +595,98 @@ h1:hover { text-shadow: red -6px 0, cyan 6px 0; }
   letter-spacing: clamp(2px, .9vw, 10px);
   font-size: clamp(18px, 4.6vw, 40px); /* ← más chico que antes */
   line-height: 1.1;
+  margin-top: 100px; 
+}
+/* ===== Tokens globales ===== */
+:root{
+  --pi-bg: linear-gradient(135deg, #ff1493 0%, #8a2be2 100%);
+  --pi-text: #000;                     /* texto negro (pediste negro) */
+  --pi-glow: rgba(138,43,226,.55);
+  --pi-radius: 14px;
+  --pi-tracking: .12em;               /* tracking unificado */
+  --pi-hover-dur: .38s;               /* hover no rápido */
+  --pi-ease: cubic-bezier(.22,.61,.36,1);
+}
+
+/* Wrappers de +INFO: centran, limpian y dan el margin-bottom */
+.boton-masinfo,
+.boton-masinfo3,
+.boton-masinfo-3d-scan{
+  margin: 28px auto 50px auto;        /* incluye el mb:10px pedido */
+  padding: 0;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* El enlace es el botón — se aplica a TODOS */
+.boton-masinfo a,
+.boton-masinfo3 a,
+.boton-masinfo-3d-scan a,
+.btn-plusinfo{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: .65em 1.2em;
+  font-family: "MonumentExtended", sans-serif;
+  font-size: clamp(14px, 2.2vw, 22px);
+  letter-spacing: var(--pi-tracking);
+  line-height: 1;
+  text-decoration: none !important;
+  color: var(--pi-text) !important;   /* negro */
+  background: var(--pi-bg);
+  border: none !important;            /* sin borde fino */
+  border-radius: var(--pi-radius);
+  outline: none;
+  box-shadow: none !important;
+  position: relative;
+  isolation: isolate;
+  transform: translateZ(0);
+  transition:
+    transform var(--pi-hover-dur) var(--pi-ease),
+    filter var(--pi-hover-dur) var(--pi-ease),
+    box-shadow var(--pi-hover-dur) var(--pi-ease),
+    opacity var(--pi-hover-dur) var(--pi-ease);
+}
+
+/* Hover sutil + sin halo tipo “borde” */
+.boton-masinfo a:hover,
+.boton-masinfo3 a:hover,
+.boton-masinfo-3d-scan a:hover,
+.btn-plusinfo:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+/* Click */
+.boton-masinfo a:active,
+.boton-masinfo3 a:active,
+.boton-masinfo-3d-scan a:active,
+.btn-plusinfo:active{
+  transform: translateY(0) scale(.99);
+  filter: brightness(.98) saturate(1.05);
+}
+
+/* Focus accesible */
+.boton-masinfo a:focus-visible,
+.boton-masinfo3 a:focus-visible,
+.boton-masinfo-3d-scan a:focus-visible,
+.btn-plusinfo:focus-visible{
+  outline: 2px solid #7fff00;
+  outline-offset: 3px;
+}
+
+/* Respeta reduce-motion */
+@media (prefers-reduced-motion: reduce){
+  .boton-masinfo a,
+  .boton-masinfo3 a,
+  .boton-masinfo-3d-scan a,
+  .btn-plusinfo{
+    transition: none !important;
+  }
 }

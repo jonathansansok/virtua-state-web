@@ -3,135 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="estilos\favicon\favicon1.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Home VirtuaState</title>
+    <link rel="icon" href="estilos/favicon/favicon1.ico" type="image/x-icon" />
+
+    <!-- //aca: Bootstrap 5.2.2 (UNA sola vez) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/styles/home.css" />
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="icon" href="estilos\favicon\favicon1.ico" type="image/x-icon" />
+    <!-- //aca: Icons y AOS (CSS) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
-    <script>
-      // aca: BORRAR cualquier "particlesJS({ ... })" sin id que tengas antes.
-      // aca: helper seguro para montar por id (no choca con otras instancias)
-      function mountParticles(id, config) {
-        const el = document.getElementById(id);
-        if (!el) return; // aqui: no montamos si no existe el contenedor
-        window.particlesJS(id, config);
-      }
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-      // aqui: config base liviana (no la default pesada de la lib)
-      const BASE_CONFIG = {
-        particles: {
-          number: { value: 120, density: { enable: false } },
-          color: { value: "#000000" }, // aqui: negro
-          shape: {
-            type: "circle",
-            stroke: { width: 0, color: "#000000" },
-            polygon: { nb_sides: 5 },
-          },
-          opacity: { value: 0.5, random: false },
-          size: { value: 3, random: true },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#000000",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-          },
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: true, mode: "repulse" },
-            onclick: { enable: true, mode: "push" },
-            resize: true,
-          },
-          modes: {
-            grab: { distance: 400, line_linked: { opacity: 1 } },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3,
-            },
-            repulse: { distance: 200, duration: 0.4 },
-            push: { particles_nb: 4 },
-            remove: { particles_nb: 2 },
-          },
-        },
-        retina_detect: true,
-      };
-
-      const CONFIG_SECTION3 = { ...BASE_CONFIG };
-      const CONFIG_SECTION6 = {
-        ...BASE_CONFIG,
-        particles: {
-          ...BASE_CONFIG.particles,
-          color: { value: "#ffffff" },
-          line_linked: {
-            ...BASE_CONFIG.particles.line_linked,
-            color: "#ffffff",
-          },
-        },
-      };
-
-      // aca: inicializo cada una SOLO si existe el contenedor
-      document.addEventListener("DOMContentLoaded", () => {
-        mountParticles("particles-js", CONFIG_SECTION3); // aqui: section3
-        mountParticles("particles-ar", CONFIG_SECTION6); // aqui: section6
-      });
-
-      // aca: debounce de resize -> recalcula canvas y densidad sin romper instancias
-      let _pzTimer;
-      window.addEventListener("resize", () => {
-        clearTimeout(_pzTimer);
-        _pzTimer = setTimeout(() => {
-          (window.pJSDom || []).forEach((inst) =>
-            inst?.pJS?.fn?.particlesRefresh?.()
-          );
-        }, 200);
-      });
-
-      // opcional: si usás AOS, al entrar la sección refrescamos por si cambió el alto
-      document.addEventListener("aos:in", () => {
-        (window.pJSDom || []).forEach((inst) =>
-          inst?.pJS?.fn?.particlesRefresh?.()
-        );
-      });
-    </script>
+    <!-- //aca: tu CSS -->
+    <link rel="stylesheet" href="./assets/styles/home.css" />
   </head>
+
   <body>
     <leadclick-widget
       integrations="1"
@@ -297,90 +192,144 @@
           <h2 class="tection1_text title-3d-virtual-tour">3D VIRTUAL TOUR</h2>
         </div>
         <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <!-- Reindexados tras quitar 1,5,8 y el vacío -->
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-            class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-            aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-            aria-label="Slide 5"></button>
-          <!-- (QUITADO) antes había un 6º indicator para el slide vacío -->
-        </div>
-      
-        <div class="carousel-inner">
-          <!-- Activo (antes #2) -->
-          <div class="carousel-item active">
-            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
-              src="https://my.matterport.com/show/?m=P9rBeZdfzXM" frameborder="0"
-              allowfullscreen allow="xr-spatial-tracking"></iframe>
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <!-- Reindexados tras quitar 1,5,8 y el vacío -->
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="4"
+              aria-label="Slide 5"
+            ></button>
+            <!-- (QUITADO) antes había un 6º indicator para el slide vacío -->
           </div>
-      
-          <!-- antes #3 -->
-          <div class="carousel-item">
-            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
-              src="https://my.matterport.com/show/?m=gRHH6NgcAws" frameborder="0"
-              allowfullscreen allow="xr-spatial-tracking"></iframe>
-          </div>
-      
-          <!-- antes #4 -->
-          <div class="carousel-item">
-            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
-              src="https://my.matterport.com/show/?m=BGcMzzBNQFo" frameborder="0"
-              allowfullscreen allow="xr-spatial-tracking"></iframe>
-          </div>
-      
-          <!-- antes #6 -->
-          <div class="carousel-item">
-            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
-              src="https://my.matterport.com/show/?m=xuqNCoxqWRQ" frameborder="0"
-              allowfullscreen allow="xr-spatial-tracking"></iframe>
-          </div>
-      
-          <!-- antes #7 -->
-          <div class="carousel-item">
-            <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
-              src="https://my.matterport.com/show/?m=aFayvkNa1XN" frameborder="0"
-              allowfullscreen allow="xr-spatial-tracking"></iframe>
-          </div>
-      
-          <!-- Slide vacío (REMOVIDO / COMENTADO) -->
-          <!--
+
+          <div class="carousel-inner">
+            <!-- Activo (antes #2) -->
+            <div class="carousel-item active">
+              <iframe
+                class="bordesIframes"
+                style="width: 100vw; height: 100vh"
+                src="https://my.matterport.com/show/?m=P9rBeZdfzXM"
+                frameborder="0"
+                allowfullscreen
+                allow="xr-spatial-tracking"
+              ></iframe>
+            </div>
+
+            <!-- antes #3 -->
+            <div class="carousel-item">
+              <iframe
+                class="bordesIframes"
+                style="width: 100vw; height: 100vh"
+                src="https://my.matterport.com/show/?m=gRHH6NgcAws"
+                frameborder="0"
+                allowfullscreen
+                allow="xr-spatial-tracking"
+              ></iframe>
+            </div>
+
+            <!-- antes #4 -->
+            <div class="carousel-item">
+              <iframe
+                class="bordesIframes"
+                style="width: 100vw; height: 100vh"
+                src="https://my.matterport.com/show/?m=BGcMzzBNQFo"
+                frameborder="0"
+                allowfullscreen
+                allow="xr-spatial-tracking"
+              ></iframe>
+            </div>
+
+            <!-- antes #6 -->
+            <div class="carousel-item">
+              <iframe
+                class="bordesIframes"
+                style="width: 100vw; height: 100vh"
+                src="https://my.matterport.com/show/?m=xuqNCoxqWRQ"
+                frameborder="0"
+                allowfullscreen
+                allow="xr-spatial-tracking"
+              ></iframe>
+            </div>
+
+            <!-- antes #7 -->
+            <div class="carousel-item">
+              <iframe
+                class="bordesIframes"
+                style="width: 100vw; height: 100vh"
+                src="https://my.matterport.com/show/?m=aFayvkNa1XN"
+                frameborder="0"
+                allowfullscreen
+                allow="xr-spatial-tracking"
+              ></iframe>
+            </div>
+
+            <!-- Slide vacío (REMOVIDO / COMENTADO) -->
+            <!--
           <div class="carousel-item">
             <iframe class="bordesIframes" style="width: 100vw; height: 100vh"
               src="" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
           </div>
-          -->
+          --></div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-      
-        <button class="carousel-control-prev" type="button"
-          data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button"
-          data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      
       </section>
       <!-- EMPIEZA RENDERS----------------------------------------- -->
       <section class="v3d-virtual-tour-section">
         <div data-aos="fade-up" class="section1">
           <h2 class="tection1_text title-3d-render">RENDERS</h2>
         </div>
-        <div id="carouselExampleIndicators2" class=" centrandoInfo carousel
-        slide data-bs-ride="carousel" >
+        <div id="carouselExampleIndicators2"
+        class="centrandoInfo carousel slide"
+        data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button
             type="button"
@@ -655,9 +604,7 @@
         </h6>
       </section>
 
-      <!-- Cargar libs (UNA sola vez, cerca del cierre de body) -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-      <script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
+
 
       <!-- EMPIEZA CYBERPUNKER------------------------------------- -->
       <div data-aos="fade-up" class="section8 mb-0 pt-5 pb-5">
@@ -891,7 +838,6 @@
               <p class="m-0 color-negro">Martinez, San Isidro, BA.</p>
             </div>
           </div>
-
           <div class="mapa"></div>
           <div class="derechos">
             <p class="m-0" id="preguntame">Preguntame si jodemos</p>
@@ -899,97 +845,60 @@
           </div>
         </footer>
 
+        <!-- //aca: Cappasity -->
         <script
           async
           src="https://api.cappasity.com/api/player/cappasity-ai"
         ></script>
+
+        <!-- //aca: Bootstrap 5.2.2 (único bundle con Popper incluido) -->
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+          crossorigin="anonymous"
+        ></script>
+
+        <!-- //aca: Three + Vanta (UNA sola vez) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+        <script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
+
+        <!-- //aca: Particles.js -->
+        <script src="/assets/js/particles.min.js"></script>
+
+        <!-- //aca: AOS -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-          integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
-          integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
-          crossorigin="anonymous"
-        ></script>
-        <script>
-          AOS.init();
-        </script>
-        <script src="./assets/js/responsive.js"></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-          crossorigin="anonymous"
-        ></script>
 
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-          crossorigin="anonymous"
-        />
-
+        <!-- //aca: LeadClick -->
         <script
           type="module"
-          src="https://cdn.jsdelivr.net/npm/@leadsales/
-leadclick@1.11.1/dist/leadclick/leadclick.esm.js"
+          src="https://cdn.jsdelivr.net/npm/@leadsales/leadclick@1.11.1/dist/leadclick/leadclick.esm.js"
         ></script>
-        <script src="/assets/js/particles.min.js"></script>
+
+        <!-- //aca: tu JS principal -->
+        <script src="./assets/js/responsive.js"></script>
+
+        <!-- //aqui: inicializaciones globales -->
         <script>
-          particlesJS({
+          // __init-core__
+
+          document.addEventListener("DOMContentLoaded", () => {
+            AOS.init();
+          });
+
+          // //aca: helper Particles
+          function mountParticles(id, config) {
+            const el = document.getElementById(id);
+            if (!el || typeof window.particlesJS !== "function") return;
+            window.particlesJS(id, config);
+          }
+
+          const BASE_PZ = {
             particles: {
-              number: {
-                value: 80,
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-              },
-              color: {
-                value: "#000000",
-              },
-              shape: {
-                type: "circle",
-                stroke: {
-                  width: 0,
-                  color: "#000000",
-                },
-                polygon: {
-                  nb_sides: 5,
-                },
-                image: {
-                  src: "img/github.svg",
-                  width: 100,
-                  height: 100,
-                },
-              },
-              opacity: {
-                value: 0.5,
-                random: false,
-                anim: {
-                  enable: false,
-                  speed: 1,
-                  opacity_min: 0.1,
-                  sync: false,
-                },
-              },
-              size: {
-                value: 3,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 40,
-                  size_min: 0.1,
-                  sync: false,
-                },
-              },
+              number: { value: 120, density: { enable: false } },
+              color: { value: "#000000" },
+              shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
+              opacity: { value: 0.5 },
+              size: { value: 3, random: true },
               line_linked: {
                 enable: true,
                 distance: 150,
@@ -1001,105 +910,100 @@ leadclick@1.11.1/dist/leadclick/leadclick.esm.js"
                 enable: true,
                 speed: 6,
                 direction: "none",
-                random: false,
-                straight: false,
                 out_mode: "out",
-                bounce: false,
-                attract: {
-                  enable: false,
-                  rotateX: 600,
-                  rotateY: 1200,
-                },
               },
             },
             interactivity: {
               detect_on: "canvas",
               events: {
-                onhover: {
-                  enable: true,
-                  mode: "repulse",
-                },
-                onclick: {
-                  enable: true,
-                  mode: "push",
-                },
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" },
                 resize: true,
               },
               modes: {
-                grab: {
-                  distance: 400,
-                  line_linked: {
-                    opacity: 1,
-                  },
-                },
-                bubble: {
-                  distance: 400,
-                  size: 40,
-                  duration: 2,
-                  opacity: 8,
-                  speed: 3,
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
-                },
-                push: {
-                  particles_nb: 4,
-                },
-                remove: {
-                  particles_nb: 2,
-                },
+                repulse: { distance: 200, duration: 0.4 },
+                push: { particles_nb: 4 },
               },
             },
             retina_detect: true,
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-        <script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
+          };
 
-        <!-- 2) Tu bloque de inicialización (esto que me pasaste) -->
-        <script>
-          (function () {
-            let vantaIg = null;
+          const PZ_SECTION3 = { ...BASE_PZ };
+          const PZ_SECTION6 = {
+            ...BASE_PZ,
+            particles: {
+              ...BASE_PZ.particles,
+              color: { value: "#ffffff" },
+              line_linked: {
+                ...BASE_PZ.particles.line_linked,
+                color: "#ffffff",
+              },
+            },
+          };
 
-            function initVanta() {
-              const reduceMotion = window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-              ).matches;
-              if (reduceMotion || vantaIg) return;
+          window.addEventListener("load", () => {
+            mountParticles("particles-js", PZ_SECTION3);
+            mountParticles("particles-ar", PZ_SECTION6);
 
-              vantaIg = VANTA.NET({
-                el: "#vanta-ig-bg",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.0,
-                minWidth: 200.0,
-                scale: 1.0,
-                scaleMobile: 1.0,
-                color: 0x7fff00,
-                backgroundColor: 0x0,
-                points: 12.0,
-                maxDistance: 20.0,
-                spacing: 18.0,
-                showDots: false,
-              });
-            }
+            let _pzTimer;
+            window.addEventListener("resize", () => {
+              clearTimeout(_pzTimer);
+              _pzTimer = setTimeout(() => {
+                (window.pJSDom || []).forEach((inst) =>
+                  inst?.pJS?.fn?.particlesRefresh?.()
+                );
+              }, 200);
+            });
 
-            function destroyVanta() {
-              if (vantaIg && typeof vantaIg.destroy === "function") {
-                vantaIg.destroy();
-                vantaIg = null;
+            // //aca: inicializar Vanta
+            (function () {
+              let vantaIg = null;
+
+              function initVanta() {
+                const reduceMotion = window.matchMedia(
+                  "(prefers-reduced-motion: reduce)"
+                ).matches;
+                if (reduceMotion || vantaIg) return;
+
+                vantaIg = VANTA.NET({
+                  el: "#vanta-ig-bg",
+                  mouseControls: true,
+                  touchControls: true,
+                  gyroControls: false,
+                  minHeight: 200.0,
+                  minWidth: 200.0,
+                  scale: 1.0,
+                  scaleMobile: 1.0,
+                  color: 0x7fff00,
+                  backgroundColor: 0x000000,
+                  points: 12.0,
+                  maxDistance: 20.0,
+                  spacing: 18.0,
+                  showDots: false,
+                });
               }
-            }
 
-            document.addEventListener("DOMContentLoaded", initVanta);
-            window.addEventListener(
-              "resize",
-              () => vantaIg && vantaIg.resize()
+              function destroyVanta() {
+                if (vantaIg && typeof vantaIg.destroy === "function") {
+                  vantaIg.destroy();
+                  vantaIg = null;
+                }
+              }
+
+              initVanta();
+              window.addEventListener(
+                "resize",
+                () => vantaIg && vantaIg.resize()
+              );
+              window.addEventListener("pagehide", destroyVanta);
+            })();
+          });
+
+          document.addEventListener("aos:in", () => {
+            (window.pJSDom || []).forEach((inst) =>
+              inst?.pJS?.fn?.particlesRefresh?.()
             );
-            window.addEventListener("pagehide", destroyVanta);
-          })();
+          });
         </script>
       </div>
     </main>
