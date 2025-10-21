@@ -1694,3 +1694,70 @@ h1:hover {
 @media (max-width: 910px){
   body:not(.js-ready) .cielo .cieloLista{ transition: none !important; }
 }
+
+/* ================== FIX +INFO ================== */
+/* ================== FIX +INFO SIN BORDES ================== */
+
+/* //aqui: que .facebook-link no fuerce ancho */
+.facebook-link { 
+  width: auto !important;
+  padding-top: 3px;
+}
+
+/* //aca: ancho unificado y layout del anchor (el botón real) */
+.boton-masinfo a,
+.boton-masinfo3 a,
+.boton-masinfo-3d-scan a {
+  width: 260px;                 /* mismo ancho para todos */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.65em 1.2em;
+  font-family: "MonumentExtended", sans-serif;
+  font-size: clamp(14px, 2.2vw, 22px);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-decoration: none !important;
+  border: none !important;      /* sin líneas de borde */
+  outline: none;
+  box-shadow: none !important;
+  transition: transform .28s ease, filter .28s ease;
+}
+
+/* === Paletas por variante: fondo = complementario de la letra === */
+
+/* //aca: Variante “+INFO” (texto rosa #ff1493 → fondo teal #14ffb0 aprox. complementario) */
+.boton-masinfo > a {
+  color: #ff1493 !important;      /* se respeta tu color de letra */
+  background: #14ffb0 !important; /* fondo opuesto/complementario */
+}
+
+/* //aca: Variante 3D Scan / facebook-link (texto verde #7fff00 → fondo violeta #6000ff) */
+.boton-masinfo-3d-scan > a,
+.boton-masinfo3 > a {
+  color: #7fff00 !important;      /* se respeta tu color de letra */
+  background: #6000ff !important; /* fondo opuesto/complementario */
+}
+
+/* //aca: hover sutil (sin bordes) */
+.boton-masinfo a:hover,
+.boton-masinfo3 a:hover,
+.boton-masinfo-3d-scan a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+/* //aca: active/focus accesible */
+.boton-masinfo a:active,
+.boton-masinfo3 a:active,
+.boton-masinfo-3d-scan a:active {
+  transform: translateY(0) scale(0.99);
+  filter: brightness(0.98) saturate(1.03);
+}
+.boton-masinfo a:focus-visible,
+.boton-masinfo3 a:focus-visible,
+.boton-masinfo-3d-scan a:focus-visible {
+  outline: 2px solid #7fff00;
+  outline-offset: 3px;
+}
