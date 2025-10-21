@@ -1691,3 +1691,6 @@ h1:hover {
     transition: none !important;
   }
 }
+@media (max-width: 910px){
+  body:not(.js-ready) .cielo .cieloLista{ transition: none !important; }
+}
