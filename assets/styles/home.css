@@ -443,59 +443,102 @@ h1:hover {
 }
 
 /* ============== SECTION 3 ============== */
+/* ===== SECTION 3: layout de capas ===== */
 .section3 {
-  background-color: #3cff2b;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  letter-spacing: 1.1rem;
-  max-height: 800px;
-}
-/* //aca: fix particles, antes tenía position fixed y height sin unidad */
-#particles-js {
-  background-color: #7fff00;
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
+  position: relative;
+  background: #7fff00;                 /* fondo verde al fondo */
+  overflow: hidden;
+  padding: clamp(24px, 5vw, 60px) 0;   /* respiración vertical */
+  /* evita que se achique a 800px: */
+  max-height: none;
 }
 
+.particles-layer, /* #particles-js */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;                          /* detrás del contenido */
+  pointer-events: none;                 /* no tapa clicks */
+  background: transparent;              /* partículas sobre verde */
+}
+
+/* título “pill” arriba del todo */
 .section3_text_container {
-  background-color: #930ae4;
+  position: relative;
+  z-index: 1;                           /* sobre las partículas */
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin-top: 40px;
-  width: 100%;
+  padding: clamp(10px, 2.6vw, 24px) 0;
+  margin: 0 0 clamp(16px, 3vw, 28px) 0;
+  background: transparent;              /* sin franja sólida detrás */
+  border-radius: 16px;
 }
+
+/* pill del título */
 .section3_text {
+  margin: 0;
+  padding: 0.45em 1.1em;
+  background: #ff1493;                  /* rosa del pill */
+  color: #fff;
+  border-radius: 16px;
   font-family: "MonumentExtended", sans-serif;
   font-weight: 800;
-  color: rgb(250, 250, 250);
   text-align: center;
-  margin: 0;
-  letter-spacing: 5px;
-  padding: 20px 60px;
-  background-color: #8a2ae3;
-  border-radius: 20px;
+  letter-spacing: clamp(2px, 0.9vw, 10px);
+  font-size: clamp(18px, 4.6vw, 40px);
+  line-height: 1.1;
 }
-@media (max-width: 768px) {
-  .section3_text_container {
-    width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
-  } /* //aca consolidado del final */
-  .section3_text {
-    font-size: 40px;
-    letter-spacing: 10px;
-    padding: 20px 20px;
-  }
+
+/* contenedor del render (imagen + iframe) */
+.cuidarAltura {
+  position: relative;
+  z-index: 1;                           /* sobre partículas */
+  height: auto;                         /* que crezca con el contenido */
+  margin-top: clamp(12px, 3vw, 24px);
+  display: grid;
+  place-items: center;
+}
+
+/* imagen marco del render */
+.img_160 {
+  width: min(90vw, 750px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* iframe posicionado dentro del marco */
+.zapaiframe {
+  position: absolute;
+  z-index: 2;
+  /* valores base para mobile; luego se escalan por media queries */
+  top: 13px;
+  left: 35px;
+  width: 245px;
+  height: 185px;
+}
+
+/* escalado responsive del “hueco” del marco */
+@media (max-width: 599px) {
+  .zapaiframe { top: 17px; width: 330px; height: 235px; left: 50%; transform: translateX(-50%); }
+}
+@media (max-width: 405px) {
+  .zapaiframe { top: 15px; width: 290px; height: 200px; left: 50%; transform: translateX(-50%); }
+}
+@media (min-width: 600px) {
+  .zapaiframe { top: 22px; left: 55px; width: 404px; height: 300px; transform: none; }
+}
+@media (min-width: 768px) {
+  .zapaiframe { top: 32px; left: 85px; width: 584px; height: 438px; }
+}
+
+/* botón al final, centrado */
+.boton-masinfo {
+  position: relative;
+  z-index: 1;
+  margin: clamp(16px, 4vw, 28px) auto 0 auto;
 }
 
 /* ============== SECTION 4 ============== */
@@ -644,13 +687,10 @@ h1:hover {
   text-align: center;
   margin: 0;
   letter-spacing: 0;
-  font-size: 45px;
+/* font-size: 45px; */
 }
-@media (min-width: 768px) {
-  .section6_text {
-    font-size: 25px;
-    letter-spacing: 10px;
-  }
+@media (min-width: 768px){
+  .section6_text { font-size: 45px; letter-spacing: 10px; } 
 }
 @media (min-width: 1000px) {
   .section6_text {
@@ -721,24 +761,6 @@ h1:hover {
 }
 .filters-ig-main {
   margin-bottom: 0;
-}
-
-/* links neon hover (reutilizable) */
-.boton-masinfo3 a {
-  text-decoration: none;
-  color: #7fff00;
-  font-size: 1.8rem;
-  font-family: "MonumentExtended", sans-serif;
-  transition: filter 0.2s ease, text-shadow 0.2s ease;
-}
-.boton-masinfo3 a:hover {
-  filter: brightness(1.2);
-  text-shadow: 0 0 8px #7fff00, 0 0 18px #7fff00;
-}
-
-.facebook-link {
-  width: 400px;
-  padding-top: 3px;
 }
 
 /* ============== SECTION 8 (CYBERPUNKER) ============== */
@@ -1224,19 +1246,12 @@ h1:hover {
   height: 800px;
   margin-top: 150px;
 }
-@media (max-width: 768px) {
-  .cuidarAltura,
-  .cuidarAltura-3dscan {
-    height: 400px;
-  }
-}
+
 @media (max-width: 600px) {
   .cuidarAltura {
     height: 300px;
   }
-  .cuidarAltura-3dscan {
-    height: 400px;
-  }
+
   .section3_text {
     margin: 30px 0 10px;
   }
@@ -1246,9 +1261,7 @@ h1:hover {
   .particles-js {
     max-height: 50px;
   }
-  .section3_text_container {
-    height: 100px;
-  }
+
   #preguntame {
     font-size: 1.1rem;
   } /* //aqui reubico ajustes menores */
@@ -1271,62 +1284,6 @@ h1:hover {
 }
 .color-negro {
   color: #000;
-}
-
-/* botones genéricos */
-.boton-masinfo,
-.boton-masinfo3,
-.boton-masinfo-3d-scan {
-  border-radius: 10px;
-  width: 250px;
-  text-align: center;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.boton-masinfo {
-  border: 1px solid #ff1493;
-}
-.boton-masinfo3 {
-  border: 1.5px solid #000;
-}
-.boton-masinfo-3d-scan {
-  border: 1px solid #000;
-}
-.boton-masinfo2 {
-  margin: 30px 0 40px;
-}
-
-.boton-masinfo a {
-  font-size: 1.8rem;
-  padding: 0;
-  color: #ff1493;
-  text-decoration: none;
-  font-family: "MonumentExtended", sans-serif;
-  border: 2px #ff1493;
-  border-radius: 10px;
-}
-.boton-masinfo-3d-scan a {
-  padding-top: 3px;
-  text-decoration: none;
-  color: #7fff00;
-  font-size: 1.8rem;
-  font-family: "MonumentExtended", sans-serif;
-}
-@media (max-width: 353px) {
-  .boton-masinfo a {
-    max-width: 230px;
-    text-align: center;
-  }
-  .boton-masinfo {
-    max-width: 250px;
-    text-align: center;
-  }
-  .facebook-link {
-    max-width: 200px;
-  }
 }
 
 /* carrusel flechas */
@@ -1526,14 +1483,6 @@ h1:hover {
   }
 }
 
-/* ============== AJUSTES MENORES EXTRA ============== */
-@media (max-width: 768px) {
-  .section3_text_container {
-    width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
-  } /* //aca ya consolidado */
-}
 
 /* ====== 360 PHOTOGRAPHY como franja responsive centrada ====== */
 .section3_text_container {
@@ -1567,21 +1516,7 @@ h1:hover {
   bottom: -12px;
 }
 
-/* título dentro de la franja */
-.section3_text {
-  position: relative; /* asegura quedar sobre el canvas de particles */
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  background: transparent; /* quitamos pill morado anterior */
-  border-radius: 0;
-  color: #000;
-  font-family: "MonumentExtended", sans-serif;
-  font-weight: 800;
-  text-align: center;
-  letter-spacing: clamp(2px, 1vw, 14px);
-  font-size: clamp(24px, 6vw, 72px); /* escala perfecto desktop→móvil */
-}
+
 /* título dentro de la franja */
 .section3_text {
   position: relative;
@@ -1625,35 +1560,6 @@ h1:hover {
   box-shadow: none !important;
 }
 
-/* El enlace es el botón — se aplica a TODOS */
-.boton-masinfo a,
-.boton-masinfo3 a,
-.boton-masinfo-3d-scan a,
-.btn-plusinfo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 0.65em 1.2em;
-  font-family: "MonumentExtended", sans-serif;
-  font-size: clamp(14px, 2.2vw, 22px);
-  letter-spacing: var(--pi-tracking);
-  line-height: 1;
-  text-decoration: none !important;
-  color: var(--pi-text) !important; /* negro */
-  background: var(--pi-bg);
-  border: none !important; /* sin borde fino */
-  border-radius: var(--pi-radius);
-  outline: none;
-  box-shadow: none !important;
-  position: relative;
-  isolation: isolate;
-  transform: translateZ(0);
-  transition: transform var(--pi-hover-dur) var(--pi-ease),
-    filter var(--pi-hover-dur) var(--pi-ease),
-    box-shadow var(--pi-hover-dur) var(--pi-ease),
-    opacity var(--pi-hover-dur) var(--pi-ease);
-}
 
 /* Hover sutil + sin halo tipo “borde” */
 .boton-masinfo a:hover,
@@ -1760,4 +1666,108 @@ h1:hover {
 .boton-masinfo-3d-scan a:focus-visible {
   outline: 2px solid #7fff00;
   outline-offset: 3px;
+}
+/* ===== [SECTION 3] sin franja azul; solo el pill rosa ===== */
+.section3{ position:relative; background:#7fff00; overflow:hidden; padding:clamp(24px,5vw,60px) 0; }
+#particles-js{ z-index:0; }
+.section3_text_container, .render-frame, .boton-masinfo{ z-index:1; position:relative; }
+.section3_text_container{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: clamp(10px, 2.6vw, 24px) 0;
+  margin: 0 0 clamp(16px,3vw,28px) 0;
+  position: relative;
+  z-index: 1; /* sobre partículas */
+}
+.section3_text_container::before,
+.section3_text_container::after{ content:none !important; display:none !important; }
+
+.section3_text{
+  margin:0;
+  padding:.45em 1.1em;
+  background:#ff1493; color:#fff; border-radius:16px;
+  font-family:"MonumentExtended",sans-serif; font-weight:800; text-align:center;
+  letter-spacing:clamp(2px,.9vw,10px);
+  font-size:clamp(18px,4.6vw,40px);
+  line-height:1.1;
+  position:relative; z-index:1;
+}
+
+/* ===== Render: imagen marco + iframe encastrado ===== */
+.render-frame{
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 820px);
+  margin: clamp(16px,3vw,28px) auto 0;
+}
+
+.frame-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none; /* los clicks pasan al iframe */
+}
+.frame-embed{
+  position: absolute;
+  z-index: 1;
+  /* ← valores afinados para tu 360foto1.png */
+  top: 3.7%;
+  left: 10.9%;
+  width: 79.2%;
+  height: 90.2%;
+  border: 0;
+}
+
+/* fine-tuning en móviles angostos */
+@media (max-width:600px){
+  .frame-embed{
+    top: 3.4%;
+    left: 10.6%;
+    width: 79.8%;
+    height: 90%;
+  }
+}
+
+/* Botón centrado y por delante */
+.boton-masinfo{ position:relative; z-index:1; margin: clamp(16px,4vw,28px) auto 0; }
+.boton-masinfo a,
+.boton-masinfo3 a,
+.boton-masinfo-3d-scan a {
+  border-radius: var(--pi-radius, 16px); /* cambialo a 9999px si querés súper pill */
+}
+
+.render-frame{
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 820px);
+  margin: clamp(16px,3vw,28px) auto 0;
+}
+.frame-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none; /* clicks al iframe */
+}
+.frame-embed{
+  position: absolute;
+  z-index: 1;
+  top: 3.7%;
+  left: 10.9%;
+  width: 79.2%;
+  height: 90.2%;
+  border: 0;
+}
+@media (max-width:600px){
+  .frame-embed{ top:3.4%; left:10.6%; width:79.8%; height:90%; }
+}
+.section4 { max-height: none !important; }              /* antes tenía tope */
+.section4.bg_animate { height: auto !important; overflow: visible !important; }  /* antes: 100vh */
+/* //aqui: micro-ajuste para móviles angostos */
+.boton-masinfo2{
+  margin-bottom: 50px;
 }
