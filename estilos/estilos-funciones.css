@@ -1227,4 +1227,277 @@ svg {
   color: #000;
 }
 
-/* ------FOOTER ---------*/
+/* ===== Alternancia de orden en secciones específicas ===== */
+/* //aca: solo desktop; en mobile se apilan normal */
+@media (min-width: 768px) {
+  /* 1) Google → foto - texto */
+  .google { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; }
+  .google .google-texto { order: 2; }                 /* //aca: texto a la derecha */
+  .google > article:not(.google-texto) { order: 1; }  /* //aca: foto a la izquierda */
+
+  /* 2) Fotos 4K → texto - foto */
+  .fotos4k { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; }
+  .fotos4k > article.notes-texto { order: 1; }        /* //aca: texto a la izquierda */
+  .fotos4k > img.miniFoto { order: 2; }               /* //aca: foto a la derecha */
+
+  /* 3) Modo de Medición → ya es foto - texto (OK) */
+  /* 4) Blur Brush → ya es texto - foto (OK) */
+  /* 5) Vista Maqueta → ya es foto - texto (OK) */
+  /* 6) Recorridos → ya es texto - foto (OK) */
+}
+
+/* //aca opcional: para evitar que se rompa el wrap, darles base similar */
+@media (min-width: 768px) {
+  .google > article,
+  .fotos4k > article,
+  .fotos4k > img.miniFoto {
+    flex: 1 1 480px; /* //aca: cada lado ocupa ~50% y cae a otra línea si no entra */
+    max-width: 700px; /* //aca: límite para no estirar la imagen gigante */
+  }
+}
+
+/* ===== MOBILE: texto arriba, foto abajo (<= 700px) ===== */
+@media (max-width: 700px) {
+
+  /* //aca: normalizamos cada sección a columna */
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos {
+    display: flex;            /* //aca: aseguramos flex */
+    flex-direction: column;   /* //aca: apilado vertical */
+    align-items: center;      /* //aca: centrado */
+    gap: 16px;
+  }
+
+  /* -------- Google: texto (arriba) + foto (abajo) -------- */
+  .google .google-texto { order: 1; }             /* //aca: texto primero */
+  .google > article:not(.google-texto) { order: 2; }  /* //aca: foto después */
+
+  /* -------- Fotos 4K: texto (arriba) + foto (abajo) -------- */
+  .fotos4k > article.notes-texto { order: 1; }    /* //aca: texto primero */
+  .fotos4k > img.miniFoto { order: 2; }           /* //aca: foto después */
+
+  /* -------- Modo de Medición: texto (arriba) + foto (abajo) -------- */
+  .modoDeMedicion > article.notes-texto { order: 1; }  /* //aca: texto primero */
+  .modoDeMedicion > img.miniFoto { order: 2; }         /* //aca: foto después */
+
+  /* -------- Blur Brush: texto (arriba) + foto (abajo) -------- */
+  .blurBrush > article.notes-texto { order: 1; }   /* //aca: texto primero */
+  .blurBrush > article.notes-foto { order: 2; }    /* //aca: foto después */
+
+  /* -------- Vista Maqueta: texto (arriba) + foto (abajo) -------- */
+  .vistaMaqueta > article.notes-texto { order: 1; }    /* //aca: texto primero */
+  .vistaMaqueta > article.notes-foto { order: 2; }     /* //aca: foto después */
+
+  /* -------- Recorridos: texto (arriba) + foto (abajo) -------- */
+  .recorridos > article.notes-texto { order: 1; }  /* //aca: texto primero */
+  .recorridos > article.notes-foto { order: 2; }   /* //aca: foto después */
+
+  /* //aca: que todo tome ancho completo en mobile y se vea prolijo */
+  .google > article,
+  .fotos4k > article,
+  .modoDeMedicion > article,
+  .blurBrush > article,
+  .vistaMaqueta > article,
+  .recorridos > article,
+  .fotos4k > img.miniFoto,
+  .modoDeMedicion > img.miniFoto,
+  .google .miniFotoGoogle,
+  .notes-foto .miniFoto {
+    width: 100%;
+    max-width: 600px;   /* //aca: limite para que no se pixelee */
+  }
+
+  /* //aca: centramos imágenes dentro de sus contenedores */
+  .notes-foto,
+  .google > article:not(.google-texto) {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* ===== Fix responsive mobile: texto arriba / foto abajo + imágenes fluidas ===== */
+/* //aca: box-sizing global para que padding/gap no rompan el ancho */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* //aca: red de seguridad por si algo queda pasado de ancho */
+html, body { overflow-x: hidden; }
+
+/* //aca: móvil: todas las secciones a columna, texto primero, foto después */
+@media (max-width: 700px) {
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-left: 16px;   /* //aca: gutters para que no pegue al borde */
+    padding-right: 16px;
+    margin-left: 0 !important; /* //aca: anulamos márgenes izquierdos heredados */
+  }
+
+  /* orden: texto arriba / foto abajo */
+  .google .google-texto { order: 1; }
+  .google > article:not(.google-texto) { order: 2; }
+
+  .fotos4k > article.notes-texto { order: 1; }
+  .fotos4k > img.miniFoto { order: 2; }
+
+  .modoDeMedicion > article.notes-texto { order: 1; }
+  .modoDeMedicion > img.miniFoto { order: 2; }
+
+  .blurBrush > article.notes-texto { order: 1; }
+  .blurBrush > article.notes-foto { order: 2; }
+
+  .vistaMaqueta > article.notes-texto { order: 1; }
+  .vistaMaqueta > article.notes-foto { order: 2; }
+
+  .recorridos > article.notes-texto { order: 1; }
+  .recorridos > article.notes-foto { order: 2; }
+
+  /* ===== Imágenes fluidas y sin overflow ===== */
+  /* //aca: neutralizamos widths fijos (350/450/550px) que definiste en otros @media */
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .notes-foto .miniFoto,
+  .google .miniFotoGoogle,
+  .fotos4k > img.miniFoto,
+  .modoDeMedicion > img.miniFoto {
+    width: 100% !important;       /* //aca: ocupa el ancho disponible del contenedor */
+    max-width: clamp(260px, 92vw, 420px); /* //aca: escala con viewport sin pasarse */
+    height: auto !important;      /* //aca: mantiene proporción */
+    display: block;
+  }
+
+  /* //aca: centramos contenedores de foto */
+  .notes-foto,
+  .google > article:not(.google-texto) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* //aca: títulos y párrafos también se ajustan al ancho, sin forzar widths fijos */
+  .google .miniTitulo,
+  .fotos4k .miniTitulo,
+  .modoDeMedicion .miniTitulo,
+  .blurBrush .miniTitulo,
+  .vistaMaqueta .miniTitulo,
+  .recorridos .miniTitulo,
+  .notes-texto1 {
+    max-width: 92vw;
+  }
+}
+
+/* ===== Ajuste fino para pantallas angostas (<= 520px) ===== */
+@media (max-width: 520px) {
+  /* //aca: un poco menos de gap para que no empuje el ancho total */
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos {
+    gap: 12px;
+  }
+
+  /* //aca: imágenes un toque más chicas para evitar “salidas” en ~491px */
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .notes-foto .miniFoto {
+    max-width: clamp(240px, 90vw, 400px);
+  }
+}
+/* === Mobile: fotos a la izquierda + texto justificado === */
+@media (max-width: 700px) {
+  /* las secciones se apilan, pero ya no centramos el contenido */
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;      /* << antes: center */
+    gap: 16px;
+    padding: 0 16px;           /* gutter interno */
+    margin-left: 0 !important; /* anula márgenes heredados que empujan */
+  }
+
+  /* --- TEXTO JUSTIFICADO --- */
+  .notes-texto,
+  .google-texto,
+  .bim-texto,
+  .notes-texto-largo,
+  .planosPlanta .notes-texto,
+  .matterPak .notes-texto {
+    text-align: justify;
+  }
+  /* parrafos frecuentes */
+  .notes-texto1,
+  .notes-texto2,
+  .bim-texto1,
+  .bim-texto2,
+  .notes-texto-largo1,
+  .notes-texto-largo2,
+  .liDeStreet p {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* --- FOTOS A LA IZQUIERDA --- */
+  /* contenedores de imagen dejan de centrar */
+  .notes-foto,
+  .google > article:not(.google-texto) {
+    display: flex;
+    justify-content: flex-start; /* << antes: center */
+  }
+
+  /* imágenes fluidas, pegadas a la izquierda */
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .fotos4k > img.miniFoto,
+  .modoDeMedicion > img.miniFoto,
+  .notes-foto .miniFoto {
+    width: 100% !important;
+    max-width: clamp(260px, 92vw, 420px); /* escala con viewport */
+    height: auto !important;
+    margin: 0 auto 0 0; /* << izquierda */
+    display: block;
+  }
+
+  /* títulos y listas no forzados a un ancho fijo */
+  .miniTitulo,
+  .google .miniTitulo,
+  .fotos4k .miniTitulo,
+  .modoDeMedicion .miniTitulo,
+  .blurBrush .miniTitulo,
+  .vistaMaqueta .miniTitulo,
+  .recorridos .miniTitulo {
+    max-width: 100%;
+  }
+}
+
+/* un ajuste más fino para pantallas muy angostas */
+@media (max-width: 520px) {
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .notes-foto .miniFoto {
+    max-width: clamp(240px, 90vw, 400px);
+  }
+}
