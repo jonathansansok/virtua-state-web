@@ -8,9 +8,7 @@
   font-weight: normal;
 }
 
-/* .TituloDeVirtualTour {
-        font-family: Integral;
-    } */
+
 * {
   margin: 0;
   padding: 0px;
@@ -307,17 +305,7 @@ h1:hover {
 .google-compare {
   width: auto;
 }
-/*    .googleTitCompare{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 40px; 
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(226, 217, 217);
-    border-radius: 3px;
-   } */
+
 .googleTitCompare h5 {
   font-size: 1.2rem;
   font-weight: bold;
@@ -358,13 +346,6 @@ h1:hover {
   width: auto;
 }
 
-/*     .matterportLast{
-        min-width: 450px;
-        flex-wrap: wrap;
-
-
-    }
- */
 .google-pie {
   margin-top: 30px;
   font-size: 1.2rem;
@@ -390,146 +371,7 @@ h1:hover {
   max-width: 600px;
 }
 
-/*EMPIEZA ESTILO DE TAB*/
-/* :root {
-  --container: 90rem;
-  --primary: hsl(201.43, 13.21%, 58.43%);
-  --white: hsl(0, 0%, 100%);
-  --white-light: hsl(0, 0%, 99%);
-  --box-shadow: hsl(220, 7.32%, 91.96%);
-}
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
-}
-body {
-  background: var(--box-shadow);
-}
-.container {
-  max-width: var(--container);
-  padding: 0 0rem;
-  margin: 0 0;
-  max-width: 750px;
-}
-header {
-  text-align: center;
-}
-.section-heading {
-  margin: 3rem 0;
-  font-size: 4rem;
-  padding-bottom: 0.7rem;
-  position: relative;
-  display: inline-block;
-}
-.section-heading::before,
-.section-heading::after {
-  content: "";
-  position: absolute;
-}
-.section-heading::before {
-  width: 100%;
-  height: 0.2rem;
-  bottom: 0;
-  left: 0;
-  background: var(--primary);
-  border-radius: 0.2rem;
-}
-.section-heading::after {
-  bottom: -0.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1rem;
-  height: 1rem;
-  border: 0.2rem solid var(--primary);
-  background: var(--box-shadow);
-}
-.tab-container {
-  width: 70%;
-  margin: 0 auto 3rem auto;
-  box-shadow: 0 0.8rem 1rem var(--box-shadow);
-}
-@media (max-width: 767px) {
-  .tab-container {
-    width: 90%;
-  }
-}
-.tab-filter-container {
-  padding: 2rem 1rem;
-  text-align: center;
-  background: hsl(205.71, 30.43%, 95.49%);
-}
-.filter-btn {
-  display: inline-flex;
-  padding: 0.8rem 1rem;
-  cursor: pointer;
-  border-radius: 2rem;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-}
-.filter-btn.active {
-  background: var(--primary);
-  color: var(--white);
-}
-.tab-filter-item-container {
-  background: var(--white);
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-.tab-item {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  padding: 0rem 3rem;
-  transform: translateY(100%);
-  background: var(--white-light);
-  transition: transform 0.5s ease-in-out;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
-  place-items: center start;
-}
-.tab-img {
-  width: 30rem;
-}
-.tab-heading {
-  padding: 2rem 0;
-  font-size: 3rem;
-}
 
-@media (max-width: 767px) {
-  .tab-heading {
-    padding: 2rem 0;
-    font-size: 2rem;
-  }
-}
-
-.tab-item.select_tab {
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out;
-  background: var(--white-light);
-  animation: feadIn 0.6s ease-in-out;
-}
-.btn-primary {
-  margin-top: 1.5rem;
-  display: inline-block;
-  background: var(--primary);
-  padding: 0.6rem 2rem;
-  border-radius: 2rem;
-  color: var(--white);
-}
-@keyframes feadIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
 :root {
   --negro: #393939;
   --blanco: #ececec;
@@ -537,8 +379,7 @@ header {
   --sombra-sec: #ffffff;
   --borde-negro: #00000050;
   --marcado: rgb(127, 195, 255);
-  /* Tipografía */
-/*   --tipo-principal: Helvetica, Arial, sans-serif; */
+
 }
 
 /* Las adaptamos al modo oscuro */
@@ -551,41 +392,10 @@ header {
     --borde-negro: #FFFFFF50;
   }
 }
-/* Configuramos si un usuario ha activado el modo alto contraste. (BETA) */
-/*
 
-  Si quieres saber cada línea de este archivo te recomiendo que veas estos vídeos:
-  👉 Reset CSS: https://youtu.be/bXqPNoYFK8w
-  👉 Reset PRO en Código: https://www.youtube.com/watch?v=bXqPNoYFK8w    
-
-    Estilos generales para que las etiquetas no contengan propiedades
-    que nos estorben y en todos los navegadores se vean correctamente
-*/
-/* html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  vertical-align: baseline;
-} */
 
 video, iframe, figure {
- /*  max-width: 100%;
-  width: 100%;
-  display: block; */
+
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center center;
@@ -595,10 +405,7 @@ video, iframe, figure {
 a {
   display: block;
 }
-/* 
-p a {
-  display: inline;
-} */
+
 
 li {
   list-style-type: none;
@@ -656,34 +463,7 @@ svg {
   fill: currentColor;
 }
 
-/* body {
-  font-family: var(--tipo-principal);
-  font-size: 100%;
-  line-height: 1.4em;
-  min-height: 100vh;
-  background-color: var(--blanco);
-  color: var(--negro);
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  font-smooth: always;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
- */
+
 .contenedor {
   width: 90%;
   height: 400px;
@@ -1052,10 +832,6 @@ svg {
   h5 {
     width: 340px;
   }
-/*   p {
-    width: 350px;
-  } */
-
   .miniFoto {
     width: 350px;
   }
@@ -1136,7 +912,7 @@ svg {
 /* ------FOOTER ---------*/
 
 .footer {
-  /*  background-color: #000; */
+
   color: #fff;
   padding: 40px 0px;
   background-image: url("../assets/img/pattern2.png");
@@ -1500,4 +1276,238 @@ html, body { overflow-x: hidden; }
   .notes-foto .miniFoto {
     max-width: clamp(240px, 90vw, 400px);
   }
+}
+/* ===== Tabs Notes 2025: blanco + sombra negra ===== */
+.tabs-notes {
+  background: #fff !important;
+  color: #000 !important;
+  border: 2px solid #000;
+  border-radius: 14px;
+  padding: 16px;
+  height: auto;                /* antes 400px */
+  max-width: 680px;            /* respeta tu layout */
+  /* sombra "3D" bordeada negra */
+  box-shadow:
+    8px 8px 0 #000,            /* escalón negro */
+    0 2px 18px rgba(0,0,0,.08);/* suave moderno */
+}
+
+/* barra de pestañas */
+.tabs-notes .ul {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* botón de pestaña */
+.tabs-notes .li {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: .6rem .9rem;
+  margin: 0;                   /* sin separación lateral extra */
+  box-shadow: 4px 4px 0 #000;  /* relieve */
+  transform: translate(0,0);
+  transition: transform .1s ease, box-shadow .1s ease, background .2s ease;
+  outline: none;
+  line-height: 1;
+}
+.tabs-notes .li:hover { transform: translate(-1px,-1px); box-shadow: 5px 5px 0 #000; }
+.tabs-notes .li:active { transform: translate(1px,1px); box-shadow: 3px 3px 0 #000; }
+
+/* pestaña activa */
+.tabs-notes .li.activo {
+  background: #f4f4f4;
+}
+
+/* área de paneles */
+.tabs-notes .subcontenedor {
+  position: relative;
+  min-height: 120px; /* asegura espacio al cambiar */
+}
+
+/* panel individual */
+.tabs-notes .bloque {
+  position: relative;          /* de absolute => relative para auto-alto */
+  top: auto;                   /* reseteo */
+  margin: 14px 6px 6px 6px;
+  padding: 16px 18px;
+  border: 2px solid #000;
+  border-radius: 14px;
+  background: #fff;
+  color: #000;
+  box-shadow: 6px 6px 0 #000, 0 1px 12px rgba(0,0,0,.06);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+  display: none;               /* oculto por defecto */
+}
+
+.tabs-notes .bloque.activo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* tipografía y listas dentro del panel */
+.tabs-notes p, .tabs-notes li, .tabs-notes ol, .tabs-notes ul { color:#000; }
+.tabs-notes ul, .tabs-notes ol { padding-left: 1.1rem; }
+.tabs-notes ul li { list-style: none; }
+.tabs-notes ol li { list-style: decimal; }
+
+/* Responsive fino */
+@media (max-width: 700px) {
+  .tabs-notes { max-width: 100%; padding: 14px; }
+  .tabs-notes .li { padding: .55rem .8rem; font-size: .95rem; }
+  .tabs-notes .bloque { padding: 14px 16px; }
+}
+/* ====== Card + Tabs: estilo blanco con sombra moderna ====== */
+:root{
+  --card-bg: #fff;
+  --text: #111;
+  --border: rgba(0,0,0,.08);
+  --shadow-sm: 0 4px 10px rgba(0,0,0,.08);
+  --shadow-md: 0 10px 22px rgba(0,0,0,.12), 0 18px 40px rgba(0,0,0,.10);
+  --shadow-lg: 0 18px 40px rgba(0,0,0,.12), 0 40px 80px rgba(0,0,0,.15);
+}
+
+/* Caja principal */
+.contenedor{
+  background: var(--card-bg) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+}
+
+/* Barra de tabs */
+.contenedor .ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Botones de tab */
+.contenedor .li{
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .55rem .95rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s ease, transform .15s ease, background .2s ease;
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+}
+.contenedor .li:hover{
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.contenedor .li.activo{
+  background: #7fff00;           /* verde fosforescente */
+  color: #000;                   /* texto negro */
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  border-color: #7fff00;         /* borde del mismo tono */
+}.contenedor .li:hover{
+  background: #7fff00b3; /* mismo color pero con transparencia */
+  color: #000;
+}
+
+/* Paneles */
+.contenedor .subcontenedor{
+  position: relative;
+  min-height: 140px; /* asegura alto agradable */
+}
+.contenedor .bloque{
+  position: absolute;
+  inset: 0;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  padding: 16px 18px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.contenedor .bloque.activo{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Texto de los paneles justificado como pediste en mobile y desktop */
+.contenedor .bloque p{ text-align: justify; hyphens: auto; }
+
+/* Responsivo fino */
+@media (max-width: 600px){
+  .contenedor{ border-radius: 14px; padding: 12px; }
+  .contenedor .li{ padding: .5rem .8rem; border-radius: 10px; }
+  .contenedor .bloque{ border-radius: 12px; padding: 14px; }
+}
+/* ===== Card BIM (blanco + sombra moderna con acento #ff1493) ===== */
+.bim-card{
+  background:#fff;
+  color:#111;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:16px;
+  padding:24px 22px;
+  max-width:600px;
+  width:100%;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.12),
+    0 40px 80px rgba(0,0,0,.15);   /* sombra moderna como la de la imagen */
+}
+
+.bim-badge{
+  display:inline-block;
+  background:#ff1493;           /* acento */
+  color:#fff;
+  font-weight:600;
+  font-size:.85rem;
+  line-height:1;
+  padding:8px 12px;
+  border-radius:999px;
+  box-shadow:0 8px 18px rgba(255,20,147,.25);
+  margin-bottom:10px;
+}
+
+.bim-title{
+  font-size:1.35rem;
+  font-weight:700;
+  margin:4px 0 12px 0;
+}
+
+.bim-points{
+  margin:0 0 16px 0;
+  padding-left:1.1rem;
+}
+.bim-points li{
+  list-style:disc;
+  margin:6px 0;
+  text-align:justify;
+  hyphens:auto;
+}
+
+/* CTA */
+.bim-cta{
+  display:inline-block;
+  background:#ff1493;
+  color:#fff;
+  font-weight:700;
+  padding:10px 14px;
+  border-radius:10px;
+  box-shadow:0 10px 22px rgba(255,20,147,.25);
+  transition:transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+.bim-cta:hover{ transform:translateY(-1px); box-shadow:0 18px 40px rgba(255,20,147,.3); }
+.bim-cta:active{ transform:translateY(0); }
+
+/* responsive fino del card */
+@media (max-width:600px){
+  .bim-card{ border-radius:14px; padding:18px; }
+  .bim-title{ font-size:1.2rem; }
 }

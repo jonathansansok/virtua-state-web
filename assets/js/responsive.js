@@ -1,4 +1,4 @@
-
+//assets\js\responsive.js
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.cieloLista').classList.remove('show');
 });
