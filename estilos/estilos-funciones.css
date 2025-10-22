@@ -1647,16 +1647,48 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* espacio inferior consistente entre secciones */
-.bim,
-.notes,
-.planosPlanta,
-.matterPak,
-.google,
-.fotos4k,
-.modoDeMedicion,
-.blurBrush,
-.vistaMaqueta,
-.recorridos{
-  margin-bottom: 280px;     /* podés subir/bajar el número a gusto */
+/* ===== MOBILE (<=700px) ===== */
+@media (max-width:700px){
+
+  /* 1) aire entre secciones */
+  .bim,
+  .notes,
+  .planosPlanta,
+  .matterPak,
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos{
+    margin-bottom: 64px;   /* ajustá el valor si querés más/menos separación */
+    row-gap: 12px;
+  }
+
+  /* 2) que la foto vaya primero (ya lo tenés) y
+        que el enlace quede inmediatamente debajo de la foto */
+  .notes-texto,
+  .google-texto{
+    display: flex;
+    flex-direction: column;
+  }
+  /* movemos el CTA al tope del bloque de texto,
+     por lo que queda pegado a la foto que está antes */
+  .notes-texto .masInformacion,
+  .google-texto .masInformacion{
+    order: -1;
+    display: block;
+    margin: 10px 0 6px;   /* respirito entre foto y link */
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* pequeño gap bajo la imagen para que no “toque” el link */
+  .notes-foto .miniFoto,
+  .miniFotoGoogle,
+  .miniFoto,
+  .miniFotoFloor{
+    margin-bottom: 6px;
+  }
 }
