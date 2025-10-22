@@ -1511,3 +1511,152 @@ html, body { overflow-x: hidden; }
   .bim-card{ border-radius:14px; padding:18px; }
   .bim-title{ font-size:1.2rem; }
 }
+/* ====== FIX GLOBAL ====== */
+/* //aqui: evita que algo empuje el ancho horizontal */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
+/* //aqui: capas por si algún z-index te tapa el menú o la burbuja */
+.menu-btn{ z-index:1001; }         /* boton hamburguesa por encima */
+.leadclick-widget, .leadclick-fab{ z-index:1000; } /* burbuja WA arriba de la card */
+
+/* ====== CONTENEDOR GENERAL ====== */
+/* //aqui: espacio inferior para no chocar con la burbuja WA en mobile */
+@media (max-width: 700px){
+  main.containerRealState{ 
+    padding: 0 16px 110px; /* //aqui: left/right gutters + bottom para la burbuja */
+    margin: 0 !important;  /* //aqui: anulamos márgenes heredados */
+  }
+}
+
+/* ====== SECCIONES EN MOBILE: columna, sin márgenes raros ====== */
+/* //aqui: unificamos TODAS las secciones que antes tenían margin-left: 22px, etc. */
+@media (max-width: 700px){
+  .bim,
+  .notes,
+  .planosPlanta,
+  .matterPak,
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;   /* //aca: ocupa ancho disponible, no centrado estrecho */
+    gap:16px;
+    margin:0 !important;   /* //aca: fuera los margin-left manuales */
+  }
+}
+
+/* ====== ORDEN: texto arriba / foto abajo (mobile) ====== */
+/* //aqui: reordenamos sin duplicar reglas */
+@media (max-width: 700px){
+  .google .google-texto,       .fotos4k .notes-texto,
+  .modoDeMedicion .notes-texto,.blurBrush .notes-texto,
+  .vistaMaqueta .notes-texto,  .recorridos .notes-texto{ order:1; }
+  .google > article:not(.google-texto),
+  .fotos4k > img.miniFoto,
+  .modoDeMedicion > img.miniFoto,
+  .blurBrush .notes-foto,
+  .vistaMaqueta .notes-foto,
+  .recorridos .notes-foto{ order:2; }
+}
+
+/* ====== IMÁGENES FLUIDAS (neutraliza 350/450/550px fijos) ====== */
+/* //aqui: una sola regla para todas tus clases de imagen */
+@media (max-width: 700px){
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .notes-foto .miniFoto{
+    width:100% !important;          /* ocupa el contenedor */
+    max-width:clamp(260px, 92vw, 420px);
+    height:auto !important;
+    display:block;
+    margin:0;                       /* sin desplazamientos laterales */
+  }
+  /* //aqui: contenedores de foto sin centrado forzado */
+  .notes-foto,
+  .google > article:not(.google-texto){
+    display:flex; justify-content:flex-start;
+  }
+}
+
+/* ====== TEXTO JUSTIFICADO EN MOBILE (como en tus capturas) ====== */
+@media (max-width: 700px){
+  .notes-texto, .google-texto, .bim-texto,
+  .notes-texto-largo, .planosPlanta .notes-texto,
+  .matterPak .notes-texto, .bim-points li,
+  .notes-texto1, .notes-texto2, .bim-texto1, .bim-texto2{
+    text-align:justify; hyphens:auto;
+  }
+}
+
+/* ====== TABS: alto auto + animación limpia ====== */
+/* //aqui: tus tabs usaban position:absolute; provocaba saltos/solapes */
+.contenedor{ max-width: 680px; }
+.contenedor .subcontenedor{ position:relative; min-height:120px; }
+.contenedor .bloque{
+  position:relative;            /* //aca: de absolute -> relative */
+  top:auto; inset:auto;         /* //aca: reseteo */
+  margin:14px 6px 6px 6px;
+  padding:16px 18px;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  box-shadow:0 10px 22px rgba(0,0,0,.12);
+  background:#fff;
+  opacity:0; transform:translateY(6px);
+  transition:opacity .25s ease, transform .25s ease;
+  display:none;
+}
+.contenedor .bloque.activo{ display:block; opacity:1; transform:translateY(0); }
+
+/* ====== CARD BIM: toques responsivos ====== */
+/* //aqui: botón ancho completo en mobile y sin “salirse” */
+.bim-card{ max-width:600px; width:100%; }
+.bim-cta{ display:inline-block; }
+@media (max-width: 600px){
+  .bim-cta{ display:block; width:100%; text-align:center; }
+}
+
+/* ====== HEADER/HAMBURGUESA ====== */
+/* //aqui: evita "flash" desplegado mientras carga JS: oculto por defecto */
+@media (max-width: 910px){
+  .cielo .cieloLista{
+    transform: translateX(-100vw);           /* oculto inicial */
+    will-change: transform;
+  }
+  .cielo .cieloLista.show{ transform: translateX(0); }
+}
+.notes-texto-largo1,
+.notes-texto-largo2{
+  text-align: left !important;   /* //aca: pisa reglas previas */
+  hyphens: manual;               /* //aca: evita cortes raros */
+}
+
+/* //aca: mobile */
+@media (max-width: 700px){
+  .notes-texto-largo1,
+  .notes-texto-largo2{
+    text-align: left !important; /* //aca: sigue a la izquierda en mobile */
+    max-width: 92vw;             /* //aca: respeta gutter */
+    margin-left: 0;              /* //aca: sin desplazamientos */
+  }
+}
+
+/* espacio inferior consistente entre secciones */
+.bim,
+.notes,
+.planosPlanta,
+.matterPak,
+.google,
+.fotos4k,
+.modoDeMedicion,
+.blurBrush,
+.vistaMaqueta,
+.recorridos{
+  margin-bottom: 280px;     /* podés subir/bajar el número a gusto */
+}
