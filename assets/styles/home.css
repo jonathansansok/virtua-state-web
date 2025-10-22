@@ -49,7 +49,7 @@ main {
 }
 
 /* ============== SCROLLBAR ============== */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
   background-color: #7fff00;
   border-radius: 8px;
@@ -57,7 +57,7 @@ main {
 ::-webkit-scrollbar-thumb {
   background-color: #ff1493;
   border-radius: 8px;
-}
+} */
 
 /* ============== NAVBAR / CIELO ============== */
 .cielo {
@@ -343,11 +343,17 @@ h1:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   background-color: #000;
 }
 .slide {
-  width: 100vw;
+  width: 100%;
+}
+
+.carousel-item{
+  width:100%;
+  height:100dvh;        /* reemplaza 100vh */
+  overflow:hidden;      /* que no haga scroll interno */
 }
 .centrandoInfo {
   display: flex;
@@ -389,10 +395,7 @@ h1:hover {
   }
 }
 
-.carousel-item {
-  width: 100vw;
-  height: 100vh;
-}
+.carousel-item { width: 100%; height: 100dvh; }
 .carousel-inner {
   justify-content: center;
   align-items: center;
@@ -897,7 +900,7 @@ h1:hover {
 .puente-main2024 {
   background-image: url("../img/puente_filtro.png");
   height: 570px;
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   border-bottom: 30px solid #000;
 }
