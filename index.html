@@ -191,13 +191,14 @@
         <div data-aos="fade-up" class="section1">
           <h2 class="tection1_text title-3d-virtual-tour">3D VIRTUAL TOUR</h2>
         </div>
+      
         <div
           id="carouselExampleIndicators"
           class="carousel slide"
           data-bs-ride="carousel"
         >
           <div class="carousel-indicators">
-            <!-- Reindexados tras quitar 1,5,8 y el vacío -->
+            <!-- reindexado: ahora son 6 slides -->
             <button
               type="button"
               data-bs-target="#carouselExampleIndicators"
@@ -230,12 +231,29 @@
               data-bs-slide-to="4"
               aria-label="Slide 5"
             ></button>
-            <!-- (QUITADO) antes había un 6º indicator para el slide vacío -->
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="5"
+              aria-label="Slide 6"
+            ></button>
           </div>
-
+      
           <div class="carousel-inner">
-            <!-- Activo (antes #2) -->
+            <!-- NUEVO PRIMER SLIDE (tu recorrido virtual propio) -->
             <div class="carousel-item active">
+              <iframe
+                class="bordesIframes"
+                style="width: 100%; height: 100dvh"
+                src="https://www.virtuastate.net/AlborTour360/AlborMain/index.htm"
+                frameborder="0"
+                allowfullscreen
+                allow="xr-spatial-tracking"
+              ></iframe>
+            </div>
+      
+            <!-- antes #2 (Matterport P9rBeZdfzXM) -->
+            <div class="carousel-item">
               <iframe
                 class="bordesIframes"
                 style="width: 100%; height: 100dvh"
@@ -245,7 +263,7 @@
                 allow="xr-spatial-tracking"
               ></iframe>
             </div>
-
+      
             <!-- antes #3 -->
             <div class="carousel-item">
               <iframe
@@ -257,7 +275,7 @@
                 allow="xr-spatial-tracking"
               ></iframe>
             </div>
-
+      
             <!-- antes #4 -->
             <div class="carousel-item">
               <iframe
@@ -269,7 +287,7 @@
                 allow="xr-spatial-tracking"
               ></iframe>
             </div>
-
+      
             <!-- antes #6 -->
             <div class="carousel-item">
               <iframe
@@ -281,7 +299,7 @@
                 allow="xr-spatial-tracking"
               ></iframe>
             </div>
-
+      
             <!-- antes #7 -->
             <div class="carousel-item">
               <iframe
@@ -293,15 +311,8 @@
                 allow="xr-spatial-tracking"
               ></iframe>
             </div>
-
-            <!-- Slide vacío (REMOVIDO / COMENTADO) -->
-            <!--
-          <div class="carousel-item">
-            <iframe class="bordesIframes" style="width: 100%; height: 100dvh"
-              src="" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
           </div>
-          --></div>
-
+      
           <button
             class="carousel-control-prev"
             type="button"
@@ -311,6 +322,7 @@
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
+      
           <button
             class="carousel-control-next"
             type="button"
@@ -322,6 +334,7 @@
           </button>
         </div>
       </section>
+      
       <!-- EMPIEZA RENDERS----------------------------------------- -->
       <section class="v3d-virtual-tour-section">
         <div data-aos="fade-up" class="section1">
