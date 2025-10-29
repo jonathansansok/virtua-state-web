@@ -924,4 +924,12 @@ h1:hover{
 
 }
 
- /* ------FOOTER ---------*/
+ /* ------FOOTER ---------*/@media (max-width: 700px) {
+  .imgPiscina {
+    width: 90% !important;   /* ocupa casi todo el ancho */
+    height: auto !important; /* mantiene proporción */
+    border-radius: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}

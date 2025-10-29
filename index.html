@@ -43,9 +43,7 @@
     >
     </leadclick-widget>
     <header class="header-CieloOk">
-      <!--         <div class="menu-btn">
-          <img class="fas fa-bars" src="https://icongr.am/fontawesome/bars.svg?size=30&color=8d8d8d" alt="||"></a>
-      </div> -->
+ 
       <div class="video-intro">
         <div class="position-relative">
           <video
@@ -892,21 +890,20 @@
         <!-- //aca: tu JS principal -->
         <script src="./assets/js/responsive.js"></script>
 
-        <!-- //aqui: inicializaciones globales -->
         <script>
           // __init-core__
-
+        
           document.addEventListener("DOMContentLoaded", () => {
             AOS.init();
           });
-
+        
           // //aca: helper Particles
           function mountParticles(id, config) {
             const el = document.getElementById(id);
             if (!el || typeof window.particlesJS !== "function") return;
             window.particlesJS(id, config);
           }
-
+        
           const BASE_PZ = {
             particles: {
               number: { value: 120, density: { enable: false } },
@@ -942,29 +939,43 @@
             },
             retina_detect: true,
           };
-
+        
           const PZ_SECTION3 = {
             ...BASE_PZ,
             interactivity: {
               ...BASE_PZ.interactivity,
-              detect_on: "window" // <- clave para que el hover funcione aunque el canvas esté debajo
-            }
+              detect_on: "window", //aca: hover sigue funcionando aunque el canvas esté detrás
+            },
           };
+        
           const PZ_SECTION6 = {
             ...BASE_PZ,
             particles: {
               ...BASE_PZ.particles,
               color: { value: "#ffffff" },
-              line_linked: { ...BASE_PZ.particles.line_linked, color: "#ffffff" },
+              line_linked: {
+                ...BASE_PZ.particles.line_linked,
+                color: "#ffffff",
+              },
             },
-            //aca: si querés que también tome toda la ventana, podés usar "window" acá, pero no es necesario
-            // interactivity: { ...BASE_PZ.interactivity, detect_on: "window" }
           };
-
+        
           window.addEventListener("load", () => {
-            mountParticles("particles-js", PZ_SECTION3);
-            mountParticles("particles-ar", PZ_SECTION6);
 
+        
+            // //aca: particles-js = sección "360 PHOTOGRAPHY"
+            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) {
+              mountParticles("particles-js", PZ_SECTION3);
+            } else {
+              const ph = document.getElementById("particles-js");
+              if (ph) { ph.remove(); }
+            }
+        
+            // //aca: particles-ar = sección AUGMENTED REALITY (la dejamos siempre, si querés matarla también en mobile hacé mismo if !isMobile)
+            mountParticles("particles-ar", PZ_SECTION6);
+        
+            // //aca: fix resize particles en desktop
             let _pzTimer;
             window.addEventListener("resize", () => {
               clearTimeout(_pzTimer);
@@ -974,17 +985,17 @@
                 );
               }, 200);
             });
-
-            // //aca: inicializar Vanta
+        
+            // //aca: inicializar Vanta (fondo sección 7 IG Filters)
             (function () {
               let vantaIg = null;
-
+        
               function initVanta() {
                 const reduceMotion = window.matchMedia(
                   "(prefers-reduced-motion: reduce)"
                 ).matches;
                 if (reduceMotion || vantaIg) return;
-
+        
                 vantaIg = VANTA.NET({
                   el: "#vanta-ig-bg",
                   mouseControls: true,
@@ -1002,14 +1013,14 @@
                   showDots: false,
                 });
               }
-
+        
               function destroyVanta() {
                 if (vantaIg && typeof vantaIg.destroy === "function") {
                   vantaIg.destroy();
                   vantaIg = null;
                 }
               }
-
+        
               initVanta();
               window.addEventListener(
                 "resize",
@@ -1018,13 +1029,15 @@
               window.addEventListener("pagehide", destroyVanta);
             })();
           });
-
+        
+          // //aca: cuando un bloque entra en viewport, refrescá partículas (solo desktop)
           document.addEventListener("aos:in", () => {
             (window.pJSDom || []).forEach((inst) =>
               inst?.pJS?.fn?.particlesRefresh?.()
             );
           });
         </script>
+        
       </div>
     </main>
   </body>

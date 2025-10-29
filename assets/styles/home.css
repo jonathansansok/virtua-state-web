@@ -48,18 +48,6 @@ main {
   z-index: 100;
 }
 
-/* ============== SCROLLBAR ============== */
-/* ::-webkit-scrollbar {
-  width: 10px;
-  background-color: #7fff00;
-  border-radius: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #ff1493;
-  border-radius: 8px;
-} */
-
-/* ============== NAVBAR / CIELO ============== */
 .cielo {
   font-family: Roboto, Arial, sans-serif;
 }
@@ -132,7 +120,7 @@ h1:hover {
   vertical-align: middle;
 }
 .menu-btn img {
-  padding-top: 5px;
+/*   padding-top: 5px; */
   padding-bottom: 1px;
   vertical-align: middle;
 }
@@ -178,7 +166,7 @@ h1:hover {
 @media (max-width: 910px) {
   .cielo .cieloLista {
     width: 100%;
-    background-color: rgba(47, 54, 64, 0.6);
+  /*   background-color: rgba(47, 54, 64, 0.6); */
     opacity: 0.9;
     display: flex;
     flex-direction: column;
@@ -192,7 +180,7 @@ h1:hover {
   }
   .cielo .cieloLista.show {
     transform: translateX(0);
-    margin-top: -52px;
+    margin-top: -10px;
   }
   .notes-texto-largo {
     display: flex;
@@ -1289,13 +1277,6 @@ h1:hover {
   color: #000;
 }
 
-/* carrusel flechas */
-.carousel-control-next,
-.carousel-control-prev {
-  height: 150px;
-}
-
-/* ============== BURBUJAS / ANIMACIONES ============== */
 .bg_animate {
   width: 100%;
   height: 100vh;
@@ -1773,4 +1754,367 @@ h1:hover {
 /* //aqui: micro-ajuste para móviles angostos */
 .boton-masinfo2{
   margin-bottom: 50px;
+}
+/* //aca: agregalo al final de tu CSS */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* evita desborde horizontal en todo */
+}
+
+/* //aca: forzá a TODOS los contenedores principales a no pasarse */
+section,
+div,
+header,
+main,
+footer,
+.carousel,
+.carousel-inner,
+.carousel-item,
+.render-frame,
+.frame-img,
+.frame-embed {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* //aca: fix scroll vertical en desktop para 360 PHOTOGRAPHY */
+.section3 {
+  max-height: none;        /* que no quede clavado a 800/300/etc */
+  height: auto;            /* deja que crezca normal con el contenido */
+  overflow-y: visible;     /* no hagas scroll interno vertical */
+  position: relative;
+}
+
+#particles-js {
+  position: absolute;
+  inset: 0;
+  max-height: 100%;
+  overflow: hidden;        /* canvas no empuja */
+  pointer-events: none;
+}
+
+/* el frame con la imagen y el iframe */
+.render-frame {
+  position: relative;
+  height: auto;
+  overflow: visible;       /* no metas scroll interno */
+}
+
+/* el iframe embebido dentro del marco NO scrollea su propio contenedor */
+.render-frame .frame-embed {
+  overflow: hidden;
+}
+/* //aca: fix scroll vertical en desktop para AUGMENTED REALITY */
+.section6 {
+  height: auto;            /* nada de forzar viewport height */
+  max-height: none;
+  overflow-y: visible;     /* sin scroll interno vertical */
+  position: relative;
+}
+
+#particles-ar {
+  position: absolute;
+  inset: 0;
+  max-height: 100%;
+  overflow: hidden;        /* que no agregue barra */
+  pointer-events: none;
+}
+
+/* aseguramos que la imagen AR y el botón no disparen overflow raro */
+.reallity_apps_img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* ===== Flechas RENDERS - versión ultra minimal ===== */
+#carouselExampleIndicators2 .carousel-control-prev,
+#carouselExampleIndicators2 .carousel-control-next {
+  position: absolute;
+  top: 25%;                  /* ~1/4 de la altura */
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+
+  /* sin caja */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  border-radius: 0;          /* ya no necesitamos pill */
+  padding: 0;
+  opacity: 1;
+  transition: opacity .2s ease;
+  pointer-events: auto;
+  z-index: 5;                /* encima del iframe */
+}
+
+/* posicionamiento horizontal */
+#carouselExampleIndicators2 .carousel-control-prev {
+  left: 10px;
+  right: auto;
+}
+#carouselExampleIndicators2 .carousel-control-next {
+  right: 10px;
+  left: auto;
+}
+
+/* iconos: flecha negra sola, sin bg default de Bootstrap */
+#carouselExampleIndicators2 .carousel-control-prev-icon,
+#carouselExampleIndicators2 .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+
+  /* resetea el svg blanco default de Bootstrap y lo hacemos negro */
+  filter: invert(0) brightness(0) contrast(1); /* => negro */
+  opacity: 0.9;
+
+  /* quita el círculo gris semitransparente que mete bootstrap */
+  background-image: none;
+  mask-size: 20px 20px;
+  -webkit-mask-size: 20px 20px;
+}
+
+/* inyectamos las flechas como máscaras SVG para que sean puras, sin fondo */
+#carouselExampleIndicators2 .carousel-control-prev-icon {
+  background-color: #000; /* color flecha */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+}
+
+#carouselExampleIndicators2 .carousel-control-next-icon {
+  background-color: #000; /* color flecha */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+}
+
+/* hover: apenas más opacas las flechas, sin caja */
+#carouselExampleIndicators2 .carousel-control-prev:hover,
+#carouselExampleIndicators2 .carousel-control-next:hover {
+  opacity: 0.7;
+}
+#carouselExampleIndicators2 .carousel-control-prev:active,
+#carouselExampleIndicators2 .carousel-control-next:active {
+  opacity: 0.5;
+}
+
+/* en pantallas más grandes, subimos levemente el tamaño de la flecha */
+@media (min-width: 768px) {
+  #carouselExampleIndicators2 .carousel-control-prev,
+  #carouselExampleIndicators2 .carousel-control-next {
+    width: 52px;
+    height: 52px;
+    max-width: 52px;
+    max-height: 52px;
+    top: 25%; /* mantenemos misma altura relativa */
+  }
+
+  #carouselExampleIndicators2 .carousel-control-prev-icon,
+  #carouselExampleIndicators2 .carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    mask-size: 24px 24px;
+    -webkit-mask-size: 24px 24px;
+  }
+}
+/* ===== Flechas CAROUSELS unificadas (3D VIRTUAL TOUR + RENDERS) ===== */
+/* aplica en #carouselExampleIndicators y #carouselExampleIndicators2 */
+
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next,
+#carouselExampleIndicators2 .carousel-control-prev,
+#carouselExampleIndicators2 .carousel-control-next {
+  position: absolute;
+  top: 25%;                  /* 1/4 de alto */
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  border-radius: 0;
+  padding: 0;
+  opacity: 1;
+  transition: opacity .2s ease;
+  pointer-events: auto;
+  z-index: 5;                /* por arriba del iframe/sketchfab */
+}
+
+/* posicionamiento horizontal */
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators2 .carousel-control-prev {
+  left: 10px;
+  right: auto;
+}
+#carouselExampleIndicators .carousel-control-next,
+#carouselExampleIndicators2 .carousel-control-next {
+  right: 10px;
+  left: auto;
+}
+
+/* iconos base sin bg bootstrap */
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next-icon,
+#carouselExampleIndicators2 .carousel-control-prev-icon,
+#carouselExampleIndicators2 .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+
+  /* anulamos el círculo gris + flecha blanca default */
+  background-image: none !important;
+
+  /* preparamos máscara vectorial */
+  mask-size: 20px 20px;
+  -webkit-mask-size: 20px 20px;
+
+  opacity: 0.9;
+}
+
+/* flecha izquierda negra pura */
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators2 .carousel-control-prev-icon {
+  background-color: #000; /* color flecha */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+}
+
+/* flecha derecha negra pura */
+#carouselExampleIndicators .carousel-control-next-icon,
+#carouselExampleIndicators2 .carousel-control-next-icon {
+  background-color: #000; /* color flecha */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+}
+
+/* hover / active: sólo cambiamos opacidad de la flecha, sin caja */
+#carouselExampleIndicators .carousel-control-prev:hover,
+#carouselExampleIndicators .carousel-control-next:hover,
+#carouselExampleIndicators2 .carousel-control-prev:hover,
+#carouselExampleIndicators2 .carousel-control-next:hover {
+  opacity: 0.7;
+}
+#carouselExampleIndicators .carousel-control-prev:active,
+#carouselExampleIndicators .carousel-control-next:active,
+#carouselExampleIndicators2 .carousel-control-prev:active,
+#carouselExampleIndicators2 .carousel-control-next:active {
+  opacity: 0.5;
+}
+
+/* desktop: flechas un toque más grandes */
+@media (min-width: 768px) {
+  #carouselExampleIndicators .carousel-control-prev,
+  #carouselExampleIndicators .carousel-control-next,
+  #carouselExampleIndicators2 .carousel-control-prev,
+  #carouselExampleIndicators2 .carousel-control-next {
+    width: 52px;
+    height: 52px;
+    max-width: 52px;
+    max-height: 52px;
+    top: 25%;
+  }
+
+  #carouselExampleIndicators .carousel-control-prev-icon,
+  #carouselExampleIndicators .carousel-control-next-icon,
+  #carouselExampleIndicators2 .carousel-control-prev-icon,
+  #carouselExampleIndicators2 .carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    mask-size: 24px 24px;
+    -webkit-mask-size: 24px 24px;
+  }
+}
+/* ===== FIX HAMBURGUESA MODERNA ===== */
+.menu-btn {
+  position: fixed; /* fijo arriba del video */
+  top: 18px;       /* sube */
+  left: 18px;
+  z-index: 9999;   /* por encima del video e iframes */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+.menu-btn img {
+  width: 26px;
+  height: 26px;
+  filter: brightness(1.3) contrast(1.2);
+  transition: transform 0.3s ease;
+}
+/* .menu-btn:hover img {
+  transform: rotate(90deg);
+}
+ */
+/* para mobile */
+@media (max-width: 768px) {
+  .menu-btn {
+    top: 60px;
+    left: 12px;
+    padding: 6px 8px;
+  }
+  .menu-btn img {
+    width: 24px;
+    height: 24px;
+  }
+}
+/* ===== HAMBURGUESA SOBRIA 2025 ===== */
+.menu-btn {
+  position: fixed; /* fija arriba del video */
+  top: 20px;
+  left: 20px;
+  z-index: 9999; /* por encima de todo */
+  background: rgba(0, 0, 0, 0.55); /* sutil vidrio oscuro */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.menu-btn:hover {
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px); /* sutil elevación */
+}
+
+.menu-btn img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(1.2) contrast(1.1);
+  transition: none; /* nunca rota */
+}
+
+/* para mobile: mismo tamaño, pero baja un poco */
+@media (max-width: 768px) {
+  .menu-btn {
+    margin-top: 40px;
+ /*    top: 14px;
+    left: 14px;
+    padding: 6px; */
+  }
+  .menu-btn img {
+/*     width: 28px;
+    height: 28px; */
+  }
+  
 }
