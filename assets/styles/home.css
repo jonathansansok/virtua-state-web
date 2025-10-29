@@ -1724,3 +1724,39 @@ body::-webkit-scrollbar {
   height: 0px;
   background: transparent;
 }
+/* === POSICIÓN HERO FIX === */
+.hero-text {
+  position: absolute;
+  top: 35%;              /* antes 45% */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5000;
+  color: #fff;
+  width: 90%;
+  max-width: 900px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* mobile primero */
+@media (max-width: 910px) {
+  .hero-text {
+    top: 20%;
+    font-size: 0.2rem;             
+  }
+}
+
+/* pantallas grandes */
+@media (min-width: 1000px) {
+  .hero-text {
+    top: 22%;           
+
+  }
+  .daPasos{
+    font-size: 1.4rem;   
+  }
+  .text_metaverso{
+    font-size: 2rem;   
+  }
+}
