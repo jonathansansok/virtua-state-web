@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
 
-/* //aca: fuentes locales */
+/* fuentes locales */
 @font-face {
   font-family: "MonumentExtended";
   src: url("../fonts/MonumentExtended-Regular.otf") format("truetype");
@@ -22,23 +22,26 @@
   font-weight: normal;
 }
 
-/* ============== RESET BÁSICO ============== */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} /* //aqui sumo box-sizing */
+}
 
-/* ============== BASE ============== */
+/* BASE */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+}
 body {
   background-color: #000;
-  overflow-x: hidden;
 }
 main {
   background-color: #000;
 }
-
-/* botón flotante */
 .my-button {
   position: fixed;
   right: 40px;
@@ -48,33 +51,77 @@ main {
   z-index: 100;
 }
 
+/* ================= NAV / HAMBURGUESA ================= */
+
 .cielo {
   font-family: Roboto, Arial, sans-serif;
 }
-.cielo ul {
+
+/* hamburguesa (mobile) */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 30px;
-  padding-top: 0;
+  align-items: center;
+  justify-content: center;
 }
-.cielo ul li {
-  color: black;
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+.menu-btn img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* overlay de navegación mobile */
+.mobile-nav-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+
+  z-index: 9998;
+  padding: 2rem;
   list-style: none;
-  margin: 1rem;
-  margin-top: 0;
-  padding: 0.5rem;
-  padding-top: 0;
-  font-size: 1.8rem;
-  font-weight: bold;
 }
-.cielo ul li a {
-  display: inline-block;
+.mobile-nav-panel.show {
+  transform: translateX(0);
+}
+.mobile-nav-panel li {
+  margin: 1rem 0 !important;
+  padding: 0 !important;
+  font-size: 2rem !important;
+  font-weight: 700;
+  list-style: none;
+  text-align: center;
+}
+.mobile-nav-panel li a {
+  color: #7fff00 !important;
   text-decoration: none;
-  color: #7fff00;
   position: relative;
+  display: inline-block;
 }
-.cielo ul li a::after {
+.mobile-nav-panel li a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -86,11 +133,118 @@ main {
   transform-origin: right;
   transition: transform 0.5s;
 }
-.cielo ul li a:hover::after {
+.mobile-nav-panel li a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
+/* bloquea scroll cuando el menú está abierto */
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* desktop nav flotante arriba a la derecha */
+@media (min-width: 911px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .cielo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    z-index: 6000;
+    pointer-events: none; /* contenedor no capta clicks */
+  }
+
+  .cielo .cieloLista {
+    pointer-events: auto; /* pero la UL sí */
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .cielo .cieloLista li {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    list-style: none;
+  }
+
+  .cielo .cieloLista li a {
+    color: #7fff00;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 0.25rem 0;
+  }
+  .cielo .cieloLista li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #8a2be2;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+  }
+  .cielo .cieloLista li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* mobile <=910px mantiene overlay */
+@media (max-width: 910px) {
+  .cielo {
+    position: static;
+  }
+
+  .mobile-nav-panel {
+    /* estas reglas ya puestas arriba */
+  }
+}
+
+/* fallback estilos viejos de .cielo ul (para seguridad) */
+.cielo ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cielo ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+}
+.cielo ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #7fff00;
+  position: relative;
+}
 .cielo-servicios {
   text-decoration: none;
   color: black;
@@ -101,36 +255,16 @@ main {
   color: #ff1493;
 }
 
-h1:hover {
-  text-shadow: red -6px 0, cyan 6px 0;
-}
+/* ================= HERO ================= */
 
-/* botón menú (mobile) */
-.menu-btn {
-  position: absolute;
-  cursor: pointer;
-  top: 15px;
-  z-index: 2;
-  font-size: 1.5rem;
-  padding: 0 12px 4px;
-  margin-left: 20px;
-  border-radius: 4px;
-  background-color: rgba(26, 26, 26, 0.9);
-  display: none;
-  vertical-align: middle;
-}
-.menu-btn img {
-/*   padding-top: 5px; */
-  padding-bottom: 1px;
-  vertical-align: middle;
-}
-
-/* ============== HERO VIDEO ============== */
+/* wrapper del video */
 .video-intro {
   max-height: 800px;
   overflow: hidden;
+  position: relative;
 }
-.position-relative {
+.video-intro .position-relative {
+  position: relative;
   height: 100vh;
 }
 .videoBg {
@@ -140,96 +274,90 @@ h1:hover {
   filter: brightness(0.8);
   position: absolute;
   inset: 0;
-}
-.textoVideo {
-  top: 5%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  position: relative;
-}
-.daPasos {
-  font-family: "MonumentExtended", sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.3rem;
-  font-weight: 500;
-}
-.text_metaverso {
-  color: #e322f4;
-  font-family: "MonumentExtended", sans-serif;
-  letter-spacing: 0.8rem;
-  margin-top: -20px;
-  font-size: 20px;
+  z-index: 0;
 }
 
-/* ============== RESPONSIVE NAV + HERO TEXT ============== */
+/* texto hero encima del video */
+.hero-text {
+  position: absolute;
+  top: 45%; /* desktop/tablet base */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5000;
+  color: #fff;
+  width: 90%;
+  max-width: 900px;
+  pointer-events: none; /* no bloquea el video */
+  overflow: hidden; /* <- evita que aparezca scrollbar interno */
+}
+
+/* líneas de texto del hero */
+.daPasos {
+  font-family: "MonumentExtended", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  font-size: 1.3rem; /* base mobile */
+  white-space: normal; /* permitir salto de línea natural, nada de scroll */
+}
+.text_metaverso {
+  font-family: "MonumentExtended", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.8rem;
+  color: #e322f4;
+  margin: 0;
+  line-height: 1.1;
+  font-size: 1.6rem; /* base mobile */
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* mobile: subimos más el bloque y ajustamos tamaño */
 @media (max-width: 910px) {
-  .cielo .cieloLista {
-    width: 100%;
-  /*   background-color: rgba(47, 54, 64, 0.6); */
-    opacity: 0.9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 0;
-    margin: 0;
-    transform: translateX(-1000px);
-    transition: transform 0.5s ease-in-out;
+  .hero-text {
+    top: 40%;
   }
-  .cielo .cieloLista.show {
-    transform: translateX(0);
-    margin-top: -10px;
-  }
-  .notes-texto-largo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 450px;
-  }
-  .notes-texto-largo1,
-  .notes-texto-largo2 {
-    max-width: 400px;
-  }
-  .cielo ul li {
-    margin: 0;
-    padding: 40px 0;
-  }
-  .menu-btn {
-    display: block;
-    margin-top: -40px;
-  }
-  .miniFoto-gsv {
-    max-width: 450px;
-  }
-}
-@media (min-width: 768px) {
   .daPasos {
-    font-size: 30px;
-  }
-  .text_metaverso {
-    font-size: 50px;
-  }
-}
-@media (max-width: 678px) {
-  .daPasos {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.3rem;
   }
   .text_metaverso {
     font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 20px;
+    letter-spacing: 0.5rem;
   }
 }
-.logo_hero {
-  width: 70%;
-  display: block;
-  margin: auto;
+
+/* pantallas >=768px subimos tipografía */
+@media (min-width: 768px) {
+  .daPasos {
+    font-size: 2rem;
+    letter-spacing: 0.4rem;
+  }
+  .text_metaverso {
+    font-size: 3rem;
+    letter-spacing: 0.8rem;
+  }
 }
 
-/* ============== SECTION 1 ============== */
+/* pantallas grandes >=1200px */
+@media (min-width: 1200px) {
+  .hero-text {
+    top: 45%; /* un toque más abajo en desktop grande para respirar */
+  }
+  .daPasos {
+    font-size: 2.2rem;
+  }
+  .text_metaverso {
+    font-size: 3.5rem;
+  }
+}
+
+/* ================= SECTIONS ================= */
+
+/* SECTION 1 */
 .technology-cover {
   background-image: url("../img/4232383.jpg");
   height: 900px;
@@ -301,13 +429,13 @@ h1:hover {
   }
 }
 
-/* ============== IMG SECTIONS ============== */
+/* shared image sizing */
 .img_section,
 .img-section {
   width: min(90%, 800px);
-} /* //aca unifico ambas clases */
+}
 
-/* ============== SECTION 2 ============== */
+/* SECTION 2 */
 .section2 {
   background: linear-gradient(
     103deg,
@@ -338,23 +466,72 @@ h1:hover {
   width: 100%;
 }
 
-.carousel-item{
-  width:100%;
-  height:100dvh;        /* reemplaza 100vh */
-  overflow:hidden;      /* que no haga scroll interno */
+/* carousel full-height slides */
+/* .carousel-item {
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+} */
+.carousel-inner {
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
+
+/* títulos de secciones */
+.title-3d-virtual-tour {
+  background-color: #8a2be2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 40px 0 20px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 3.4rem;
+}
+@media (max-width: 859px) {
+  .title-3d-virtual-tour {
+    font-size: 30px;
+  }
+}
+.title-3d-render {
+  color: #fff;
+  background-color: #7fff00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 40px 0 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
 .centrandoInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.centrando-slider {
+  width: 853px;
+  height: 480px;
+  align-items: center;
+  margin: 20px 0 30px;
+}
+@media (max-width: 854px) {
+  .achico-iframes {
+    width: 100%;
+  }
+}
+
 .section2_text {
   top: 20%;
   margin: auto;
   position: relative;
 }
-
 .section2_text_1 {
   font-size: 30px;
   font-weight: 800;
@@ -370,57 +547,6 @@ h1:hover {
     font-size: 70px;
   }
 }
-
-.centrando-slider {
-  width: 853px;
-  height: 480px;
-  align-items: center;
-  margin: 20px 0 30px;
-}
-@media (max-width: 854px) {
-  .achico-iframes {
-    width: 100%;
-  }
-}
-
-.carousel-item { width: 100%; height: 100dvh; }
-.carousel-inner {
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-}
-
-.title-3d-virtual-tour {
-  background-color: #8a2be2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin: 40px 0 20px;
-  width: 100%;
-  border-radius: 10px;
-  font-size: 3.4rem;
-}
-.title-3d-render {
-  color: #fff;
-  background-color: #7fff00;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin: 40px 0 20px;
-  width: 100%;
-  border-radius: 10px;
-}
-.centrar-epigrafe {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .section2_text_2 {
   font-family: "Rubik Mono One", sans-serif;
   font-size: 120px;
@@ -433,45 +559,139 @@ h1:hover {
   -webkit-text-stroke: 4px #000;
 }
 
-/* ============== SECTION 3 ============== */
-/* ===== SECTION 3: layout de capas ===== */
+/* RENDERS carousels flechas unificadas */
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next,
+#carouselExampleIndicators2 .carousel-control-prev,
+#carouselExampleIndicators2 .carousel-control-next {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  border-radius: 0;
+  padding: 0;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  pointer-events: auto;
+  z-index: 5;
+}
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators2 .carousel-control-prev {
+  left: 10px;
+  right: auto;
+}
+#carouselExampleIndicators .carousel-control-next,
+#carouselExampleIndicators2 .carousel-control-next {
+  right: 10px;
+  left: auto;
+}
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next-icon,
+#carouselExampleIndicators2 .carousel-control-prev-icon,
+#carouselExampleIndicators2 .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-image: none !important;
+  mask-size: 20px 20px;
+  -webkit-mask-size: 20px 20px;
+  opacity: 0.9;
+}
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators2 .carousel-control-prev-icon {
+  background-color: #000;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+}
+#carouselExampleIndicators .carousel-control-next-icon,
+#carouselExampleIndicators2 .carousel-control-next-icon {
+  background-color: #000;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+}
+#carouselExampleIndicators .carousel-control-prev:hover,
+#carouselExampleIndicators .carousel-control-next:hover,
+#carouselExampleIndicators2 .carousel-control-prev:hover,
+#carouselExampleIndicators2 .carousel-control-next:hover {
+  opacity: 0.7;
+}
+#carouselExampleIndicators .carousel-control-prev:active,
+#carouselExampleIndicators .carousel-control-next:active,
+#carouselExampleIndicators2 .carousel-control-prev:active,
+#carouselExampleIndicators2 .carousel-control-next:active {
+  opacity: 0.5;
+}
+@media (min-width: 768px) {
+  #carouselExampleIndicators .carousel-control-prev,
+  #carouselExampleIndicators .carousel-control-next,
+  #carouselExampleIndicators2 .carousel-control-prev,
+  #carouselExampleIndicators2 .carousel-control-next {
+    width: 52px;
+    height: 52px;
+    max-width: 52px;
+    max-height: 52px;
+  }
+  #carouselExampleIndicators .carousel-control-prev-icon,
+  #carouselExampleIndicators .carousel-control-next-icon,
+  #carouselExampleIndicators2 .carousel-control-prev-icon,
+  #carouselExampleIndicators2 .carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    mask-size: 24px 24px;
+    -webkit-mask-size: 24px 24px;
+  }
+}
+
+/* SECTION 3 - 360 PHOTOGRAPHY */
 .section3 {
   position: relative;
-  background: #7fff00;                 /* fondo verde al fondo */
+  background: #7fff00;
   overflow: hidden;
-  padding: clamp(24px, 5vw, 60px) 0;   /* respiración vertical */
-  /* evita que se achique a 800px: */
+  padding: clamp(24px, 5vw, 60px) 0;
   max-height: none;
 }
-
-.particles-layer, /* #particles-js */
-#particles-js {
+#particles-js,
+.particles-layer {
   position: absolute;
   inset: 0;
-  z-index: 0;                          /* detrás del contenido */
-  pointer-events: none;                 /* no tapa clicks */
-  background: transparent;              /* partículas sobre verde */
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
 }
-
-/* título “pill” arriba del todo */
 .section3_text_container {
   position: relative;
-  z-index: 1;                           /* sobre las partículas */
+  z-index: 1;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: clamp(10px, 2.6vw, 24px) 0;
   margin: 0 0 clamp(16px, 3vw, 28px) 0;
-  background: transparent;              /* sin franja sólida detrás */
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
   border-radius: 16px;
 }
-
-/* pill del título */
+.section3_text_container::before,
+.section3_text_container::after {
+  content: none !important;
+  display: none !important;
+}
 .section3_text {
   margin: 0;
   padding: 0.45em 1.1em;
-  background: #ff1493;                  /* rosa del pill */
+  background: #ff1493;
   color: #fff;
   border-radius: 16px;
   font-family: "MonumentExtended", sans-serif;
@@ -480,59 +700,147 @@ h1:hover {
   letter-spacing: clamp(2px, 0.9vw, 10px);
   font-size: clamp(18px, 4.6vw, 40px);
   line-height: 1.1;
+  position: relative;
+  z-index: 1;
 }
 
-/* contenedor del render (imagen + iframe) */
+/* marco + iframe */
+.render-frame {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 820px);
+  margin: clamp(16px, 3vw, 28px) auto 0;
+  height: auto;
+  overflow: visible;
+}
+.frame-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none; /* clicks pasan al iframe */
+}
+.frame-embed {
+  position: absolute;
+  z-index: 1;
+  top: 3.7%;
+  left: 10.9%;
+  width: 79.2%;
+  height: 90.2%;
+  border: 0;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .frame-embed {
+    top: 3.4%;
+    left: 10.6%;
+    width: 79.8%;
+    height: 90%;
+  }
+}
+
+/* botón +INFO */
+:root {
+  --pi-radius: 16px;
+}
+.boton-masinfo,
+.boton-masinfo3,
+.boton-masinfo-3d-scan {
+  margin: 28px auto 50px auto;
+  padding: 0;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none !important;
+  box-shadow: none !important;
+}
+.boton-masinfo a,
+.boton-masinfo3 a,
+.boton-masinfo-3d-scan a {
+  width: 260px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.65em 1.2em;
+  font-family: "MonumentExtended", sans-serif;
+  font-size: clamp(14px, 2.2vw, 22px);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-decoration: none !important;
+  border: none !important;
+  outline: none;
+  box-shadow: none !important;
+  border-radius: var(--pi-radius, 16px);
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+.boton-masinfo > a {
+  color: #ff1493 !important;
+  background: #14ffb0 !important;
+}
+.boton-masinfo-3d-scan > a,
+.boton-masinfo3 > a {
+  color: #7fff00 !important;
+  background: #6000ff !important;
+}
+.boton-masinfo a:hover,
+.boton-masinfo3 a:hover,
+.boton-masinfo-3d-scan a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+.boton-masinfo a:active,
+.boton-masinfo3 a:active,
+.boton-masinfo-3d-scan a:active {
+  transform: translateY(0) scale(0.99);
+  filter: brightness(0.98) saturate(1.03);
+}
+.boton-masinfo a:focus-visible,
+.boton-masinfo3 a:focus-visible,
+.boton-masinfo-3d-scan a:focus-visible {
+  outline: 2px solid #7fff00;
+  outline-offset: 3px;
+}
+.facebook-link {
+  width: auto !important;
+  padding-top: 3px;
+}
+
 .cuidarAltura {
   position: relative;
-  z-index: 1;                           /* sobre partículas */
-  height: auto;                         /* que crezca con el contenido */
+  z-index: 1;
+  height: auto;
   margin-top: clamp(12px, 3vw, 24px);
   display: grid;
   place-items: center;
 }
-
-/* imagen marco del render */
 .img_160 {
   width: min(90vw, 750px);
   height: auto;
   display: block;
   margin: 0 auto;
-}
-
-/* iframe posicionado dentro del marco */
-.zapaiframe {
-  position: absolute;
-  z-index: 2;
-  /* valores base para mobile; luego se escalan por media queries */
-  top: 13px;
-  left: 35px;
-  width: 245px;
-  height: 185px;
-}
-
-/* escalado responsive del “hueco” del marco */
-@media (max-width: 599px) {
-  .zapaiframe { top: 17px; width: 330px; height: 235px; left: 50%; transform: translateX(-50%); }
-}
-@media (max-width: 405px) {
-  .zapaiframe { top: 15px; width: 290px; height: 200px; left: 50%; transform: translateX(-50%); }
+  z-index: 99999;
 }
 @media (min-width: 600px) {
-  .zapaiframe { top: 22px; left: 55px; width: 404px; height: 300px; transform: none; }
+  .img_160 {
+    width: 514px;
+  }
 }
 @media (min-width: 768px) {
-  .zapaiframe { top: 32px; left: 85px; width: 584px; height: 438px; }
+  .img_160 {
+    width: 750px;
+  }
+}
+@media (max-width: 405px) {
+  .img_160 {
+    width: 340px;
+  }
 }
 
-/* botón al final, centrado */
-.boton-masinfo {
-  position: relative;
-  z-index: 1;
-  margin: clamp(16px, 4vw, 28px) auto 0 auto;
-}
-
-/* ============== SECTION 4 ============== */
+/* SECTION 4 - 3D SCAN */
 .section4 {
   background-color: #8a2ae3;
   display: flex;
@@ -540,14 +848,15 @@ h1:hover {
   justify-content: flex-start;
   align-items: center;
   letter-spacing: 1.1rem;
-  max-height: 800px;
+  max-height: none !important;
 }
-@media (max-width: 768px) {
-  .section4 {
-    max-height: 570px;
-  }
+.section4.bg_animate {
+  width: 100%;
+  height: auto !important;
+  position: relative;
+  overflow: visible !important;
+  overflow-x: hidden !important;
 }
-
 .section4_text_container {
   background-color: #7fff00;
   display: flex;
@@ -574,712 +883,9 @@ h1:hover {
   }
 }
 
-/* ============== SECTION 5 ============== */
-.section5 {
-  background-color: #ff1493;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  letter-spacing: 1.1rem;
-}
-.section5_text_container {
-  background-color: #7fff00;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin-top: 40px;
-  width: 100%;
-}
-.section5_text {
-  font-family: "MonumentExtended", sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: #000;
-  text-align: center;
-  margin: 0;
-  letter-spacing: 0;
-}
-@media (min-width: 768px) {
-  .section5_text {
-    font-size: 25px;
-    letter-spacing: 10px;
-  }
-}
-@media (min-width: 1000px) {
-  .section5_text {
-    font-size: 35px;
-    letter-spacing: 10px;
-  }
-}
-
-.section5_text2 {
-  font-family: "MonumentExtended", sans-serif;
-  color: #000;
-  font-weight: 800;
-  text-align: center;
-  margin: 0;
-  font-size: 35px;
-}
-@media (min-width: 860px) {
-  .section5_text2 {
-    font-size: 45px;
-  }
-}
-@media (max-width: 859px) {
-  .title-3d-virtual-tour {
-    font-size: 30px;
-  }
-}
-
-/* ============== SECTION 6 (particles-ar layer) ============== */
-.section6 {
-  background: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  letter-spacing: 1.1rem;
-  position: relative;
-  overflow: hidden;
-}
-#particles-ar {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-/* //aca garantizo contenido encima del canvas */
-.section6_text_container,
-.section6_text,
-.reallity_apps_img,
-.boton-masinfo {
-  position: relative;
-  z-index: 1;
-}
-
-.section6_text_container {
-  background-color: #8a2be2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin-top: 40px;
-  width: 100%;
-}
-.section6_text {
-  font-family: "MonumentExtended", sans-serif;
-  font-weight: 800;
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  letter-spacing: 0;
-/* font-size: 45px; */
-}
-@media (min-width: 768px){
-  .section6_text { font-size: 45px; letter-spacing: 10px; } 
-}
-@media (min-width: 1000px) {
-  .section6_text {
-    font-size: 40px;
-    letter-spacing: 10px;
-  }
-}
-
-.reallity_apps_img {
-  height: min(90%, 650px);
-} /* //aca solo una vez */
-
-/* ============== SECTION 7 (Vanta) ============== */
-.section7 {
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  letter-spacing: 1.1rem;
-}
-#section7 {
-  position: relative;
-  overflow: hidden;
-}
-#vanta-ig-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-#section7 > *:not(#vanta-ig-bg) {
-  position: relative;
-  z-index: 1;
-}
-
-.section7_text_container {
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
-  border: none;
-  box-shadow: none;
-  border-radius: 14px;
-  padding: 0;
-}
-.section7_text {
-  font-family: "MonumentExtended", sans-serif;
-  padding: 10px 25px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: 800;
-  text-align: center;
-  margin: 0;
-  letter-spacing: 0;
-  background-color: #7fff00;
-  color: #000;
-}
-@media (min-width: 768px) {
-  .section7_text {
-    font-size: 25px;
-    letter-spacing: 10px;
-  }
-}
-@media (min-width: 1000px) {
-  .section7_text {
-    font-size: 35px;
-    letter-spacing: 10px;
-  }
-}
-.filters-ig-main {
-  margin-bottom: 0;
-}
-
-/* ============== SECTION 8 (CYBERPUNKER) ============== */
-.section8 {
-  background-color: #000;
-  padding-top: 100px;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.cyber-section {
-  width: 780px;
-  height: 1180px;
-  background-image: url("../img/cyberPunker.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  z-index: 5;
-}
-@media (max-width: 780px) {
-  .cyber-section {
-    width: 480px;
-  }
-}
-@media (max-width: 479px) {
-  .cyber-section {
-    width: 350px;
-  }
-}
-
-.cyber-section-inside {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 800px;
-  height: 900px;
-}
-.pizarra {
-  background-image: url("../img/tarjetas-ok-fondo.png");
-  width: 310px;
-  height: 200px;
-  z-index: -2;
-  display: flex;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.pizarra2 {
-  margin-top: -100px;
-}
-.pizarra3 {
-  margin-top: 100px;
-}
-.pizarra4 {
-  margin-top: 150px;
-}
-.pizarra5 {
-  margin-top: 40px;
-}
-
-.pizarra-transparente {
-  width: 280px;
-  height: 150px;
-}
-.pizarra-transparente-texto {
-  font-family: "MonumentExtended", sans-serif;
-  font-weight: 100;
-  font-size: 11.5px;
-  color: #fff;
-  margin-left: 10px;
-  width: 280px;
-  height: 145px;
-  border-radius: 10px;
-  padding: 1px 13px 1px 3px;
-}
-
-@media (max-width: 780px) {
-  .cyber-section-inside {
-    margin-top: 10px;
-  }
-  .pizarra,
-  .pizarra2,
-  .pizarra3,
-  .pizarra4,
-  .pizarra5 {
-    margin: 0;
-  }
-}
-
-/* ============== SECTION 9 (PUENTE 2024) ============== */
-.section9 {
-  margin-top: 50px;
-  background-color: #fff;
-  height: 100vh;
-}
-.section9Puente {
-  width: 100%;
-  height: 300px;
-}
-@media (min-width: 537px) {
-  .section9Puente {
-    height: 400px;
-  }
-}
-@media (min-width: 768px) {
-  .section9Puente {
-    height: 550px;
-  }
-  .section9_title {
-    font-size: 8rem;
-  }
-}
-.section9_title {
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  padding-top: 10px;
-  height: 570px;
-}
-.puente-main2024 {
-  background-image: url("../img/puente_filtro.png");
-  height: 570px;
-  background-size: cover;
-  background-position: center;
-  border-bottom: 30px solid #000;
-}
-
-.title_puente {
-  font-family: "MonumentExtended", sans-serif;
-  color: #fff;
-  text-align: center;
-  padding-top: 20px;
-  margin: 30px 0;
-}
-.virtuastatepuente_text {
-  font-family: "Integral", sans-serif;
-  color: #fff;
-  text-align: center;
-  font-size: 50px;
-  font-weight: normal;
-}
-@media (min-width: 537px) {
-  .title_puente {
-    font-size: 40px;
-  }
-  .virtuastatepuente_text {
-    font-size: 40px;
-  }
-  .achicoLetra {
-    font-size: 2rem;
-  }
-  .agrandoLetra {
-    font-size: 4rem;
-  }
-}
-@media (min-width: 768px) {
-  .title_puente {
-    font-size: 30px;
-  }
-  .virtuastatepuente_text {
-    font-size: 100px;
-  }
-}
-@media (max-width: 416px) {
-  .section6_text {
-    font-size: 30px;
-  } /* //aca solo ajuste tipográfico puntual */
-  .virtuastatepuente_text {
-    font-size: 40px;
-  }
-}
-
-/* ============== ELEMENTOS GENERALES/UTILS ============== */
-.menosBottom {
-  margin-bottom: 0;
-}
-
-.agendar_img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-@media (min-width: 537px) {
-  .agendar_img {
-    width: 70px;
-    height: 70px;
-  }
-}
-@media (min-width: 768px) {
-  .agendar_img {
-    margin-bottom: 30px;
-  }
-}
-
-.container_text_agendar {
-  border: 2px solid #fff;
-  border-radius: 30px;
-  padding: 0 10px;
-  background-color: #e322f4;
-  color: #fff;
-  width: 150px;
-}
-.container_text_agendar a {
-  color: #fff;
-}
-.text_agendar {
-  font-family: "MonumentExtended", sans-serif;
-  text-align: center;
-  font-size: 15px;
-  cursor: pointer;
-}
-@media (min-width: 768px) {
-  .text_agendar {
-    font-size: 20px;
-  }
-  .container_text_agendar {
-    width: 170px;
-  }
-}
-.container_text_agendar:hover {
-  background-color: #fff;
-  color: #e322f4;
-  transform: scale(1.1);
-}
-.container_text_agendar a:hover {
-  background-color: #fff;
-  color: #e322f4;
-}
-
-.footer {
-  color: #fff;
-  padding: 40px 0;
-  background-image: url("../img/pattern2.png");
-  background-size: contain;
-  background-position: center;
-}
-@media (min-width: 768px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-  }
-}
-.text1_footer {
-  font-family: "MonumentExtended", sans-serif;
-  text-align: center;
-  font-size: 20px;
-}
-@media (min-width: 768px) {
-  .text1_footer {
-    font-size: 40px;
-  }
-}
-.matters {
-  color: #8a2ae3;
-}
-.logoFooter {
-  font-size: 50px;
-}
-.bi-linkedin {
-  color: #8a2ae3;
-}
-.bi-instagram {
-  color: #ff1493;
-}
-.cursor_pointer {
-  cursor: pointer;
-}
-.img_footer {
-  width: 200px;
-  border-radius: 10px;
-}
-.container1_text_footer {
-  width: 200px;
-}
-.title_container1_text_footer {
-  font-family: "MonumentExtended", sans-serif;
-  font-size: 17px;
-  color: #fff;
-  text-align: center;
-}
-.derechos {
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.section_trends {
-  background-color: #fff;
-  padding: 60px 15px;
-  background-image: url("../img/grid3d.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.trends_title {
-  font-family: "MonumentExtended", sans-serif;
-  font-size: 25px;
-  color: #fffbff;
-  text-align: center;
-  margin-bottom: 0;
-}
-.trends_2024 {
-  font-family: "MonumentExtended", sans-serif;
-  font-size: 40px;
-  color: #fff;
-  text-align: center;
-}
-
-.card_trend {
-  width: 250px;
-  height: 200px;
-  border: 2px solid rgb(166, 166, 166);
-  padding: 20px;
-  background-color: #fff;
-}
-@media (min-width: 400px) {
-  .card_trend {
-    width: 300px;
-  }
-}
-@media (min-width: 500px) {
-  .card_trend {
-    width: 400px;
-  }
-}
-
-.img-marco {
-  width: 276px;
-  height: 270px;
-  top: -27px;
-  left: -15px;
-  position: relative;
-}
-@media (min-width: 400px) {
-  .img-marco {
-    width: 336px;
-    left: -20px;
-  }
-}
-@media (min-width: 500px) {
-  .img-marco {
-    width: 440px;
-    left: -23px;
-  }
-}
-
-.card_trend_title {
-  font-family: "MonumentExtended", sans-serif;
-  font-size: 15px;
-  color: #e322f4;
-  font-weight: bold;
-  margin: 0;
-}
-@media (min-width: 400px) {
-  .card_trend_title {
-    font-size: 20px;
-  }
-}
-.card_trend_text {
-  font-size: 13px;
-  color: #000;
-  margin: 0;
-}
-@media (min-width: 400px) {
-  .card_trend_text {
-    font-size: 14px;
-  }
-}
-@media (min-width: 500px) {
-  .card_trend_text {
-    font-size: 16px;
-  }
-}
-
-.contenedor_cards {
-  gap: 40px;
-  width: min(90%, 1200px);
-  font-weight: bold;
-}
-.boton_descargar {
-  background-color: #e322f4;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.boton_descargar:hover {
-  background-color: #fff;
-  color: #e322f4;
-}
-
-.mapa {
-  width: min(90%, 800px);
-}
-.contenedor_redes {
-  margin-top: -15px;
-  margin-bottom: 10px;
-}
-
-.img_160 {
-  width: 400px;
-  margin: 0 auto;
-  display: block;
-  z-index: 99999;
-}
-@media (min-width: 600px) {
-  .img_160 {
-    width: 514px;
-  }
-}
-@media (min-width: 768px) {
-  .img_160 {
-    width: 750px;
-  }
-}
-@media (max-width: 405px) {
-  .img_160 {
-    width: 340px;
-  }
-}
-
-.zapa3d {
-  top: 0;
-  position: relative;
-}
-.zapaiframe {
-  position: absolute;
-  top: 13px;
-  left: 35px;
-  z-index: 1;
-  width: 245px;
-  height: 185px;
-}
-@media (max-width: 599px) {
-  .zapaiframe {
-    top: 17px;
-    width: 330px;
-    height: 235px;
-  }
-}
-@media (max-width: 405px) {
-  .zapaiframe {
-    top: 15px;
-    left: 24px;
-    width: 290px;
-    height: 200px;
-  }
-}
-@media (min-width: 600px) {
-  .zapaiframe {
-    top: 22px;
-    left: 55px;
-    width: 404px;
-    height: 300px;
-  }
-}
-@media (min-width: 768px) {
-  .zapaiframe {
-    top: 32px;
-    left: 85px;
-    width: 584px;
-    height: 438px;
-  }
-}
-
-.cuidarAltura {
-  height: 800px;
-  margin-top: 150px;
-}
-
-@media (max-width: 600px) {
-  .cuidarAltura {
-    height: 300px;
-  }
-
-  .section3_text {
-    margin: 30px 0 10px;
-  }
-  .section3_text2 {
-    font-size: 20px;
-  }
-  .particles-js {
-    max-height: 50px;
-  }
-
-  #preguntame {
-    font-size: 1.1rem;
-  } /* //aqui reubico ajustes menores */
-}
-
-@media (max-width: 465px) {
-  .gmap_canvas,
-  .mapouter {
-    max-width: 350px;
-  }
-}
-
-.container_render1 {
-  width: min(100%, 640px);
-  height: 360px;
-}
-#preguntame {
-  color: #000;
-  font-size: 1.1rem;
-}
-.color-negro {
-  color: #000;
-}
-
+/* burbujas bg animado */
 .bg_animate {
   width: 100%;
-  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -1362,7 +968,6 @@ h1:hover {
   animation-duration: 5.2s;
   animation-delay: 1s;
 }
-
 @keyframes burbujas {
   0% {
     bottom: 0;
@@ -1379,22 +984,72 @@ h1:hover {
     opacity: 0;
   }
 }
-@keyframes movimiento {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(30px);
-  }
-  100% {
-    transform: translateY(0);
+@media (max-width: 768px) and (orientation: portrait) {
+  .section4.bg_animate .burbujas {
+    display: none !important;
   }
 }
 
+/* SECTION 5 */
+.section5 {
+  background-color: #ff1493;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  letter-spacing: 1.1rem;
+}
+.section5_text_container {
+  background-color: #7fff00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+.section5_text {
+  font-family: "MonumentExtended", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0;
+}
+@media (min-width: 768px) {
+  .section5_text {
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+}
+@media (min-width: 1000px) {
+  .section5_text {
+    font-size: 35px;
+    letter-spacing: 10px;
+  }
+}
+.section5_text2 {
+  font-family: "MonumentExtended", sans-serif;
+  color: #000;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+}
+@media (min-width: 860px) {
+  .section5_text2 {
+    font-size: 45px;
+  }
+}
+
+/* floating squares anim */
 .animation-area {
   z-index: -500;
   background-color: rgb(255, 20, 147);
   width: 100%;
+  position: relative;
 }
 .box-area {
   position: absolute;
@@ -1467,655 +1122,605 @@ h1:hover {
   }
 }
 
-
-/* ====== 360 PHOTOGRAPHY como franja responsive centrada ====== */
-.section3_text_container {
-  position: relative;
-  width: 100%;
-  /*   background: transparent;   */ /* ← SIN franja; solo el “pill” del título */
-  padding: clamp(14px, 3vw, 28px) 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-  margin-top: 100px;
-
-  background: #1100ff;
-  border-radius: 16px;
-}
-/* barras negras arriba/abajo (opcional, queda muy bien) */
-.section3_text_container::before,
-.section3_text_container::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 12px;
-  background: #000;
-}
-.section3_text_container::before {
-  top: -12px;
-}
-.section3_text_container::after {
-  bottom: -12px;
-}
-
-
-/* título dentro de la franja */
-.section3_text {
-  position: relative;
-  z-index: 1;
-
-  padding: 0.45em 1.1em; /* “gordo” del pill */
-  background: rgb(255, 20, 147); /* ← color de fondo “ese” */
-  color: #fff; /* ← texto blanco */
-  border-radius: 16px; /* ← bordes redondeados */
-  font-family: "MonumentExtended", sans-serif;
-  font-weight: 800;
-  text-align: center;
-  letter-spacing: clamp(2px, 0.9vw, 10px);
-  font-size: clamp(18px, 4.6vw, 40px); /* ← más chico que antes */
-  line-height: 1.1;
-  margin-top: 100px;
-}
-/* ===== Tokens globales ===== */
-:root {
-  --pi-bg: linear-gradient(135deg, #ff1493 0%, #8a2be2 100%);
-  --pi-text: #000; /* texto negro (pediste negro) */
-  --pi-glow: rgba(138, 43, 226, 0.55);
-  --pi-radius: 14px;
-  --pi-tracking: 0.12em; /* tracking unificado */
-  --pi-hover-dur: 0.38s; /* hover no rápido */
-  --pi-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-/* Wrappers de +INFO: centran, limpian y dan el margin-bottom */
-.boton-masinfo,
-.boton-masinfo3,
-.boton-masinfo-3d-scan {
-  margin: 28px auto 50px auto; /* incluye el mb:10px pedido */
-  padding: 0;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* SECTION 6 - AUGMENTED REALITY */
+.section6 {
   background: transparent;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-
-/* Hover sutil + sin halo tipo “borde” */
-.boton-masinfo a:hover,
-.boton-masinfo3 a:hover,
-.boton-masinfo-3d-scan a:hover,
-.btn-plusinfo:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.06);
-}
-
-/* Click */
-.boton-masinfo a:active,
-.boton-masinfo3 a:active,
-.boton-masinfo-3d-scan a:active,
-.btn-plusinfo:active {
-  transform: translateY(0) scale(0.99);
-  filter: brightness(0.98) saturate(1.05);
-}
-
-/* Focus accesible */
-.boton-masinfo a:focus-visible,
-.boton-masinfo3 a:focus-visible,
-.boton-masinfo-3d-scan a:focus-visible,
-.btn-plusinfo:focus-visible {
-  outline: 2px solid #7fff00;
-  outline-offset: 3px;
-}
-
-/* Respeta reduce-motion */
-@media (prefers-reduced-motion: reduce) {
-  .boton-masinfo a,
-  .boton-masinfo3 a,
-  .boton-masinfo-3d-scan a,
-  .btn-plusinfo {
-    transition: none !important;
-  }
-}
-@media (max-width: 910px){
-  body:not(.js-ready) .cielo .cieloLista{ transition: none !important; }
-}
-
-/* ================== FIX +INFO ================== */
-/* ================== FIX +INFO SIN BORDES ================== */
-
-/* //aqui: que .facebook-link no fuerce ancho */
-.facebook-link { 
-  width: auto !important;
-  padding-top: 3px;
-}
-
-/* //aca: ancho unificado y layout del anchor (el botón real) */
-.boton-masinfo a,
-.boton-masinfo3 a,
-.boton-masinfo-3d-scan a {
-  width: 260px;                 /* mismo ancho para todos */
-  display: inline-flex;
-  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  text-align: center;
-  padding: 0.65em 1.2em;
-  font-family: "MonumentExtended", sans-serif;
-  font-size: clamp(14px, 2.2vw, 22px);
-  letter-spacing: 0.12em;
-  line-height: 1;
-  text-decoration: none !important;
-  border: none !important;      /* sin líneas de borde */
-  outline: none;
-  box-shadow: none !important;
-  transition: transform .28s ease, filter .28s ease;
-}
-
-/* === Paletas por variante: fondo = complementario de la letra === */
-
-/* //aca: Variante “+INFO” (texto rosa #ff1493 → fondo teal #14ffb0 aprox. complementario) */
-.boton-masinfo > a {
-  color: #ff1493 !important;      /* se respeta tu color de letra */
-  background: #14ffb0 !important; /* fondo opuesto/complementario */
-}
-
-/* //aca: Variante 3D Scan / facebook-link (texto verde #7fff00 → fondo violeta #6000ff) */
-.boton-masinfo-3d-scan > a,
-.boton-masinfo3 > a {
-  color: #7fff00 !important;      /* se respeta tu color de letra */
-  background: #6000ff !important; /* fondo opuesto/complementario */
-}
-
-/* //aca: hover sutil (sin bordes) */
-.boton-masinfo a:hover,
-.boton-masinfo3 a:hover,
-.boton-masinfo-3d-scan a:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.06);
-}
-
-/* //aca: active/focus accesible */
-.boton-masinfo a:active,
-.boton-masinfo3 a:active,
-.boton-masinfo-3d-scan a:active {
-  transform: translateY(0) scale(0.99);
-  filter: brightness(0.98) saturate(1.03);
-}
-.boton-masinfo a:focus-visible,
-.boton-masinfo3 a:focus-visible,
-.boton-masinfo-3d-scan a:focus-visible {
-  outline: 2px solid #7fff00;
-  outline-offset: 3px;
-}
-/* ===== [SECTION 3] sin franja azul; solo el pill rosa ===== */
-.section3{ position:relative; background:#7fff00; overflow:hidden; padding:clamp(24px,5vw,60px) 0; }
-#particles-js{ z-index:0; }
-.section3_text_container, .render-frame, .boton-masinfo{ z-index:1; position:relative; }
-.section3_text_container{
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  padding: clamp(10px, 2.6vw, 24px) 0;
-  margin: 0 0 clamp(16px,3vw,28px) 0;
+  letter-spacing: 1.1rem;
   position: relative;
-  z-index: 1; /* sobre partículas */
-}
-.section3_text_container::before,
-.section3_text_container::after{ content:none !important; display:none !important; }
-
-.section3_text{
-  margin:0;
-  padding:.45em 1.1em;
-  background:#ff1493; color:#fff; border-radius:16px;
-  font-family:"MonumentExtended",sans-serif; font-weight:800; text-align:center;
-  letter-spacing:clamp(2px,.9vw,10px);
-  font-size:clamp(18px,4.6vw,40px);
-  line-height:1.1;
-  position:relative; z-index:1;
-}
-
-/* ===== Render: imagen marco + iframe encastrado ===== */
-.render-frame{
-  position: relative;
-  z-index: 1;
-  width: min(92vw, 820px);
-  margin: clamp(16px,3vw,28px) auto 0;
-}
-
-.frame-img{
-  width: 100%;
   height: auto;
-  display: block;
-  position: relative;
-  z-index: 2;
-  pointer-events: none; /* los clicks pasan al iframe */
-}
-.frame-embed{
-  position: absolute;
-  z-index: 1;
-  /* ← valores afinados para tu 360foto1.png */
-  top: 3.7%;
-  left: 10.9%;
-  width: 79.2%;
-  height: 90.2%;
-  border: 0;
-}
-
-/* fine-tuning en móviles angostos */
-@media (max-width:600px){
-  .frame-embed{
-    top: 3.4%;
-    left: 10.6%;
-    width: 79.8%;
-    height: 90%;
-  }
-}
-
-/* Botón centrado y por delante */
-.boton-masinfo{ position:relative; z-index:1; margin: clamp(16px,4vw,28px) auto 0; }
-.boton-masinfo a,
-.boton-masinfo3 a,
-.boton-masinfo-3d-scan a {
-  border-radius: var(--pi-radius, 16px); /* cambialo a 9999px si querés súper pill */
-}
-
-.render-frame{
-  position: relative;
-  z-index: 1;
-  width: min(92vw, 820px);
-  margin: clamp(16px,3vw,28px) auto 0;
-}
-.frame-img{
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 2;
-  pointer-events: none; /* clicks al iframe */
-}
-.frame-embed{
-  position: absolute;
-  z-index: 1;
-  top: 3.7%;
-  left: 10.9%;
-  width: 79.2%;
-  height: 90.2%;
-  border: 0;
-}
-@media (max-width:600px){
-  .frame-embed{ top:3.4%; left:10.6%; width:79.8%; height:90%; }
-}
-.section4 { max-height: none !important; }              /* antes tenía tope */
-.section4.bg_animate { height: auto !important; overflow: visible !important; }  /* antes: 100vh */
-/* //aqui: micro-ajuste para móviles angostos */
-.boton-masinfo2{
-  margin-bottom: 50px;
-}
-/* //aca: agregalo al final de tu CSS */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden; /* evita desborde horizontal en todo */
-}
-
-/* //aca: forzá a TODOS los contenedores principales a no pasarse */
-section,
-div,
-header,
-main,
-footer,
-.carousel,
-.carousel-inner,
-.carousel-item,
-.render-frame,
-.frame-img,
-.frame-embed {
-  max-width: 100%;
+  max-height: none;
+  overflow-y: visible;
   overflow-x: hidden;
 }
-/* //aca: fix scroll vertical en desktop para 360 PHOTOGRAPHY */
-.section3 {
-  max-height: none;        /* que no quede clavado a 800/300/etc */
-  height: auto;            /* deja que crezca normal con el contenido */
-  overflow-y: visible;     /* no hagas scroll interno vertical */
-  position: relative;
-}
-
-#particles-js {
-  position: absolute;
-  inset: 0;
-  max-height: 100%;
-  overflow: hidden;        /* canvas no empuja */
-  pointer-events: none;
-}
-
-/* el frame con la imagen y el iframe */
-.render-frame {
-  position: relative;
-  height: auto;
-  overflow: visible;       /* no metas scroll interno */
-}
-
-/* el iframe embebido dentro del marco NO scrollea su propio contenedor */
-.render-frame .frame-embed {
-  overflow: hidden;
-}
-/* //aca: fix scroll vertical en desktop para AUGMENTED REALITY */
-.section6 {
-  height: auto;            /* nada de forzar viewport height */
-  max-height: none;
-  overflow-y: visible;     /* sin scroll interno vertical */
-  position: relative;
-}
-
 #particles-ar {
   position: absolute;
   inset: 0;
+  z-index: 0;
   max-height: 100%;
-  overflow: hidden;        /* que no agregue barra */
+  overflow: hidden;
   pointer-events: none;
 }
-
-/* aseguramos que la imagen AR y el botón no disparen overflow raro */
+.section6_text_container,
+.section6_text,
+.reallity_apps_img,
+.boton-masinfo {
+  position: relative;
+  z-index: 1;
+}
+.section6_text_container {
+  background-color: #8a2be2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+.section6_text {
+  font-family: "MonumentExtended", sans-serif;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0;
+  font-size: 30px;
+}
+@media (min-width: 768px) {
+  .section6_text {
+    font-size: 45px;
+    letter-spacing: 10px;
+  }
+}
+@media (min-width: 1000px) {
+  .section6_text {
+    font-size: 40px;
+    letter-spacing: 10px;
+  }
+}
 .reallity_apps_img {
   max-width: 100%;
   height: auto;
   display: block;
+  height: min(90%, 650px);
 }
-/* ===== Flechas RENDERS - versión ultra minimal ===== */
-#carouselExampleIndicators2 .carousel-control-prev,
-#carouselExampleIndicators2 .carousel-control-next {
+
+/* SECTION 7 - IG FILTERS */
+.section7 {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  letter-spacing: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+#vanta-ig-bg {
   position: absolute;
-  top: 25%;                  /* ~1/4 de la altura */
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  max-width: 44px;
-  max-height: 44px;
-
-  /* sin caja */
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-
-  border-radius: 0;          /* ya no necesitamos pill */
-  padding: 0;
-  opacity: 1;
-  transition: opacity .2s ease;
-  pointer-events: auto;
-  z-index: 5;                /* encima del iframe */
+  inset: 0;
+  z-index: 0;
 }
-
-/* posicionamiento horizontal */
-#carouselExampleIndicators2 .carousel-control-prev {
-  left: 10px;
-  right: auto;
+#section7 > *:not(#vanta-ig-bg) {
+  position: relative;
+  z-index: 1;
 }
-#carouselExampleIndicators2 .carousel-control-next {
-  right: 10px;
-  left: auto;
-}
-
-/* iconos: flecha negra sola, sin bg default de Bootstrap */
-#carouselExampleIndicators2 .carousel-control-prev-icon,
-#carouselExampleIndicators2 .carousel-control-next-icon {
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
-
-  /* resetea el svg blanco default de Bootstrap y lo hacemos negro */
-  filter: invert(0) brightness(0) contrast(1); /* => negro */
-  opacity: 0.9;
-
-  /* quita el círculo gris semitransparente que mete bootstrap */
-  background-image: none;
-  mask-size: 20px 20px;
-  -webkit-mask-size: 20px 20px;
-}
-
-/* inyectamos las flechas como máscaras SVG para que sean puras, sin fondo */
-#carouselExampleIndicators2 .carousel-control-prev-icon {
-  background-color: #000; /* color flecha */
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-}
-
-#carouselExampleIndicators2 .carousel-control-next-icon {
-  background-color: #000; /* color flecha */
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-}
-
-/* hover: apenas más opacas las flechas, sin caja */
-#carouselExampleIndicators2 .carousel-control-prev:hover,
-#carouselExampleIndicators2 .carousel-control-next:hover {
-  opacity: 0.7;
-}
-#carouselExampleIndicators2 .carousel-control-prev:active,
-#carouselExampleIndicators2 .carousel-control-next:active {
-  opacity: 0.5;
-}
-
-/* en pantallas más grandes, subimos levemente el tamaño de la flecha */
-@media (min-width: 768px) {
-  #carouselExampleIndicators2 .carousel-control-prev,
-  #carouselExampleIndicators2 .carousel-control-next {
-    width: 52px;
-    height: 52px;
-    max-width: 52px;
-    max-height: 52px;
-    top: 25%; /* mantenemos misma altura relativa */
-  }
-
-  #carouselExampleIndicators2 .carousel-control-prev-icon,
-  #carouselExampleIndicators2 .carousel-control-next-icon {
-    width: 24px;
-    height: 24px;
-    background-size: 24px 24px;
-    mask-size: 24px 24px;
-    -webkit-mask-size: 24px 24px;
-  }
-}
-/* ===== Flechas CAROUSELS unificadas (3D VIRTUAL TOUR + RENDERS) ===== */
-/* aplica en #carouselExampleIndicators y #carouselExampleIndicators2 */
-
-#carouselExampleIndicators .carousel-control-prev,
-#carouselExampleIndicators .carousel-control-next,
-#carouselExampleIndicators2 .carousel-control-prev,
-#carouselExampleIndicators2 .carousel-control-next {
-  position: absolute;
-  top: 25%;                  /* 1/4 de alto */
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  max-width: 44px;
-  max-height: 44px;
-
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-
-  border-radius: 0;
-  padding: 0;
-  opacity: 1;
-  transition: opacity .2s ease;
-  pointer-events: auto;
-  z-index: 5;                /* por arriba del iframe/sketchfab */
-}
-
-/* posicionamiento horizontal */
-#carouselExampleIndicators .carousel-control-prev,
-#carouselExampleIndicators2 .carousel-control-prev {
-  left: 10px;
-  right: auto;
-}
-#carouselExampleIndicators .carousel-control-next,
-#carouselExampleIndicators2 .carousel-control-next {
-  right: 10px;
-  left: auto;
-}
-
-/* iconos base sin bg bootstrap */
-#carouselExampleIndicators .carousel-control-prev-icon,
-#carouselExampleIndicators .carousel-control-next-icon,
-#carouselExampleIndicators2 .carousel-control-prev-icon,
-#carouselExampleIndicators2 .carousel-control-next-icon {
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
-
-  /* anulamos el círculo gris + flecha blanca default */
-  background-image: none !important;
-
-  /* preparamos máscara vectorial */
-  mask-size: 20px 20px;
-  -webkit-mask-size: 20px 20px;
-
-  opacity: 0.9;
-}
-
-/* flecha izquierda negra pura */
-#carouselExampleIndicators .carousel-control-prev-icon,
-#carouselExampleIndicators2 .carousel-control-prev-icon {
-  background-color: #000; /* color flecha */
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1 3 8l8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-}
-
-/* flecha derecha negra pura */
-#carouselExampleIndicators .carousel-control-next-icon,
-#carouselExampleIndicators2 .carousel-control-next-icon {
-  background-color: #000; /* color flecha */
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l8 7-8 7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-}
-
-/* hover / active: sólo cambiamos opacidad de la flecha, sin caja */
-#carouselExampleIndicators .carousel-control-prev:hover,
-#carouselExampleIndicators .carousel-control-next:hover,
-#carouselExampleIndicators2 .carousel-control-prev:hover,
-#carouselExampleIndicators2 .carousel-control-next:hover {
-  opacity: 0.7;
-}
-#carouselExampleIndicators .carousel-control-prev:active,
-#carouselExampleIndicators .carousel-control-next:active,
-#carouselExampleIndicators2 .carousel-control-prev:active,
-#carouselExampleIndicators2 .carousel-control-next:active {
-  opacity: 0.5;
-}
-
-/* desktop: flechas un toque más grandes */
-@media (min-width: 768px) {
-  #carouselExampleIndicators .carousel-control-prev,
-  #carouselExampleIndicators .carousel-control-next,
-  #carouselExampleIndicators2 .carousel-control-prev,
-  #carouselExampleIndicators2 .carousel-control-next {
-    width: 52px;
-    height: 52px;
-    max-width: 52px;
-    max-height: 52px;
-    top: 25%;
-  }
-
-  #carouselExampleIndicators .carousel-control-prev-icon,
-  #carouselExampleIndicators .carousel-control-next-icon,
-  #carouselExampleIndicators2 .carousel-control-prev-icon,
-  #carouselExampleIndicators2 .carousel-control-next-icon {
-    width: 24px;
-    height: 24px;
-    background-size: 24px 24px;
-    mask-size: 24px 24px;
-    -webkit-mask-size: 24px 24px;
-  }
-}
-/* ===== FIX HAMBURGUESA MODERNA ===== */
-.menu-btn {
-  position: fixed; /* fijo arriba del video */
-  top: 18px;       /* sube */
-  left: 18px;
-  z-index: 9999;   /* por encima del video e iframes */
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 10px;
-  padding: 8px 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.menu-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
-}
-.menu-btn img {
-  width: 26px;
-  height: 26px;
-  filter: brightness(1.3) contrast(1.2);
-  transition: transform 0.3s ease;
-}
-/* .menu-btn:hover img {
-  transform: rotate(90deg);
-}
- */
-/* para mobile */
-@media (max-width: 768px) {
-  .menu-btn {
-    top: 60px;
-    left: 12px;
-    padding: 6px 8px;
-  }
-  .menu-btn img {
-    width: 24px;
-    height: 24px;
-  }
-}
-/* ===== HAMBURGUESA SOBRIA 2025 ===== */
-.menu-btn {
-  position: fixed; /* fija arriba del video */
-  top: 20px;
-  left: 20px;
-  z-index: 9999; /* por encima de todo */
-  background: rgba(0, 0, 0, 0.55); /* sutil vidrio oscuro */
+.section7_text_container {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 6px 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
+  border: none;
+  box-shadow: none;
+  border-radius: 14px;
+  padding: 0;
 }
-.menu-btn:hover {
+.section7_text {
+  font-family: "MonumentExtended", sans-serif;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0;
+  background-color: #7fff00;
+  color: #000;
+}
+@media (min-width: 768px) {
+  .section7_text {
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+}
+@media (min-width: 1000px) {
+  .section7_text {
+    font-size: 35px;
+    letter-spacing: 10px;
+  }
+}
+.filters-ig-main {
+  margin-bottom: 0;
+}
+
+/* SECTION 8 - CYBERPUNKER */
+.section8 {
+  background-color: #000;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cyber-section {
+  width: 780px;
+  height: 1180px;
+  background-image: url("../img/cyberPunker.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  z-index: 5;
+}
+@media (max-width: 780px) {
+  .cyber-section {
+    width: 480px;
+  }
+}
+@media (max-width: 479px) {
+  .cyber-section {
+    width: 350px;
+  }
+}
+.cyber-section-inside {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 900px;
+}
+.pizarra {
+  background-image: url("../img/tarjetas-ok-fondo.png");
+  width: 310px;
+  height: 200px;
+  z-index: -2;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pizarra2 {
+  margin-top: -100px;
+}
+.pizarra3 {
+  margin-top: 100px;
+}
+.pizarra4 {
+  margin-top: 150px;
+}
+.pizarra5 {
+  margin-top: 40px;
+}
+.pizarra-transparente {
+  width: 280px;
+  height: 150px;
+}
+.pizarra-transparente-texto {
+  font-family: "MonumentExtended", sans-serif;
+  font-weight: 100;
+  font-size: 11.5px;
+  color: #fff;
+  margin-left: 10px;
+  width: 280px;
+  height: 145px;
+  border-radius: 10px;
+  padding: 1px 13px 1px 3px;
+}
+@media (max-width: 780px) {
+  .cyber-section-inside {
+    margin-top: 10px;
+  }
+  .pizarra,
+  .pizarra2,
+  .pizarra3,
+  .pizarra4,
+  .pizarra5 {
+    margin: 0;
+  }
+}
+
+/* SECTION 9 - PUENTE / FOOTER */
+.section9 {
   margin-top: 50px;
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px); 
+  background-color: #fff;
+  height: 100vh;
+}
+.section9Puente {
+  width: 100%;
+  height: 300px;
+}
+@media (min-width: 537px) {
+  .section9Puente {
+    height: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .section9Puente {
+    height: 550px;
+  }
+  .section9_title {
+    font-size: 8rem;
+  }
+}
+.section9_title {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding-top: 10px;
+  height: 570px;
+}
+.puente-main2024 {
+  background-image: url("../img/puente_filtro.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 30px solid #000;
+
+  min-height: 570px;
+  padding-bottom: 60px;
 }
 
-.menu-btn img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(1.2) contrast(1.1);
-  transition: none;
+.title_puente {
+  font-family: "MonumentExtended", sans-serif;
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+  margin: 30px 0;
+}
+.virtuastatepuente_text {
+  font-family: "Integral", sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 50px;
+  font-weight: normal;
+}
+@media (min-width: 537px) {
+  .title_puente {
+    font-size: 40px;
+  }
+  .virtuastatepuente_text {
+    font-size: 40px;
+  }
+  .achicoLetra {
+    font-size: 2rem;
+  }
+  .agrandoLetra {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 768px) {
+  .title_puente {
+    font-size: 30px;
+  }
+  .virtuastatepuente_text {
+    font-size: 100px;
+  }
+}
+@media (max-width: 416px) {
+  .section6_text {
+    font-size: 30px;
+  }
+  .virtuastatepuente_text {
+    font-size: 40px;
+  }
 }
 
+.menosBottom {
+  margin-bottom: 0;
+}
+.agendar_img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+@media (min-width: 537px) {
+  .agendar_img {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (min-width: 768px) {
+  .agendar_img {
+    margin-bottom: 30px;
+  }
+}
+.container_text_agendar {
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 0 10px;
+  background-color: #e322f4;
+  color: #fff;
+  width: 150px;
+}
+.container_text_agendar a {
+  color: #fff;
+  text-decoration: none;
+}
+.text_agendar {
+  font-family: "MonumentExtended", sans-serif;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .text_agendar {
+    font-size: 20px;
+  }
+  .container_text_agendar {
+    width: 170px;
+  }
+}
+.container_text_agendar:hover {
+  background-color: #fff;
+  color: #e322f4;
+  transform: scale(1.1);
+}
+.container_text_agendar a:hover {
+  color: #e322f4;
+}
+
+.footer {
+  color: #fff;
+  padding: 40px 0;
+  background-image: url("../img/pattern2.png");
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+.text1_footer {
+  font-family: "MonumentExtended", sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .text1_footer {
+    font-size: 40px;
+  }
+}
+.matters {
+  color: #8a2be2;
+}
+.logoFooter {
+  font-size: 50px;
+}
+.bi-linkedin {
+  color: #8a2be2;
+}
+.bi-instagram {
+  color: #ff1493;
+}
+.cursor_pointer {
+  cursor: pointer;
+}
+.img_footer {
+  width: 200px;
+  border-radius: 10px;
+}
+.container1_text_footer {
+  width: 200px;
+  text-align: center;
+}
+.title_container1_text_footer {
+  font-family: "MonumentExtended", sans-serif;
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+}
+.derechos {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+}
+#preguntame {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.contenedor_redes {
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.mapa {
+  width: min(90%, 800px);
+}
+.gmap_canvas,
+.mapouter {
+  max-width: 456px;
+}
+@media (max-width: 465px) {
+  .gmap_canvas,
+  .mapouter {
+    max-width: 350px;
+  }
+}
+
+/* helpers */
+.color-negro {
+  color: #000;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+/* main {
+  background-color: #000;
+  overflow-x: hidden;
+} */
+/* ======= FIX SCROLL VERTICAL EXTRA ENTRE SECCIONES ======= */
+
+/* 1️⃣ Evita márgenes colapsados y asegura flujo sin gaps */
+.v3d-virtual-tour-section,
+.section3,
+.section4,
+.section5,
+.section6,
+.section7,
+.section8,
+.puente-main2024 {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+/* 2️⃣ Cada .carousel-item debe tener altura exacta sin exceder viewport */
+/* .carousel-item {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+} */
+
+/* 3️⃣ Bloquea crecimiento vertical de carruseles (Bootstrap los estira) */
+.carousel,
+.carousel-inner {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* 4️⃣ Evita que se acumulen gaps del AOS (margen visual) */
+[data-aos] {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 5️⃣ Elimina cualquier espacio interno fantasma en main */
+main {
+  background-color: #000;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  /* clave: que nunca tenga su propio scroll */
+  overflow: visible !important;     /* evita que Chrome marque main como scroll container */
+  max-height: none !important;
+}
+html,
+body {
+  /* no hagas más copias de este bloque en el CSS, dejalo UNA VEZ al final */
+  max-width: 100%;
+  width: 100%;
+  min-height: 100%;
+  background-color: #000;
+
+  /* scroll horizontal JAMÁS */
+  overflow-x: hidden !important;
+
+  /* scroll vertical SOLO acá */
+  overflow-y: auto !important;
+
+  /* evita que otras libs (AOS, bootstrap) lo conviertan en flex y rompan el flujo */
+  display: block !important;
+  position: relative !important;
+}
+/* 7️⃣ En móviles, evita acumulación por vh dinámico */
 @media (max-width: 768px) {
-  .menu-btn {
-    margin-top: 40px;
-
+  .carousel-item iframe {
+    height: 100svh !important; /* usa safe viewport */
   }
-
-  
 }
-@media (max-width: 768px) and (orientation: portrait) {
-  .section4.bg_animate .burbujas {
-    display: none !important;        /* oculta el contenedor entero */
+/* --- FIX DOBLE SCROLLBAR --- */
+
+/* el carrusel NO debe tener su propio scroll vertical */
+#carouselExampleIndicators,
+#carouselExampleIndicators2,
+#carouselExampleIndicators .carousel-inner,
+#carouselExampleIndicators2 .carousel-inner,
+#carouselExampleIndicators .carousel-item,
+#carouselExampleIndicators2 .carousel-item {
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden !important;
+  overscroll-behavior: contain;
+}
+
+/* IMPORTANTÍSIMO:
+   forzamos que el iframe no muestre scroll interno */
+#carouselExampleIndicators iframe,
+#carouselExampleIndicators2 iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  overflow: hidden;          /* oculta barras propias del iframe contenedor */
+  scrollbar-width: none;     /* Firefox */
+}
+#carouselExampleIndicators iframe::-webkit-scrollbar,
+#carouselExampleIndicators2 iframe::-webkit-scrollbar {
+  display: none; /* Chrome/Edge */
+}
+
+/* en mobile el vh es medio mentiroso → usamos unidades "svh" seguras */
+@media (max-width: 768px) {
+  #carouselExampleIndicators,
+  #carouselExampleIndicators2,
+  #carouselExampleIndicators .carousel-inner,
+  #carouselExampleIndicators2 .carousel-inner,
+  #carouselExampleIndicators .carousel-item,
+  #carouselExampleIndicators2 .carousel-item {
+    height: 100svh;
+    max-height: 100svh;
   }
 
+  #carouselExampleIndicators iframe,
+  #carouselExampleIndicators2 iframe {
+    height: 100svh;
+    max-height: 100svh;
+  }
+}
+/* ====== BLOQUE FINAL GLOBAL (home fullscreen sin barra visible) ====== */
+html,
+body {
+  /* aseguramos layout normal */
+  position: relative !important;
+  display: block !important;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  background-color: #000;
 
+  /* seguimos permitiendo scroll con la rueda/touch,
+     pero ocultamos visualmente la barrita */
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;   /* forzamos canal de scroll */
+  scrollbar-width: none;           /* Firefox: ocultar */
+}
+
+/* Chrome / Edge / Safari scrollbar invisibles */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
 }
