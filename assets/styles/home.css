@@ -2094,27 +2094,28 @@ footer,
 .menu-btn:hover {
   margin-top: 50px;
   background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px); /* sutil elevación */
+  transform: translateY(-2px); 
 }
 
 .menu-btn img {
   width: 30px;
   height: 30px;
   filter: brightness(1.2) contrast(1.1);
-  transition: none; /* nunca rota */
+  transition: none;
 }
 
-/* para mobile: mismo tamaño, pero baja un poco */
 @media (max-width: 768px) {
   .menu-btn {
     margin-top: 40px;
- /*    top: 14px;
-    left: 14px;
-    padding: 6px; */
+
   }
-  .menu-btn img {
-/*     width: 28px;
-    height: 28px; */
-  }
+
   
+}
+@media (max-width: 768px) and (orientation: portrait) {
+  .section4.bg_animate .burbujas {
+    display: none !important;        /* oculta el contenedor entero */
+  }
+
+
 }
