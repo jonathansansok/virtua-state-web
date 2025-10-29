@@ -1692,3 +1692,314 @@ html, body { overflow-x: hidden; }
     margin-bottom: 6px;
   }
 }
+
+
+/* === FIX MOBILE HARD-LEFT (<=700px) === */
+@media (max-width:700px){
+
+  /* 1. Contenedor global: sin padding-left forzado */
+  main.containerRealState{
+    padding-left: 0 !important;   /* antes le metimos 16px */
+    padding-right: 16px;          /* lo mantenemos solo a la derecha si querés respirito visual */
+    margin: 0 !important;
+  }
+
+  /* 2. Cada sección principal SIN margin-left y SIN centrado */
+  .bim,
+  .notes,
+  .planosPlanta,
+  .matterPak,
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos{
+    align-items: flex-start !important; /* //aca: antes stretch/center, ahora texto arranca bien a la izquierda */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* 3. Bloques de texto (títulos, párrafos, listas) alineados bien a la izquierda */
+  .bim-card,
+  .bim-texto,
+  .notes-texto,
+  .google-texto,
+  .planosPlanta .notes-texto,
+  .matterPak .notes-texto,
+  .modoDeMedicion .notes-texto,
+  .blurBrush .notes-texto,
+  .vistaMaqueta .notes-texto,
+  .recorridos .notes-texto,
+  .notes-texto-largo,
+  .notes-texto-largo1,
+  .notes-texto-largo2,
+  .bim-points,
+  .bim-points li,
+  .notes-texto1,
+  .notes-texto2,
+  .bim-texto1,
+  .bim-texto2,
+  .liDeStreet,
+  .liDeStreet p {
+    text-align: left !important;   /* //aca: NO justify en mobile */
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* 4. títulos h3/h4/h5 que tenían width fija tipo 340px */
+  h3, h4, h5, h6,
+  .miniTitulo,
+  .bim-title,
+  .bim-miniTitulo {
+    width: auto !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* 5. Las imágenes dejan de estar “centradas”: se alinean a la izquierda */
+  .notes-foto,
+  .google > article:not(.google-texto),
+  .planosPlanta > img,
+  .matterPak > img,
+  .fotos4k > img,
+  .modoDeMedicion > img,
+  .blurBrush .notes-foto,
+  .vistaMaqueta .notes-foto,
+  .recorridos .notes-foto {
+    width: 100%;
+    display: block !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* 6. Las propias imágenes: 100% del ancho disponible pero arrancando a la izq */
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .notes-foto .miniFoto,
+  .modoDeMedicion > img.miniFoto,
+  .fotos4k > img.miniFoto {
+    width: 100% !important;
+    max-width: 420px !important; /* si querés que no se ponga gigante en pantallas medianas */
+    height: auto !important;
+    margin-left: 0 !important;
+  }
+
+  /* 7. CTA/link “masInformacion”: que también arranque a la izquierda */
+  .masInformacion {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: 100%;
+  }
+
+  /* 8. Tabs (el bloque .contenedor de las tabs Notes):
+        que no meta padding lateral que empuje el texto */
+  .contenedor{
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+  .contenedor .li{
+    text-align: left !important;
+  }
+  .contenedor .bloque{
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* 9. footer: misma idea, texto alineado duro a la izquierda en mobile */
+  footer.footer {
+    padding-left: 16px;   /* si literalmente querés CERO, poné 0 */
+    padding-right: 16px;
+  }
+
+  .container1_text_footer,
+  .container1_text_footer p,
+  .container1_text_footer .title_container1_text_footer,
+  .derechos {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* redes sociales en footer: alineadas a la izq */
+  .contenedor_redes {
+    justify-content: flex-start !important;
+  }
+}
+/* ===== Tabs Notes v2 (soft card + sombra realista) ===== */
+
+/* Wrapper de todo el módulo */
+.contenedor {
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(0,0,0,.07);          /* borde finito gris */
+  border-radius: 20px;
+  padding: 20px 20px 24px;
+  max-width: 680px;
+  width: 100%;
+  box-shadow:
+    0 24px 48px rgba(0,0,0,.08),
+    0 4px 16px rgba(0,0,0,.05);               /* sombra suave, profunda */
+  font-family: "Roboto", system-ui, sans-serif;
+}
+
+/* fila de pestañas */
+.contenedor .ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* botón de tab (estado base / inactiva) */
+.contenedor .li {
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(0,0,0,.12);          /* borde gris suave */
+  border-radius: 999px;                       /* pill */
+  padding: .6rem .9rem;
+  font-size: .9rem;
+  line-height: 1.1;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.08),
+    0 2px 6px rgba(0,0,0,.06);                /* sombra flotando */
+  transition:
+    box-shadow .15s ease,
+    transform .15s ease,
+    background .15s ease,
+    border-color .15s ease;
+}
+
+.contenedor .li:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 32px rgba(0,0,0,.12),
+    0 4px 10px rgba(0,0,0,.08);
+}
+
+/* tab ACTIVA */
+.contenedor .li.activo {
+  background: #7fff00;                        /* verde marca */
+  color: #000;
+  border-color: rgba(0,0,0,.18);
+  box-shadow:
+    0 24px 36px rgba(127,255,0,.28),          /* glow verdoso */
+    0 8px 16px rgba(0,0,0,.18);
+  font-weight: 700;
+}
+
+/* contenedor del contenido de cada tab */
+.contenedor .subcontenedor {
+  position: relative;
+  min-height: 140px;
+}
+
+/* panel individual (card blanca con sombra) */
+.contenedor .bloque {
+  display: none;
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 16px;
+  padding: 18px 20px 20px;
+  font-size: .95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  box-shadow:
+    0 32px 64px rgba(0,0,0,.12),
+    0 4px 16px rgba(0,0,0,.08);               /* profundidad suave */
+  opacity: 0;
+  transform: translateY(6px) scale(.99);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+/* panel visible */
+.contenedor .bloque.activo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* primera línea más marcada */
+.contenedor .bloque p:first-child {
+  font-weight: 600;
+  color: #000;
+}
+
+/* resaltar keywords dentro del texto */
+.contenedor .bloque strong {
+  font-weight: 700;
+  color: #000;
+  background: rgba(127,255,0,.18);            /* highlight suave verde translúcido */
+  border-radius: .4em;
+  padding: 0 .35em;
+}
+
+/* si metés bullets después */
+.contenedor .bloque ul {
+  margin-top: 14px;
+  padding-left: 0;
+  list-style: none;
+}
+.contenedor .bloque ul li {
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: .6em;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.contenedor .bloque ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1.2;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #04c200;                              /* check verde más oscuro para contraste */
+  text-shadow: 0 0 4px rgba(0,0,0,.2);
+}
+
+/* ===== Responsive (<=700px) ===== */
+@media (max-width:700px){
+  .contenedor {
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow:
+      0 20px 40px rgba(0,0,0,.16),
+      0 4px 12px rgba(0,0,0,.08);
+  }
+
+  .contenedor .li {
+    font-size: .85rem;
+    padding: .55rem .8rem;
+    border-radius: 999px;
+  }
+
+  .contenedor .bloque {
+    border-radius: 14px;
+    padding: 16px 16px 18px;
+    font-size: .9rem;
+    line-height: 1.45;
+  }
+}
