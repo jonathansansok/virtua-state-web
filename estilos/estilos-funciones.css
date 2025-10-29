@@ -8,12 +8,143 @@
   font-weight: normal;
 }
 
+:root {
+  --negro: #393939;
+  --blanco: #ececec;
+  --sombra-ppal: #c9c9c9;
+  --sombra-sec: #ffffff;
+  --borde-negro: #00000050;
+  --marcado: rgb(127, 195, 255);
 
-* {
+  --card-bg: #fff;
+  --text: #111;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 22px rgba(0, 0, 0, 0.12), 0 18px 40px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.12), 0 40px 80px rgba(0, 0, 0, 0.15);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+    --blanco: #303030;
+    --sombra-ppal: #242424;
+    --sombra-sec: #3c3c3c;
+    --borde-negro: #ffffff50;
+  }
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
-  padding: 0px;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+video,
+iframe,
+figure {
+  object-fit: cover;
+  object-position: center center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+  appearance: none;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #7fff00;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff1493;
+  border-radius: 8px;
+}
+
 .my-button {
   position: fixed;
   right: 40px;
@@ -23,22 +154,10 @@
   z-index: 100;
 }
 
-::-webkit-srollbar {
-  width: 10px;
-}
-::-webkit-scrollbar {
-  background-color: #7fff00;
-
-  border-radius: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #ff1493;
-  border-radius: 8px;
-}
-
 .header-CieloOk {
   height: 520px;
 }
+
 .cielo {
   height: 520px;
   background-image: url("../assets/img/sofa.jpg");
@@ -54,7 +173,6 @@
   margin-right: 30px;
   padding-top: 25px;
 }
-
 .cielo ul li {
   color: black;
   list-style: none;
@@ -72,7 +190,6 @@
 .cielo ul li a::after {
   content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -80,9 +197,8 @@
   background-color: #ff1493;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.5s; /*  ease-in-out */
+  transition: transform 0.5s;
 }
-
 .cielo ul li a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
@@ -102,31 +218,11 @@ h1:hover {
   text-shadow: red -6px 0, cyan 6px 0;
 }
 
-::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #ff1493;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s; /*  ease-in-out */
-}
-
-.cielo ul li a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
 .menu-btn {
   position: absolute;
   cursor: pointer;
   top: 15px;
-  /*      right: 30px;  */
-  z-index: 2;
+  z-index: 1001;
   font-size: 1.5rem;
   padding-left: 12px;
   padding-right: 12px;
@@ -147,8 +243,6 @@ h1:hover {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
-  /*     gap: 0px 0px; */
-
   grid-template-areas:
     "bim"
     "notes"
@@ -176,7 +270,6 @@ h1:hover {
   width: 600px;
   opacity: 150;
 }
-
 .bim-miniFoto {
   margin-bottom: 30px;
 }
@@ -193,6 +286,7 @@ h1:hover {
 .bim-miniTitulo {
   margin-bottom: 25px;
 }
+
 .masInformacion {
   color: black;
   font-weight: bold;
@@ -214,7 +308,6 @@ h1:hover {
   width: 72px;
   margin-bottom: 30px;
 }
-
 .notes-texto1 {
   max-width: 650px;
   line-height: 1.73rem;
@@ -224,7 +317,6 @@ h1:hover {
   max-width: 650px;
   line-height: 1.5rem;
 }
-
 .miniTitulo {
   margin-bottom: 20px;
 }
@@ -234,22 +326,14 @@ h1:hover {
 
 .notes-texto-largo {
   margin-top: 30px;
-  /*     max-width: 87%; */
   line-height: 1.72rem;
   font-size: 16px;
   margin: 20px 80px 0px 80px;
 }
-
 .notes-texto-largo1 {
   line-height: 1.72rem;
   width: auto;
   font-size: 16px;
-}
-
-.masInformacion {
-  color: black;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 .planosPlanta {
@@ -262,7 +346,6 @@ h1:hover {
   margin-top: 60px;
   gap: 0px 70px;
 }
-
 .miniFotoFloor {
   width: 500px;
 }
@@ -283,9 +366,6 @@ h1:hover {
 .liDeStreet:hover {
   color: #8a2be2;
 }
-/*     .notes-texto-largo{
-      
-    } */
 
 .google {
   grid-area: google;
@@ -297,7 +377,6 @@ h1:hover {
   margin-top: 80px;
   gap: 0px 70px;
 }
-
 .miniFotoGoogle {
   width: 550px;
   border-radius: 7px;
@@ -305,7 +384,6 @@ h1:hover {
 .google-compare {
   width: auto;
 }
-
 .googleTitCompare h5 {
   font-size: 1.2rem;
   font-weight: bold;
@@ -318,11 +396,8 @@ h1:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /*         min-width: 450px; */
   flex-wrap: wrap;
-  /*         align-items: center; */
   padding-top: 30px;
-  /*         border: 1px solid rgb(221, 217, 217);  */
   padding-bottom: 15px;
   gap: 0px 20px;
 }
@@ -345,7 +420,6 @@ h1:hover {
   margin-top: 40px;
   width: auto;
 }
-
 .google-pie {
   margin-top: 30px;
   font-size: 1.2rem;
@@ -361,200 +435,11 @@ h1:hover {
   margin-top: 100px;
   gap: 0px 70px;
 }
-
 .miniFoto4k {
   margin-top: 10px;
   width: 90px;
   margin-bottom: 30px;
 }
-.notes-texto1 {
-  max-width: 600px;
-}
-
-
-:root {
-  --negro: #393939;
-  --blanco: #ececec;
-  --sombra-ppal: #c9c9c9;
-  --sombra-sec: #ffffff;
-  --borde-negro: #00000050;
-  --marcado: rgb(127, 195, 255);
-
-}
-
-/* Las adaptamos al modo oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --negro: #ececec;
-    --blanco: #303030;
-    --sombra-ppal: #242424;
-    --sombra-sec: #3c3c3c;
-    --borde-negro: #FFFFFF50;
-  }
-}
-
-
-video, iframe, figure {
-
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
-}
-
-a {
-  display: block;
-}
-
-
-li {
-  list-style-type: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
-  font-size: 1em;
-  font-weight: inherit;
-  font-style: inherit;
-  text-decoration: none;
-  color: inherit;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
-}
-
-::-moz-selection {
-  background-color: var(--negro);
-  color: var(--blanco);
-}
-
-::selection {
-  background-color: var(--negro);
-  color: var(--blanco);
-}
-
-form, input, textarea, select, button, label {
-  font-family: inherit;
-  font-size: inherit;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  background-color: transparent;
-  display: block;
-  color: inherit;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-table, tr, td {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-svg {
-  width: 100%;
-  display: block;
-  fill: currentColor;
-}
-
-
-.contenedor {
-  width: 90%;
-  height: 400px;
-  max-width: 45em;
-  padding: 1em;
-  color: var(--negro);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  border-radius: 0.5em;
-  background-color: var(--blanco);
-  -webkit-box-shadow: 0.3em 0.3em 0.6em var(--sombra-ppal), -0.3em -0.3em 0.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-          box-shadow: 0.3em 0.3em 0.6em var(--sombra-ppal), -0.3em -0.3em 0.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-}
-
-.contenedor .ul {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.contenedor .li {
-  padding: 1em;
-  margin: 0 2em 0 0;
-  color: var(--negro);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  border-radius: 0.5em;
-  background-color: var(--blanco);
-  -webkit-box-shadow: 0.3em 0.3em 0.6em var(--sombra-ppal), -0.3em -0.3em 0.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-          box-shadow: 0.3em 0.3em 0.6em var(--sombra-ppal), -0.3em -0.3em 0.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  .contenedor .li {
-
-    margin: 0 0.5em 0 0;
-   font-size: 0.8rem;
-  }
-}
-
-
-.contenedor .li.activo {
-  background-color: lightskyblue;
-  color: white;
-}
-
-.contenedor .subcontenedor {
-  min-height: 10vh;
-  position: relative;
-}
-
-.contenedor .bloque {
-  margin: 1em;
-  padding: 1em;
-  position: absolute;
-  top: 2em;
-  color: var(--negro);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  border-radius: 0.5em;
-  background-color: var(--blanco);
-  -webkit-box-shadow: 0.3em 0.3em 0.6em var(--sombra-ppal), -0.3em -0.3em 0.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-          box-shadow: 0.3em 0.3em 0.6em var(--sombra-ppal), -0.3em -0.3em 0.6em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-  opacity: 0;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.contenedor .bloque.activo {
-  opacity: 1;
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
-}
-
-/*TERMINA ESTILO DE TAB*/
 
 .modoDeMedicion {
   grid-area: modoDeMedicion;
@@ -604,7 +489,324 @@ svg {
   gap: 0px 70px;
 }
 
-@media (max-width: 1118px) {
+.footer {
+  color: #fff;
+  padding: 40px 0px;
+  background-image: url("../assets/img/pattern2.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.text1_footer {
+  font-family: "MonumentExtended", sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .text1_footer {
+    font-size: 40px;
+  }
+}
+
+.matters {
+  color: #8a2ae3;
+}
+.logoFooter {
+  font-size: 50px;
+}
+.bi-linkedin {
+  color: #8a2ae3;
+}
+.bi-instagram {
+  color: #ff1493;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.img_footer {
+  width: 200px;
+  border-radius: 10px;
+}
+.container1_text_footer {
+  width: 200px;
+}
+.title_container1_text_footer {
+  font-family: "MonumentExtended", sans-serif;
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+}
+.derechos {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#preguntame {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.color-negro {
+  color: #000;
+}
+
+.leadclick-widget,
+.leadclick-fab {
+  z-index: 1000;
+}
+
+.tabs-notes {
+  background: #fff !important;
+  color: #000 !important;
+  border: 2px solid #000;
+  border-radius: 14px;
+  padding: 16px;
+  height: auto;
+  max-width: 680px;
+  box-shadow: 8px 8px 0 #000, 0 2px 18px rgba(0, 0, 0, 0.08);
+}
+.tabs-notes .ul {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tabs-notes .li {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 0.6rem 0.9rem;
+  margin: 0;
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(0, 0);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+  outline: none;
+  line-height: 1;
+  cursor: pointer;
+}
+.tabs-notes .li:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #000;
+}
+.tabs-notes .li:active {
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 #000;
+}
+.tabs-notes .li.activo {
+  background: #f4f4f4;
+}
+.tabs-notes .subcontenedor {
+  position: relative;
+  min-height: 120px;
+}
+.tabs-notes .bloque {
+  position: relative;
+  top: auto;
+  margin: 14px 6px 6px 6px;
+  padding: 16px 18px;
+  border: 2px solid #000;
+  border-radius: 14px;
+  background: #fff;
+  color: #000;
+  box-shadow: 6px 6px 0 #000, 0 1px 12px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: none;
+}
+.tabs-notes .bloque.activo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.tabs-notes p,
+.tabs-notes li,
+.tabs-notes ol,
+.tabs-notes ul {
+  color: #000;
+}
+.tabs-notes ul,
+.tabs-notes ol {
+  padding-left: 1.1rem;
+}
+.tabs-notes ul li {
+  list-style: none;
+}
+.tabs-notes ol li {
+  list-style: decimal;
+}
+
+.bim-card {
+  background: #fff;
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 24px 22px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12), 0 40px 80px rgba(0, 0, 0, 0.15);
+}
+.bim-badge {
+  display: inline-block;
+  background: #ff1493;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(255, 20, 147, 0.25);
+  margin-bottom: 10px;
+}
+.bim-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 4px 0 12px 0;
+}
+.bim-points {
+  margin: 0 0 16px 0;
+  padding-left: 1.1rem;
+}
+.bim-points li {
+  list-style: disc;
+  margin: 6px 0;
+  text-align: justify;
+  hyphens: auto;
+}
+.bim-cta {
+  display: inline-block;
+  background: #ff1493;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(255, 20, 147, 0.25);
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.bim-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(255, 20, 147, 0.3);
+}
+.bim-cta:active {
+  transform: translateY(0);
+}
+
+.contenedor {
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  padding: 20px 20px 24px;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.05);
+  font-family: "Roboto", system-ui, sans-serif;
+}
+.contenedor .ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 16px 0;
+  padding: 0;
+  list-style: none;
+}
+.contenedor .li {
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.1;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.15s ease, transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
+  text-align: left;
+}
+.contenedor .li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.contenedor .li.activo {
+  background: #7fff00;
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 24px 36px rgba(127, 255, 0, 0.28),
+    0 8px 16px rgba(0, 0, 0, 0.18);
+  font-weight: 700;
+}
+.contenedor .subcontenedor {
+  position: relative;
+  min-height: 140px;
+}
+.contenedor .bloque {
+  display: none;
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+  padding: 18px 20px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(6px) scale(0.99);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  text-align: left;
+}
+.contenedor .bloque.activo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.contenedor .bloque p:first-child {
+  font-weight: 600;
+  color: #000;
+}
+.contenedor .bloque strong {
+  font-weight: 700;
+  color: #000;
+  background: rgba(127, 255, 0, 0.18);
+  border-radius: 0.4em;
+  padding: 0 0.35em;
+}
+.contenedor .bloque ul {
+  margin-top: 14px;
+  padding-left: 0;
+  list-style: none;
+}
+.contenedor .bloque ul li {
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: 0.6em;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.contenedor .bloque ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1.2;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #04c200;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.notes-texto-largo1,
+.notes-texto-largo2 {
+  text-align: left !important;
+  hyphens: manual;
+}
+
+/* @media (max-width: 1118px) {
   .bim-miniFoto {
     margin-top: 20px;
   }
@@ -646,7 +848,6 @@ svg {
   .google-pie {
     width: 700px;
   }
-
   .notes-texto-largo {
     margin-left: 15px;
     margin-right: 15px;
@@ -662,7 +863,7 @@ svg {
     height: auto;
   }
 }
-
+ */
 @media (max-width: 910px) {
   .cielo .cieloLista {
     width: 100%;
@@ -675,11 +876,12 @@ svg {
     text-align: center;
     padding-top: 40px;
     margin: 0;
-    transform: translateX(-1000px);
+    transform: translateX(-100vw);
     transition: transform 0.5s ease-in-out;
+    will-change: transform;
   }
   .cielo .cieloLista.show {
-    transform: translateX(0px);
+    transform: translateX(0);
   }
   .notes-texto-largo {
     display: flex;
@@ -694,13 +896,11 @@ svg {
   .notes-texto-largo2 {
     max-width: 400px;
   }
-
   .cielo ul li {
     margin-top: 0;
     margin-bottom: 0;
     padding: 8px 0px;
   }
-
   .menu-btn {
     display: block;
   }
@@ -716,87 +916,363 @@ svg {
 }
 
 @media (max-width: 700px) {
+  main.containerRealState {
+    padding: 0 16px 110px;
+    margin: 0 !important;
+  }
+
+  .bim,
+  .notes,
+  .planosPlanta,
+  .matterPak,
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    row-gap: 12px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+
   .bim {
-    margin-top: 40px;
+    margin-left: 0;
   }
-  .googleFrames1Tit {
-    width: 450px;
-  }
-  .google-pie {
-    width: 450px;
-  }
+
   .miniFoto {
     width: 450px;
+    align-self: flex-start;
   }
+
   .miniFotoNotes {
     width: 450px;
   }
+
   .notes-texto1 {
     max-width: 450px;
   }
-  .planosPlanta {
+
+  .googleFrames1Tit {
     width: 450px;
-    display: flex;
+  }
+
+  .google-pie {
+    width: 450px;
+  }
+
+  .planosPlanta {
+    width: auto;
     flex-direction: column;
     justify-content: center;
   }
+
+  .matterPak,
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos {
+    margin-left: 0;
+  }
+
   .bim-texto {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
+    align-items: flex-start;
   }
+
   .bim-miniFoto {
     width: 50px;
   }
-  .bim-texto1 {
-    width: 450px;
-    min-width: 300px;
-  }
+
+  .bim-texto1,
   .bim-texto2 {
     width: 450px;
     min-width: 300px;
+    text-align: left !important;
+    hyphens: auto;
   }
+
   .miniFotoGoogle {
     width: 350px;
     border-radius: 7px;
   }
+
   .miniFotoNotes {
     width: 350px;
     border-radius: 7px;
   }
-  .bim {
-    margin-left: 24px;
-  }
-  .notes {
-    margin-left: 13px;
+
+  .miniFoto-gsv {
+    width: 350px;
   }
 
-  .planosPlanta {
-    margin-left: 22px;
+  .miniFotoFloor {
+    width: 350px;
   }
-  .matterPak {
-    margin-left: 25px;
+
+  .notes-texto,
+  .google-texto {
+    display: flex;
+    flex-direction: column;
+    text-align: left !important;
   }
-  .google {
-    margin-left: 22px;
+
+  .notes-texto .masInformacion,
+  .google-texto .masInformacion {
+    order: -1;
+    display: block;
+    margin: 10px 0 6px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-align: left !important;
   }
-  .fotos4k {
-    margin-left: 22px;
+
+  .notes-texto,
+  .google-texto,
+  .bim-texto,
+  .notes-texto-largo,
+  .planosPlanta .notes-texto,
+  .matterPak .notes-texto,
+  .bim-points li,
+  .notes-texto1,
+  .notes-texto2,
+  .bim-texto1,
+  .bim-texto2 {
+    text-align: left !important;
+    hyphens: auto;
   }
-  .modoDeMedicion {
-    margin-left: 22px;
+
+  .notes-texto-largo,
+  .notes-texto-largo1,
+  .notes-texto-largo2,
+  .bim-points,
+  .bim-points li,
+  .liDeStreet,
+  .liDeStreet p {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
-  .blurBrush {
-    margin-left: 22px;
+
+  h3,
+  h4,
+  h5,
+  h6,
+  .miniTitulo,
+  .bim-title,
+  .bim-miniTitulo {
+    width: auto !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
-  .vistaMaqueta {
-    margin-left: 22px;
+
+  .notes-foto,
+  .google > article:not(.google-texto),
+  .planosPlanta > img,
+  .matterPak > img,
+  .fotos4k > img,
+  .modoDeMedicion > img,
+  .blurBrush .notes-foto,
+  .vistaMaqueta .notes-foto,
+  .recorridos .notes-foto {
+    width: 100%;
+    display: block !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
+
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .notes-foto .miniFoto,
+  .modoDeMedicion > img.miniFoto,
+  .fotos4k > img.miniFoto {
+    width: 100% !important;
+    max-width: clamp(260px, 92vw, 420px);
+    height: auto !important;
+    margin-left: 0 !important;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
   .recorridos {
-    margin-left: 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .google .google-texto {
+    order: 1;
+  }
+  .google > article:not(.google-texto) {
+    order: 2;
+  }
+
+  .fotos4k > article.notes-texto {
+    order: 1;
+  }
+  .fotos4k > img.miniFoto {
+    order: 2;
+  }
+
+  .modoDeMedicion > article.notes-texto {
+    order: 1;
+  }
+  .modoDeMedicion > img.miniFoto {
+    order: 2;
+  }
+
+  .blurBrush > article.notes-texto {
+    order: 1;
+  }
+  .blurBrush > article.notes-foto {
+    order: 2;
+  }
+
+  .vistaMaqueta > article.notes-texto {
+    order: 1;
+  }
+  .vistaMaqueta > article.notes-foto {
+    order: 2;
+  }
+
+  .recorridos > article.notes-texto {
+    order: 1;
+  }
+  .recorridos > article.notes-foto {
+    order: 2;
+  }
+
+  .google > article,
+  .fotos4k > article,
+  .modoDeMedicion > article,
+  .blurBrush > article,
+  .vistaMaqueta > article,
+  .recorridos > article,
+  .fotos4k > img.miniFoto,
+  .modoDeMedicion > img.miniFoto,
+  .google .miniFotoGoogle,
+  .notes-foto .miniFoto {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .notes-foto,
+  .google > article:not(.google-texto) {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .notes-texto-largo1,
+  .notes-texto-largo2 {
+    text-align: left !important;
+    max-width: 92vw;
+    margin-left: 0;
+  }
+
+  footer.footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .container1_text_footer,
+  .container1_text_footer p,
+  .container1_text_footer .title_container1_text_footer,
+  .derechos {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .contenedor_redes {
+    justify-content: flex-start !important;
+  }
+
+  .contenedor {
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  .contenedor .li {
+    font-size: 0.85rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    text-align: left !important;
+  }
+
+  .contenedor .subcontenedor {
+    min-height: 140px;
+  }
+
+  .contenedor .bloque {
+    border-radius: 14px;
+    padding: 16px 16px 18px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 }
+@media (max-width:700px) {
+  .bim-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.contenedor .subcontenedor .bloque {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  .bim-card {
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .bim-title {
+    font-size: 1.2rem;
+  }
+  .bim-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 @media (max-width: 530px) {
   .header-CieloOk {
     height: 350px;
@@ -811,24 +1287,41 @@ svg {
   .cardsRosasUnidad {
     padding-left: 10px;
   }
-  .miniFoto {
-    align-self: center;
-  }
   .cardsRosasUnidad p {
     padding-right: 10px;
   }
-  .miniFotoFloor {
-    width: 350px;
+}
+
+@media (max-width: 520px) {
+  .google,
+  .fotos4k,
+  .modoDeMedicion,
+  .blurBrush,
+  .vistaMaqueta,
+  .recorridos {
+    gap: 12px;
+  }
+  .miniFoto,
+  .miniFotoGoogle,
+  .miniFotoFloor,
+  .miniFotoNotes,
+  .notes-foto .miniFoto {
+    max-width: clamp(240px, 90vw, 400px);
+  }
+}
+
+@media (max-width: 481px) {
+  .footer-esquivo-bootstrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media (max-width: 480px) {
-  h4 {
-    width: 340px;
-  }
-  h3 {
-    width: 340px;
-  }
+  h4,
+  h3,
   h5 {
     width: 340px;
   }
@@ -856,133 +1349,11 @@ svg {
   .googleFrames1Tit {
     width: 350px;
   }
-
   .matterportLast {
     width: 350px;
   }
   .google-pie {
     width: 350px;
-  }
-}
-
-@media (max-width: 450px) {
-  .bim {
-    width: 350px;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .miniFoto {
-    width: 350px;
-  }
-  .notes {
-    width: 350px;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .planosPlanta {
-    width: 350px;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .matterPak {
-    width: 350px;
-    justify-content: center;
-  }
-  .google {
-    width: 350px;
-  }
-  .fotos4k {
-    width: 350px;
-  }
-  .modoDeMedicion {
-    width: 350px;
-  }
-  .blurBrush {
-    width: 350px;
-  }
-  .vistaMaqueta {
-    width: 350px;
-  }
-
-  .recorridos {
-    width: 350px;
-  }
-}
-
-/* ------FOOTER ---------*/
-
-.footer {
-
-  color: #fff;
-  padding: 40px 0px;
-  background-image: url("../assets/img/pattern2.png");
-  background-size: contain;
-  background-position: center;
-  opacity: disabled;
-  opacity: none;
-}
-
-.text1_footer {
-  font-family: "MonumentExtended", sans-serif;
-  text-align: center;
-  font-size: 20px;
-}
-
-@media (min-width: 768px) {
-  .text1_footer {
-    font-size: 40px;
-  }
-}
-
-.matters {
-  color: #8a2ae3;
-}
-
-.logoFooter {
-  font-size: 50px;
-}
-
-.bi-linkedin {
-  color: #8a2ae3;
-}
-
-.bi-instagram {
-  color: #ff1493;
-}
-
-.cursor_pointer {
-  cursor: pointer;
-}
-
-.img_footer {
-  width: 200px;
-  border-radius: 10px;
-}
-
-.container1_text_footer {
-  width: 200px;
-}
-
-.title_container1_text_footer {
-  font-family: "MonumentExtended", sans-serif;
-  font-size: 17px;
-  color: #fff;
-  text-align: center;
-}
-
-.derechos {
-  text-align: center;
-
-  font-size: 12px;
-  font-weight: bold;
-}
-
-@media (max-width: 481px) {
-  .footer-esquivo-bootstrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -994,1012 +1365,35 @@ svg {
     max-width: 350px;
   }
 }
-#preguntame {
-  color: #000;
-  font-size: 1.1rem;
-}
 
-.color-negro {
-  color: #000;
-}
-
-/* ===== Alternancia de orden en secciones específicas ===== */
-/* //aca: solo desktop; en mobile se apilan normal */
-@media (min-width: 768px) {
-  /* 1) Google → foto - texto */
-  .google { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; }
-  .google .google-texto { order: 2; }                 /* //aca: texto a la derecha */
-  .google > article:not(.google-texto) { order: 1; }  /* //aca: foto a la izquierda */
-
-  /* 2) Fotos 4K → texto - foto */
-  .fotos4k { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; }
-  .fotos4k > article.notes-texto { order: 1; }        /* //aca: texto a la izquierda */
-  .fotos4k > img.miniFoto { order: 2; }               /* //aca: foto a la derecha */
-
-  /* 3) Modo de Medición → ya es foto - texto (OK) */
-  /* 4) Blur Brush → ya es texto - foto (OK) */
-  /* 5) Vista Maqueta → ya es foto - texto (OK) */
-  /* 6) Recorridos → ya es texto - foto (OK) */
-}
-
-/* //aca opcional: para evitar que se rompa el wrap, darles base similar */
-@media (min-width: 768px) {
-  .google > article,
-  .fotos4k > article,
-  .fotos4k > img.miniFoto {
-    flex: 1 1 480px; /* //aca: cada lado ocupa ~50% y cae a otra línea si no entra */
-    max-width: 700px; /* //aca: límite para no estirar la imagen gigante */
-  }
-}
-
-/* ===== MOBILE: texto arriba, foto abajo (<= 700px) ===== */
-@media (max-width: 700px) {
-
-  /* //aca: normalizamos cada sección a columna */
+@media (max-width: 450px) {
+  .bim,
+  .notes,
+  .planosPlanta,
+  .matterPak,
   .google,
   .fotos4k,
   .modoDeMedicion,
   .blurBrush,
   .vistaMaqueta,
   .recorridos {
-    display: flex;            /* //aca: aseguramos flex */
-    flex-direction: column;   /* //aca: apilado vertical */
-    align-items: center;      /* //aca: centrado */
-    gap: 16px;
-  }
-
-  /* -------- Google: texto (arriba) + foto (abajo) -------- */
-  .google .google-texto { order: 1; }             /* //aca: texto primero */
-  .google > article:not(.google-texto) { order: 2; }  /* //aca: foto después */
-
-  /* -------- Fotos 4K: texto (arriba) + foto (abajo) -------- */
-  .fotos4k > article.notes-texto { order: 1; }    /* //aca: texto primero */
-  .fotos4k > img.miniFoto { order: 2; }           /* //aca: foto después */
-
-  /* -------- Modo de Medición: texto (arriba) + foto (abajo) -------- */
-  .modoDeMedicion > article.notes-texto { order: 1; }  /* //aca: texto primero */
-  .modoDeMedicion > img.miniFoto { order: 2; }         /* //aca: foto después */
-
-  /* -------- Blur Brush: texto (arriba) + foto (abajo) -------- */
-  .blurBrush > article.notes-texto { order: 1; }   /* //aca: texto primero */
-  .blurBrush > article.notes-foto { order: 2; }    /* //aca: foto después */
-
-  /* -------- Vista Maqueta: texto (arriba) + foto (abajo) -------- */
-  .vistaMaqueta > article.notes-texto { order: 1; }    /* //aca: texto primero */
-  .vistaMaqueta > article.notes-foto { order: 2; }     /* //aca: foto después */
-
-  /* -------- Recorridos: texto (arriba) + foto (abajo) -------- */
-  .recorridos > article.notes-texto { order: 1; }  /* //aca: texto primero */
-  .recorridos > article.notes-foto { order: 2; }   /* //aca: foto después */
-
-  /* //aca: que todo tome ancho completo en mobile y se vea prolijo */
-  .google > article,
-  .fotos4k > article,
-  .modoDeMedicion > article,
-  .blurBrush > article,
-  .vistaMaqueta > article,
-  .recorridos > article,
-  .fotos4k > img.miniFoto,
-  .modoDeMedicion > img.miniFoto,
-  .google .miniFotoGoogle,
-  .notes-foto .miniFoto {
-    width: 100%;
-    max-width: 600px;   /* //aca: limite para que no se pixelee */
-  }
-
-  /* //aca: centramos imágenes dentro de sus contenedores */
-  .notes-foto,
-  .google > article:not(.google-texto) {
-    display: flex;
+    width: 350px;
+    flex-direction: column;
     justify-content: center;
   }
-}
-/* ===== Fix responsive mobile: texto arriba / foto abajo + imágenes fluidas ===== */
-/* //aca: box-sizing global para que padding/gap no rompan el ancho */
-*, *::before, *::after { box-sizing: border-box; }
-
-/* //aca: red de seguridad por si algo queda pasado de ancho */
-html, body { overflow-x: hidden; }
-
-/* //aca: móvil: todas las secciones a columna, texto primero, foto después */
-@media (max-width: 700px) {
-  .google,
-  .fotos4k,
-  .modoDeMedicion,
-  .blurBrush,
-  .vistaMaqueta,
-  .recorridos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding-left: 16px;   /* //aca: gutters para que no pegue al borde */
-    padding-right: 16px;
-    margin-left: 0 !important; /* //aca: anulamos márgenes izquierdos heredados */
-  }
-
-  /* orden: texto arriba / foto abajo */
-  .google .google-texto { order: 1; }
-  .google > article:not(.google-texto) { order: 2; }
-
-  .fotos4k > article.notes-texto { order: 1; }
-  .fotos4k > img.miniFoto { order: 2; }
-
-  .modoDeMedicion > article.notes-texto { order: 1; }
-  .modoDeMedicion > img.miniFoto { order: 2; }
-
-  .blurBrush > article.notes-texto { order: 1; }
-  .blurBrush > article.notes-foto { order: 2; }
-
-  .vistaMaqueta > article.notes-texto { order: 1; }
-  .vistaMaqueta > article.notes-foto { order: 2; }
-
-  .recorridos > article.notes-texto { order: 1; }
-  .recorridos > article.notes-foto { order: 2; }
-
-  /* ===== Imágenes fluidas y sin overflow ===== */
-  /* //aca: neutralizamos widths fijos (350/450/550px) que definiste en otros @media */
-  .miniFoto,
-  .miniFotoGoogle,
-  .miniFotoFloor,
-  .miniFotoNotes,
-  .notes-foto .miniFoto,
-  .google .miniFotoGoogle,
-  .fotos4k > img.miniFoto,
-  .modoDeMedicion > img.miniFoto {
-    width: 100% !important;       /* //aca: ocupa el ancho disponible del contenedor */
-    max-width: clamp(260px, 92vw, 420px); /* //aca: escala con viewport sin pasarse */
-    height: auto !important;      /* //aca: mantiene proporción */
-    display: block;
-  }
-
-  /* //aca: centramos contenedores de foto */
-  .notes-foto,
-  .google > article:not(.google-texto) {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  /* //aca: títulos y párrafos también se ajustan al ancho, sin forzar widths fijos */
-  .google .miniTitulo,
-  .fotos4k .miniTitulo,
-  .modoDeMedicion .miniTitulo,
-  .blurBrush .miniTitulo,
-  .vistaMaqueta .miniTitulo,
-  .recorridos .miniTitulo,
-  .notes-texto1 {
-    max-width: 92vw;
+  .miniFoto {
+    width: 350px;
   }
 }
-
-/* ===== Ajuste fino para pantallas angostas (<= 520px) ===== */
-@media (max-width: 520px) {
-  /* //aca: un poco menos de gap para que no empuje el ancho total */
-  .google,
-  .fotos4k,
-  .modoDeMedicion,
-  .blurBrush,
-  .vistaMaqueta,
-  .recorridos {
-    gap: 12px;
+@media (max-width:700px) {
+  .bim-points {
+    padding-left: 0;        /* sacamos indent extra */
+    margin-left: 0;
   }
 
-  /* //aca: imágenes un toque más chicas para evitar “salidas” en ~491px */
-  .miniFoto,
-  .miniFotoGoogle,
-  .miniFotoFloor,
-  .miniFotoNotes,
-  .notes-foto .miniFoto {
-    max-width: clamp(240px, 90vw, 400px);
-  }
-}
-/* === Mobile: fotos a la izquierda + texto justificado === */
-@media (max-width: 700px) {
-  /* las secciones se apilan, pero ya no centramos el contenido */
-  .google,
-  .fotos4k,
-  .modoDeMedicion,
-  .blurBrush,
-  .vistaMaqueta,
-  .recorridos {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;      /* << antes: center */
-    gap: 16px;
-    padding: 0 16px;           /* gutter interno */
-    margin-left: 0 !important; /* anula márgenes heredados que empujan */
-  }
-
-  /* --- TEXTO JUSTIFICADO --- */
-  .notes-texto,
-  .google-texto,
-  .bim-texto,
-  .notes-texto-largo,
-  .planosPlanta .notes-texto,
-  .matterPak .notes-texto {
-    text-align: justify;
-  }
-  /* parrafos frecuentes */
-  .notes-texto1,
-  .notes-texto2,
-  .bim-texto1,
-  .bim-texto2,
-  .notes-texto-largo1,
-  .notes-texto-largo2,
-  .liDeStreet p {
-    text-align: justify;
-    hyphens: auto;
-  }
-
-  /* --- FOTOS A LA IZQUIERDA --- */
-  /* contenedores de imagen dejan de centrar */
-  .notes-foto,
-  .google > article:not(.google-texto) {
-    display: flex;
-    justify-content: flex-start; /* << antes: center */
-  }
-
-  /* imágenes fluidas, pegadas a la izquierda */
-  .miniFoto,
-  .miniFotoGoogle,
-  .miniFotoFloor,
-  .miniFotoNotes,
-  .fotos4k > img.miniFoto,
-  .modoDeMedicion > img.miniFoto,
-  .notes-foto .miniFoto {
-    width: 100% !important;
-    max-width: clamp(260px, 92vw, 420px); /* escala con viewport */
-    height: auto !important;
-    margin: 0 auto 0 0; /* << izquierda */
-    display: block;
-  }
-
-  /* títulos y listas no forzados a un ancho fijo */
-  .miniTitulo,
-  .google .miniTitulo,
-  .fotos4k .miniTitulo,
-  .modoDeMedicion .miniTitulo,
-  .blurBrush .miniTitulo,
-  .vistaMaqueta .miniTitulo,
-  .recorridos .miniTitulo {
-    max-width: 100%;
-  }
-}
-
-/* un ajuste más fino para pantallas muy angostas */
-@media (max-width: 520px) {
-  .miniFoto,
-  .miniFotoGoogle,
-  .miniFotoFloor,
-  .miniFotoNotes,
-  .notes-foto .miniFoto {
-    max-width: clamp(240px, 90vw, 400px);
-  }
-}
-/* ===== Tabs Notes 2025: blanco + sombra negra ===== */
-.tabs-notes {
-  background: #fff !important;
-  color: #000 !important;
-  border: 2px solid #000;
-  border-radius: 14px;
-  padding: 16px;
-  height: auto;                /* antes 400px */
-  max-width: 680px;            /* respeta tu layout */
-  /* sombra "3D" bordeada negra */
-  box-shadow:
-    8px 8px 0 #000,            /* escalón negro */
-    0 2px 18px rgba(0,0,0,.08);/* suave moderno */
-}
-
-/* barra de pestañas */
-.tabs-notes .ul {
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* botón de pestaña */
-.tabs-notes .li {
-  background: #fff;
-  color: #000;
-  border: 2px solid #000;
-  border-radius: 12px;
-  padding: .6rem .9rem;
-  margin: 0;                   /* sin separación lateral extra */
-  box-shadow: 4px 4px 0 #000;  /* relieve */
-  transform: translate(0,0);
-  transition: transform .1s ease, box-shadow .1s ease, background .2s ease;
-  outline: none;
-  line-height: 1;
-}
-.tabs-notes .li:hover { transform: translate(-1px,-1px); box-shadow: 5px 5px 0 #000; }
-.tabs-notes .li:active { transform: translate(1px,1px); box-shadow: 3px 3px 0 #000; }
-
-/* pestaña activa */
-.tabs-notes .li.activo {
-  background: #f4f4f4;
-}
-
-/* área de paneles */
-.tabs-notes .subcontenedor {
-  position: relative;
-  min-height: 120px; /* asegura espacio al cambiar */
-}
-
-/* panel individual */
-.tabs-notes .bloque {
-  position: relative;          /* de absolute => relative para auto-alto */
-  top: auto;                   /* reseteo */
-  margin: 14px 6px 6px 6px;
-  padding: 16px 18px;
-  border: 2px solid #000;
-  border-radius: 14px;
-  background: #fff;
-  color: #000;
-  box-shadow: 6px 6px 0 #000, 0 1px 12px rgba(0,0,0,.06);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .25s ease, transform .25s ease;
-  display: none;               /* oculto por defecto */
-}
-
-.tabs-notes .bloque.activo {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* tipografía y listas dentro del panel */
-.tabs-notes p, .tabs-notes li, .tabs-notes ol, .tabs-notes ul { color:#000; }
-.tabs-notes ul, .tabs-notes ol { padding-left: 1.1rem; }
-.tabs-notes ul li { list-style: none; }
-.tabs-notes ol li { list-style: decimal; }
-
-/* Responsive fino */
-@media (max-width: 700px) {
-  .tabs-notes { max-width: 100%; padding: 14px; }
-  .tabs-notes .li { padding: .55rem .8rem; font-size: .95rem; }
-  .tabs-notes .bloque { padding: 14px 16px; }
-}
-/* ====== Card + Tabs: estilo blanco con sombra moderna ====== */
-:root{
-  --card-bg: #fff;
-  --text: #111;
-  --border: rgba(0,0,0,.08);
-  --shadow-sm: 0 4px 10px rgba(0,0,0,.08);
-  --shadow-md: 0 10px 22px rgba(0,0,0,.12), 0 18px 40px rgba(0,0,0,.10);
-  --shadow-lg: 0 18px 40px rgba(0,0,0,.12), 0 40px 80px rgba(0,0,0,.15);
-}
-
-/* Caja principal */
-.contenedor{
-  background: var(--card-bg) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
-  padding: 16px;
-}
-
-/* Barra de tabs */
-.contenedor .ul{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-/* Botones de tab */
-.contenedor .li{
-  background: var(--card-bg);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: .55rem .95rem;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow .25s ease, transform .15s ease, background .2s ease;
-  cursor: pointer;
-  line-height: 1;
-  user-select: none;
-}
-.contenedor .li:hover{
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
-.contenedor .li.activo{
-  background: #7fff00;           /* verde fosforescente */
-  color: #000;                   /* texto negro */
-  box-shadow: 0 10px 20px rgba(0,0,0,.15);
-  border-color: #7fff00;         /* borde del mismo tono */
-}.contenedor .li:hover{
-  background: #7fff00b3; /* mismo color pero con transparencia */
-  color: #000;
-}
-
-/* Paneles */
-.contenedor .subcontenedor{
-  position: relative;
-  min-height: 140px; /* asegura alto agradable */
-}
-.contenedor .bloque{
-  position: absolute;
-  inset: 0;
-  background: var(--card-bg);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow-md);
-  padding: 16px 18px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .25s ease, transform .25s ease;
-}
-.contenedor .bloque.activo{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Texto de los paneles justificado como pediste en mobile y desktop */
-.contenedor .bloque p{ text-align: justify; hyphens: auto; }
-
-/* Responsivo fino */
-@media (max-width: 600px){
-  .contenedor{ border-radius: 14px; padding: 12px; }
-  .contenedor .li{ padding: .5rem .8rem; border-radius: 10px; }
-  .contenedor .bloque{ border-radius: 12px; padding: 14px; }
-}
-/* ===== Card BIM (blanco + sombra moderna con acento #ff1493) ===== */
-.bim-card{
-  background:#fff;
-  color:#111;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:16px;
-  padding:24px 22px;
-  max-width:600px;
-  width:100%;
-  box-shadow:
-    0 18px 40px rgba(0,0,0,.12),
-    0 40px 80px rgba(0,0,0,.15);   /* sombra moderna como la de la imagen */
-}
-
-.bim-badge{
-  display:inline-block;
-  background:#ff1493;           /* acento */
-  color:#fff;
-  font-weight:600;
-  font-size:.85rem;
-  line-height:1;
-  padding:8px 12px;
-  border-radius:999px;
-  box-shadow:0 8px 18px rgba(255,20,147,.25);
-  margin-bottom:10px;
-}
-
-.bim-title{
-  font-size:1.35rem;
-  font-weight:700;
-  margin:4px 0 12px 0;
-}
-
-.bim-points{
-  margin:0 0 16px 0;
-  padding-left:1.1rem;
-}
-.bim-points li{
-  list-style:disc;
-  margin:6px 0;
-  text-align:justify;
-  hyphens:auto;
-}
-
-/* CTA */
-.bim-cta{
-  display:inline-block;
-  background:#ff1493;
-  color:#fff;
-  font-weight:700;
-  padding:10px 14px;
-  border-radius:10px;
-  box-shadow:0 10px 22px rgba(255,20,147,.25);
-  transition:transform .12s ease, box-shadow .2s ease, background .2s ease;
-}
-.bim-cta:hover{ transform:translateY(-1px); box-shadow:0 18px 40px rgba(255,20,147,.3); }
-.bim-cta:active{ transform:translateY(0); }
-
-/* responsive fino del card */
-@media (max-width:600px){
-  .bim-card{ border-radius:14px; padding:18px; }
-  .bim-title{ font-size:1.2rem; }
-}
-/* ====== FIX GLOBAL ====== */
-/* //aqui: evita que algo empuje el ancho horizontal */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { overflow-x: hidden; }
-
-/* //aqui: capas por si algún z-index te tapa el menú o la burbuja */
-.menu-btn{ z-index:1001; }         /* boton hamburguesa por encima */
-.leadclick-widget, .leadclick-fab{ z-index:1000; } /* burbuja WA arriba de la card */
-
-/* ====== CONTENEDOR GENERAL ====== */
-/* //aqui: espacio inferior para no chocar con la burbuja WA en mobile */
-@media (max-width: 700px){
-  main.containerRealState{ 
-    padding: 0 16px 110px; /* //aqui: left/right gutters + bottom para la burbuja */
-    margin: 0 !important;  /* //aqui: anulamos márgenes heredados */
-  }
-}
-
-/* ====== SECCIONES EN MOBILE: columna, sin márgenes raros ====== */
-/* //aqui: unificamos TODAS las secciones que antes tenían margin-left: 22px, etc. */
-@media (max-width: 700px){
-  .bim,
-  .notes,
-  .planosPlanta,
-  .matterPak,
-  .google,
-  .fotos4k,
-  .modoDeMedicion,
-  .blurBrush,
-  .vistaMaqueta,
-  .recorridos{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;   /* //aca: ocupa ancho disponible, no centrado estrecho */
-    gap:16px;
-    margin:0 !important;   /* //aca: fuera los margin-left manuales */
-  }
-}
-
-/* ====== ORDEN: texto arriba / foto abajo (mobile) ====== */
-/* //aqui: reordenamos sin duplicar reglas */
-@media (max-width: 700px){
-  .google .google-texto,       .fotos4k .notes-texto,
-  .modoDeMedicion .notes-texto,.blurBrush .notes-texto,
-  .vistaMaqueta .notes-texto,  .recorridos .notes-texto{ order:1; }
-  .google > article:not(.google-texto),
-  .fotos4k > img.miniFoto,
-  .modoDeMedicion > img.miniFoto,
-  .blurBrush .notes-foto,
-  .vistaMaqueta .notes-foto,
-  .recorridos .notes-foto{ order:2; }
-}
-
-/* ====== IMÁGENES FLUIDAS (neutraliza 350/450/550px fijos) ====== */
-/* //aqui: una sola regla para todas tus clases de imagen */
-@media (max-width: 700px){
-  .miniFoto,
-  .miniFotoGoogle,
-  .miniFotoFloor,
-  .miniFotoNotes,
-  .notes-foto .miniFoto{
-    width:100% !important;          /* ocupa el contenedor */
-    max-width:clamp(260px, 92vw, 420px);
-    height:auto !important;
-    display:block;
-    margin:0;                       /* sin desplazamientos laterales */
-  }
-  /* //aqui: contenedores de foto sin centrado forzado */
-  .notes-foto,
-  .google > article:not(.google-texto){
-    display:flex; justify-content:flex-start;
-  }
-}
-
-/* ====== TEXTO JUSTIFICADO EN MOBILE (como en tus capturas) ====== */
-@media (max-width: 700px){
-  .notes-texto, .google-texto, .bim-texto,
-  .notes-texto-largo, .planosPlanta .notes-texto,
-  .matterPak .notes-texto, .bim-points li,
-  .notes-texto1, .notes-texto2, .bim-texto1, .bim-texto2{
-    text-align:justify; hyphens:auto;
-  }
-}
-
-/* ====== TABS: alto auto + animación limpia ====== */
-/* //aqui: tus tabs usaban position:absolute; provocaba saltos/solapes */
-.contenedor{ max-width: 680px; }
-.contenedor .subcontenedor{ position:relative; min-height:120px; }
-.contenedor .bloque{
-  position:relative;            /* //aca: de absolute -> relative */
-  top:auto; inset:auto;         /* //aca: reseteo */
-  margin:14px 6px 6px 6px;
-  padding:16px 18px;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:14px;
-  box-shadow:0 10px 22px rgba(0,0,0,.12);
-  background:#fff;
-  opacity:0; transform:translateY(6px);
-  transition:opacity .25s ease, transform .25s ease;
-  display:none;
-}
-.contenedor .bloque.activo{ display:block; opacity:1; transform:translateY(0); }
-
-/* ====== CARD BIM: toques responsivos ====== */
-/* //aqui: botón ancho completo en mobile y sin “salirse” */
-.bim-card{ max-width:600px; width:100%; }
-.bim-cta{ display:inline-block; }
-@media (max-width: 600px){
-  .bim-cta{ display:block; width:100%; text-align:center; }
-}
-
-/* ====== HEADER/HAMBURGUESA ====== */
-/* //aqui: evita "flash" desplegado mientras carga JS: oculto por defecto */
-@media (max-width: 910px){
-  .cielo .cieloLista{
-    transform: translateX(-100vw);           /* oculto inicial */
-    will-change: transform;
-  }
-  .cielo .cieloLista.show{ transform: translateX(0); }
-}
-.notes-texto-largo1,
-.notes-texto-largo2{
-  text-align: left !important;   /* //aca: pisa reglas previas */
-  hyphens: manual;               /* //aca: evita cortes raros */
-}
-
-/* //aca: mobile */
-@media (max-width: 700px){
-  .notes-texto-largo1,
-  .notes-texto-largo2{
-    text-align: left !important; /* //aca: sigue a la izquierda en mobile */
-    max-width: 92vw;             /* //aca: respeta gutter */
-    margin-left: 0;              /* //aca: sin desplazamientos */
-  }
-}
-
-/* ===== MOBILE (<=700px) ===== */
-@media (max-width:700px){
-
-  /* 1) aire entre secciones */
-  .bim,
-  .notes,
-  .planosPlanta,
-  .matterPak,
-  .google,
-  .fotos4k,
-  .modoDeMedicion,
-  .blurBrush,
-  .vistaMaqueta,
-  .recorridos{
-    margin-bottom: 64px;   /* ajustá el valor si querés más/menos separación */
-    row-gap: 12px;
-  }
-
-  /* 2) que la foto vaya primero (ya lo tenés) y
-        que el enlace quede inmediatamente debajo de la foto */
-  .notes-texto,
-  .google-texto{
-    display: flex;
-    flex-direction: column;
-  }
-  /* movemos el CTA al tope del bloque de texto,
-     por lo que queda pegado a la foto que está antes */
-  .notes-texto .masInformacion,
-  .google-texto .masInformacion{
-    order: -1;
-    display: block;
-    margin: 10px 0 6px;   /* respirito entre foto y link */
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  /* pequeño gap bajo la imagen para que no “toque” el link */
-  .notes-foto .miniFoto,
-  .miniFotoGoogle,
-  .miniFoto,
-  .miniFotoFloor{
-    margin-bottom: 6px;
-  }
-}
-
-
-/* === FIX MOBILE HARD-LEFT (<=700px) === */
-@media (max-width:700px){
-
-  /* 1. Contenedor global: sin padding-left forzado */
-  main.containerRealState{
-    padding-left: 0 !important;   /* antes le metimos 16px */
-    padding-right: 16px;          /* lo mantenemos solo a la derecha si querés respirito visual */
-    margin: 0 !important;
-  }
-
-  /* 2. Cada sección principal SIN margin-left y SIN centrado */
-  .bim,
-  .notes,
-  .planosPlanta,
-  .matterPak,
-  .google,
-  .fotos4k,
-  .modoDeMedicion,
-  .blurBrush,
-  .vistaMaqueta,
-  .recorridos{
-    align-items: flex-start !important; /* //aca: antes stretch/center, ahora texto arranca bien a la izquierda */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-  }
-
-  /* 3. Bloques de texto (títulos, párrafos, listas) alineados bien a la izquierda */
-  .bim-card,
-  .bim-texto,
-  .notes-texto,
-  .google-texto,
-  .planosPlanta .notes-texto,
-  .matterPak .notes-texto,
-  .modoDeMedicion .notes-texto,
-  .blurBrush .notes-texto,
-  .vistaMaqueta .notes-texto,
-  .recorridos .notes-texto,
-  .notes-texto-largo,
-  .notes-texto-largo1,
-  .notes-texto-largo2,
-  .bim-points,
-  .bim-points li,
-  .notes-texto1,
-  .notes-texto2,
-  .bim-texto1,
-  .bim-texto2,
-  .liDeStreet,
-  .liDeStreet p {
-    text-align: left !important;   /* //aca: NO justify en mobile */
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  /* 4. títulos h3/h4/h5 que tenían width fija tipo 340px */
-  h3, h4, h5, h6,
-  .miniTitulo,
-  .bim-title,
-  .bim-miniTitulo {
-    width: auto !important;
-    max-width: 100% !important;
-    text-align: left !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  /* 5. Las imágenes dejan de estar “centradas”: se alinean a la izquierda */
-  .notes-foto,
-  .google > article:not(.google-texto),
-  .planosPlanta > img,
-  .matterPak > img,
-  .fotos4k > img,
-  .modoDeMedicion > img,
-  .blurBrush .notes-foto,
-  .vistaMaqueta .notes-foto,
-  .recorridos .notes-foto {
-    width: 100%;
-    display: block !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    text-align: left !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  /* 6. Las propias imágenes: 100% del ancho disponible pero arrancando a la izq */
-  .miniFoto,
-  .miniFotoGoogle,
-  .miniFotoFloor,
-  .miniFotoNotes,
-  .notes-foto .miniFoto,
-  .modoDeMedicion > img.miniFoto,
-  .fotos4k > img.miniFoto {
-    width: 100% !important;
-    max-width: 420px !important; /* si querés que no se ponga gigante en pantallas medianas */
-    height: auto !important;
-    margin-left: 0 !important;
-  }
-
-  /* 7. CTA/link “masInformacion”: que también arranque a la izquierda */
-  .masInformacion {
-    text-align: left !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    width: 100%;
-  }
-
-  /* 8. Tabs (el bloque .contenedor de las tabs Notes):
-        que no meta padding lateral que empuje el texto */
-  .contenedor{
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: left !important;
-  }
-  .contenedor .li{
-    text-align: left !important;
-  }
-  .contenedor .bloque{
-    text-align: left !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  /* 9. footer: misma idea, texto alineado duro a la izquierda en mobile */
-  footer.footer {
-    padding-left: 16px;   /* si literalmente querés CERO, poné 0 */
-    padding-right: 16px;
-  }
-
-  .container1_text_footer,
-  .container1_text_footer p,
-  .container1_text_footer .title_container1_text_footer,
-  .derechos {
-    text-align: left !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  /* redes sociales en footer: alineadas a la izq */
-  .contenedor_redes {
-    justify-content: flex-start !important;
-  }
-}
-/* ===== Tabs Notes v2 (soft card + sombra realista) ===== */
-
-/* Wrapper de todo el módulo */
-.contenedor {
-  background: #fff;
-  color: #000;
-  border: 1px solid rgba(0,0,0,.07);          /* borde finito gris */
-  border-radius: 20px;
-  padding: 20px 20px 24px;
-  max-width: 680px;
-  width: 100%;
-  box-shadow:
-    0 24px 48px rgba(0,0,0,.08),
-    0 4px 16px rgba(0,0,0,.05);               /* sombra suave, profunda */
-  font-family: "Roboto", system-ui, sans-serif;
-}
-
-/* fila de pestañas */
-.contenedor .ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0 0 16px 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* botón de tab (estado base / inactiva) */
-.contenedor .li {
-  background: #fff;
-  color: #000;
-  border: 1px solid rgba(0,0,0,.12);          /* borde gris suave */
-  border-radius: 999px;                       /* pill */
-  padding: .6rem .9rem;
-  font-size: .9rem;
-  line-height: 1.1;
-  font-weight: 600;
-  cursor: pointer;
-  user-select: none;
-  box-shadow:
-    0 12px 24px rgba(0,0,0,.08),
-    0 2px 6px rgba(0,0,0,.06);                /* sombra flotando */
-  transition:
-    box-shadow .15s ease,
-    transform .15s ease,
-    background .15s ease,
-    border-color .15s ease;
-}
-
-.contenedor .li:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 20px 32px rgba(0,0,0,.12),
-    0 4px 10px rgba(0,0,0,.08);
-}
-
-/* tab ACTIVA */
-.contenedor .li.activo {
-  background: #7fff00;                        /* verde marca */
-  color: #000;
-  border-color: rgba(0,0,0,.18);
-  box-shadow:
-    0 24px 36px rgba(127,255,0,.28),          /* glow verdoso */
-    0 8px 16px rgba(0,0,0,.18);
-  font-weight: 700;
-}
-
-/* contenedor del contenido de cada tab */
-.contenedor .subcontenedor {
-  position: relative;
-  min-height: 140px;
-}
-
-/* panel individual (card blanca con sombra) */
-.contenedor .bloque {
-  display: none;
-  background: #fff;
-  color: #000;
-  border: 1px solid rgba(0,0,0,.07);
-  border-radius: 16px;
-  padding: 18px 20px 20px;
-  font-size: .95rem;
-  line-height: 1.5;
-  font-weight: 500;
-  box-shadow:
-    0 32px 64px rgba(0,0,0,.12),
-    0 4px 16px rgba(0,0,0,.08);               /* profundidad suave */
-  opacity: 0;
-  transform: translateY(6px) scale(.99);
-  transition: opacity .18s ease, transform .18s ease;
-}
-
-/* panel visible */
-.contenedor .bloque.activo {
-  display: block;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* primera línea más marcada */
-.contenedor .bloque p:first-child {
-  font-weight: 600;
-  color: #000;
-}
-
-/* resaltar keywords dentro del texto */
-.contenedor .bloque strong {
-  font-weight: 700;
-  color: #000;
-  background: rgba(127,255,0,.18);            /* highlight suave verde translúcido */
-  border-radius: .4em;
-  padding: 0 .35em;
-}
-
-/* si metés bullets después */
-.contenedor .bloque ul {
-  margin-top: 14px;
-  padding-left: 0;
-  list-style: none;
-}
-.contenedor .bloque ul li {
-  position: relative;
-  padding-left: 1.4em;
-  margin-bottom: .6em;
-  font-weight: 500;
-  line-height: 1.45;
-}
-.contenedor .bloque ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  top: 0;
-  line-height: 1.2;
-  font-size: .8rem;
-  font-weight: 700;
-  color: #04c200;                              /* check verde más oscuro para contraste */
-  text-shadow: 0 0 4px rgba(0,0,0,.2);
-}
-
-/* ===== Responsive (<=700px) ===== */
-@media (max-width:700px){
-  .contenedor {
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow:
-      0 20px 40px rgba(0,0,0,.16),
-      0 4px 12px rgba(0,0,0,.08);
-  }
-
-  .contenedor .li {
-    font-size: .85rem;
-    padding: .55rem .8rem;
-    border-radius: 999px;
-  }
-
-  .contenedor .bloque {
-    border-radius: 14px;
-    padding: 16px 16px 18px;
-    font-size: .9rem;
-    line-height: 1.45;
+  .bim-points li {
+    list-style: none;       /* chau puntito */
+    padding-left: 0;        /* por si algún user agent mete espacio */
+    margin-left: 0;
   }
 }
