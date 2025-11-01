@@ -98,10 +98,13 @@
         </div>
       
         <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
+  id="carouselExampleIndicators"
+  class="carousel slide"
+  data-bs-ride="false"
+  data-bs-interval="false"
+  data-bs-touch="false"
+  data-bs-keyboard="false"
+>
           <div class="carousel-indicators">
             <!-- reindexado: ahora son 6 slides -->
             <button
@@ -245,9 +248,14 @@
         <div data-aos="fade-up" class="section1">
           <h2 class="tection1_text title-3d-render">RENDERS</h2>
         </div>
-        <div id="carouselExampleIndicators2"
-        class="centrandoInfo carousel slide"
-        data-bs-ride="carousel">
+        <div
+  id="carouselExampleIndicators2"
+  class="carousel slide"
+  data-bs-ride="false"
+  data-bs-interval="false"
+  data-bs-touch="false"
+  data-bs-keyboard="false"
+>
         <div class="carousel-indicators">
           <button
             type="button"
@@ -698,7 +706,42 @@
           integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
           crossorigin="anonymous"
         ></script>
-
+        <script>
+          // Pausa el carrusel si el usuario interactúa con un iframe (click/drag/touch/wheel)
+          function hardenCarouselAgainstIframe(id) {
+            const el = document.getElementById(id);
+            if (!el || !window.bootstrap) return;
+        
+            // Fuerza config segura (sin auto, sin touch)
+            const instance = bootstrap.Carousel.getOrCreateInstance(el, {
+              interval: false,
+              touch: false,
+              keyboard: false,
+              ride: false,
+              pause: false, // deshabilita pausa "hover" para que el control sea explícito
+              wrap: true,
+            });
+        
+            // Al interactuar dentro de iframes: pausar
+            el.querySelectorAll('iframe').forEach((ifr) => {
+              ['pointerdown', 'touchstart', 'mousedown', 'wheel'].forEach((ev) => {
+                ifr.addEventListener(ev, () => instance.pause(), { passive: true });
+              });
+            });
+        
+            // Al usar flechas, reanudar solo si quisieras volver a ciclar (acá no cicla; opcional)
+            el.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach((btn) => {
+              btn.addEventListener('click', () => instance.pause()); // mantener sin auto-slide
+            });
+          }
+        
+          // Aplicar a los dos carousels
+          document.addEventListener('DOMContentLoaded', () => {
+            hardenCarouselAgainstIframe('carouselExampleIndicators');
+            hardenCarouselAgainstIframe('carouselExampleIndicators2');
+          });
+        </script>
+        
         <!-- //aca: Three + Vanta (UNA sola vez) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
         <script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>

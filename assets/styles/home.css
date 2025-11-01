@@ -1830,3 +1830,27 @@ body::-webkit-scrollbar {
     font-size: 2rem;   
   }
 }
+/* ==== FIX: Mostrar una sola barra de scroll vertical “normal” ==== */
+
+/* 1) El scroll vive en BODY, no en contenedores */
+html, body {
+  overflow-x: hidden !important;   /* no scroll horizontal */
+  overflow-y: auto !important;     /* barra visible si hace falta */
+}
+
+/* 2) Volver a mostrar la scrollbar (Firefox y WebKit) */
+html, body {
+  scrollbar-width: auto;           /* Firefox: volver a la barra normal */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 12px;                     /* tamaño normal, podés ajustar o quitar */
+  height: 12px;
+}
+
+/* 3) IMPORTANTE: anular cualquier “ocultador” anterior */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: block;                  /* por si quedó display:none de antes */
+}
