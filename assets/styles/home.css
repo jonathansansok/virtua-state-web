@@ -29,13 +29,7 @@
   box-sizing: border-box;
 }
 
-/* BASE */
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-  background-color: #000;
-}
+
 body {
   background-color: #000;
 }
@@ -217,9 +211,6 @@ main {
     position: static;
   }
 
-  .mobile-nav-panel {
-    /* estas reglas ya puestas arriba */
-  }
 }
 
 /* fallback estilos viejos de .cielo ul (para seguridad) */
@@ -1638,18 +1629,7 @@ main {
 .color-negro {
   color: #000;
 }
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-  background-color: #000;
-}
 
-/* main {
-  background-color: #000;
-  overflow-x: hidden;
-} */
-/* ======= FIX SCROLL VERTICAL EXTRA ENTRE SECCIONES ======= */
 
 /* 1️⃣ Evita márgenes colapsados y asegura flujo sin gaps */
 .v3d-virtual-tour-section,
@@ -1696,24 +1676,6 @@ main {
   overflow: visible !important;     /* evita que Chrome marque main como scroll container */
   max-height: none !important;
 }
-html,
-body {
-  /* no hagas más copias de este bloque en el CSS, dejalo UNA VEZ al final */
-  max-width: 100%;
-  width: 100%;
-  min-height: 100%;
-  background-color: #000;
-
-  /* scroll horizontal JAMÁS */
-  overflow-x: hidden !important;
-
-  /* scroll vertical SOLO acá */
-  overflow-y: auto !important;
-
-  /* evita que otras libs (AOS, bootstrap) lo conviertan en flex y rompan el flujo */
-  display: block !important;
-  position: relative !important;
-}
 /* 7️⃣ En móviles, evita acumulación por vh dinámico */
 @media (max-width: 768px) {
   .carousel-item iframe {
@@ -1721,34 +1683,33 @@ body {
   }
 }
 /* --- FIX DOBLE SCROLLBAR --- */
-
-/* el carrusel NO debe tener su propio scroll vertical */
+/* carruseles ocupan el alto del viewport seguro en mobile */
 #carouselExampleIndicators,
 #carouselExampleIndicators2,
 #carouselExampleIndicators .carousel-inner,
 #carouselExampleIndicators2 .carousel-inner,
 #carouselExampleIndicators .carousel-item,
 #carouselExampleIndicators2 .carousel-item {
-  height: 100vh;
-  max-height: 100vh;
-  overflow-y: hidden !important;
-  overscroll-behavior: contain;
+  height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;       /* clave: no crean su propio scroll */
 }
 
-/* IMPORTANTÍSIMO:
-   forzamos que el iframe no muestre scroll interno */
+/* iframes: sin barras internas ni bordes */
 #carouselExampleIndicators iframe,
 #carouselExampleIndicators2 iframe {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
-  overflow: hidden;          /* oculta barras propias del iframe contenedor */
-  scrollbar-width: none;     /* Firefox */
+
 }
-#carouselExampleIndicators iframe::-webkit-scrollbar,
-#carouselExampleIndicators2 iframe::-webkit-scrollbar {
-  display: none; /* Chrome/Edge */
+
+/* main no debe scrollear: deja su contenido fluir */
+main {
+  overflow: visible !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* en mobile el vh es medio mentiroso → usamos unidades "svh" seguras */
@@ -1768,45 +1729,6 @@ body {
     height: 100svh;
     max-height: 100svh;
   }
-}
-/* ====== BLOQUE FINAL GLOBAL (home fullscreen sin barra visible) ====== */
-html,
-body {
-  /* aseguramos layout normal */
-  position: relative !important;
-  display: block !important;
-  width: 100%;
-  max-width: 100%;
-  min-height: 100%;
-  background-color: #000;
-
-  /* seguimos permitiendo scroll con la rueda/touch,
-     pero ocultamos visualmente la barrita */
-  overflow-x: hidden !important;
-  overflow-y: scroll !important;   /* forzamos canal de scroll */
-  scrollbar-width: none;           /* Firefox: ocultar */
-}
-
-/* Chrome / Edge / Safari scrollbar invisibles */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  background: transparent;
-}
-/* === POSICIÓN HERO FIX === */
-.hero-text {
-  position: absolute;
-  top: 35%;              /* antes 45% */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 5000;
-  color: #fff;
-  width: 90%;
-  max-width: 900px;
-  pointer-events: none;
-  overflow: hidden;
 }
 
 /* mobile primero */
@@ -1830,27 +1752,55 @@ body::-webkit-scrollbar {
     font-size: 2rem;   
   }
 }
-/* ==== FIX: Mostrar una sola barra de scroll vertical “normal” ==== */
 
-/* 1) El scroll vive en BODY, no en contenedores */
-html, body {
-  overflow-x: hidden !important;   /* no scroll horizontal */
-  overflow-y: auto !important;     /* barra visible si hace falta */
+html {
+  height: 100%;
+
 }
 
-/* 2) Volver a mostrar la scrollbar (Firefox y WebKit) */
-html, body {
-  scrollbar-width: auto;           /* Firefox: volver a la barra normal */
+
+/* === ÚNICO CANAL DE SCROLL: HTML === */
+html {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow-x: hidden;   /* nunca scroll horizontal */
+  overflow-y: auto;     /* la ÚNICA barra de scroll está acá */
 }
 
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 12px;                     /* tamaño normal, podés ajustar o quitar */
-  height: 12px;
+/* el body NO scrollea, solo contiene */
+body {
+  min-height: 100%;
+  background: #000;
+  overflow: hidden;     /* clave: evita la segunda barra */
+  display: block;
+  position: relative;
 }
 
-/* 3) IMPORTANTE: anular cualquier “ocultador” anterior */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: block;                  /* por si quedó display:none de antes */
+/* main nunca debe crear scroll propio */
+main {
+  overflow: visible !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* carruseles e items a alto de viewport, sin scroll interno */
+#carouselExampleIndicators,
+#carouselExampleIndicators2,
+#carouselExampleIndicators .carousel-inner,
+#carouselExampleIndicators2 .carousel-inner,
+#carouselExampleIndicators .carousel-item,
+#carouselExampleIndicators2 .carousel-item {
+  height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
+}
+
+/* iframes de los carruseles: llenar y sin bordes/scroll */
+#carouselExampleIndicators iframe,
+#carouselExampleIndicators2 iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
