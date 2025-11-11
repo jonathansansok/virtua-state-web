@@ -1804,3 +1804,30 @@ main {
   height: 100%;
   border: 0;
 }
+.aereal_text_container {
+  background-color: #8a2be2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 28px; /* 👈 padding-bottom le da aire */
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.aereal_text {
+  font-family: "MonumentExtended", sans-serif;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  letter-spacing: clamp(1px, 0.8vw, 10px);
+  font-size: clamp(22px, 5.2vw, 48px);
+  line-height: 1.1;
+  padding: 0 0 10px 0;
+}
+.aereal-virtual-tour-section .title-3d-virtual-tour {
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
